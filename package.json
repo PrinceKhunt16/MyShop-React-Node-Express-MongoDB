@@ -1,5 +1,5 @@
 {
-  "name": "myshop",
+  "name": "trymyshop",
   "version": "1.0.0",
   "description": "",
   "main": "backend/server.js",
@@ -13,7 +13,6 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.6",
-    "nodemon": "^2.0.19"
+    "mongoose": "^6.4.4"
   }
 }
