@@ -1,9 +1,11 @@
 const express = require("express");
+const cokkieParser = require('cookie-parser');
 const app = express();
 
 const errorMiddleware = require("./middleware/error");
 
 app.use(express.json());
+app.use(cokkieParser());
 
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoutes");
