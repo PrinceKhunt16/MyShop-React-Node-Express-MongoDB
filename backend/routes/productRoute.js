@@ -7,15 +7,15 @@ const router = express.Router();
 router.route("/products").get(getAllProducts);
 
 // Create Product - Admin
-router.route("/product/new").post(isAuthenticationUser, authorizeRoles("admin"), createProduct);
+router.route("/admin/product/new").post(isAuthenticationUser, authorizeRoles("admin"), createProduct);
 
 // Update Product - Admin
-router.route("/product/:id").put(isAuthenticationUser, authorizeRoles("admin"), updateProduct);
+router.route("/admin/product/:id").put(isAuthenticationUser, authorizeRoles("admin"), updateProduct);
 
 // Delete Product - Admin
-router.route("/product/:id").delete(isAuthenticationUser, authorizeRoles("admin"), deleteProduct);
+router.route("/admin/product/:id").delete(isAuthenticationUser, authorizeRoles("admin"), deleteProduct);
 
-// Get Product Details - Admin
+// Get Product Details
 router.route("/product/:id").get(getProductDetails);
 
 module.exports = router;
