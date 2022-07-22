@@ -1,25 +1,26 @@
-import React from 'react'
-import BannerPhoto from "../../Utils/bannerPhoto.jpeg"
+import React, { useEffect } from 'react'
+import BannerPhoto from "../../Utils/BannerPhoto.jpeg"
 import "./style.css"
 import ProductCard from './ProductCard'
+import MetaData from "../Layouts/MetaData"
+import { getProducts } from '../../Redux/action/productAction'
+import { useDispatch, useSelector } from "react-redux";
+import Loading from '../Layouts/Loading'
 
 const Homepage = () => {
-  const product = {
-    name: "Blue Tshirt",
-    images: [
-      {
-        url: "https://i.ibb.co/DRST11n/1.webp"
-      }
-    ],
-    price: "3000",
-    _id: "blue-shirt",
-    stock: 3,
-    numOfReviews: 5,
-    ratings: 4
-  };
+  const dispatch = useDispatch();
+
+  const { loading, error, products, productsCount } = useSelector(
+    (state) => state.products
+  );
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
 
   return (
     <div>
+      <MetaData title={"My Shop Homepage"} />
       <div className='homepage'>
         <img src={BannerPhoto} />
       </div>
@@ -28,16 +29,14 @@ const Homepage = () => {
       </div>
       <div className='products'>
         <div className='bodyProducts'>
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+                {products &&
+                  products.map((product) => <ProductCard product={product} />)}
+            </>
+          )}
         </div>
       </div>
     </div>

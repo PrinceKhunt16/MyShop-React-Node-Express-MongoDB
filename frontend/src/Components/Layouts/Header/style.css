@@ -26,7 +26,6 @@
     color: rgba(0, 0, 0, 0.9);
     font-size: 37px;
     font-weight: 300;
-    margin: auto 7px;
     margin-top: -3px;
 }
 
@@ -100,6 +99,11 @@
     justify-content: center;
     align-items: center;
     color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.icons ul li:last-child {
+    margin-right: 0px;
 }
 
 .icons ul li a svg {

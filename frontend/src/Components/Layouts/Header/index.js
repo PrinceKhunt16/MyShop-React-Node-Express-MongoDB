@@ -3,6 +3,7 @@ import "./style.css"
 import { IoIosSearch } from "react-icons/io"
 import { AiOutlineUser } from "react-icons/ai"
 import { BsFillCartCheckFill } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 const Header = () => {
      return (
@@ -15,16 +16,16 @@ const Header = () => {
                     <div className='otherRoutes'>
                         <ul>
                             <li>
-                                <a to="/"> Home </a>
+                                <Link to="/"> Home </Link>
                             </li>
                             <li>
-                                <a to="/products"> Products </a>
+                                <Link to="/products"> Products </Link>
                             </li>
                             <li>
-                                <a to="/contact"> Contact </a>
+                                <Link to="/contact"> Contact </Link>
                             </li>
                             <li>
-                                <a to="/aboutus"> About </a>
+                                <Link to="/aboutus"> About </Link>
                             </li>
                         </ul>
                     </div>
@@ -34,14 +35,14 @@ const Header = () => {
                                 <input type="text" placeholder='Search Product' />
                             </li>
                             <li className='iconsBody'>
-                                <a to="/login">
+                                <Link to="/login">
                                     <AiOutlineUser />
-                                </a>
+                                </Link>
                             </li>
                             <li className='iconsBody'>
-                                <a to="/cart">
+                                <Link to="/cart">
                                     <BsFillCartCheckFill />
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
