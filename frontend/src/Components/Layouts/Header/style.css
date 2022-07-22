@@ -1,0 +1,142 @@
+.header {
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top:0;
+}
+
+.header .contant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 95%;
+    margin: auto;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header a .logo {
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 37px;
+    font-weight: 300;
+    margin: auto 7px;
+    margin-top: -3px;
+}
+
+.otherRoutes ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+}
+
+.otherRoutes ul li {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 10px;
+}
+
+.otherRoutes ul li a {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.icons ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+}
+
+.iconsBody {
+    margin: auto 7px;
+    height: 43px;
+    width: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    padding: 2px;
+}
+
+.searchProductInput {
+    margin: auto 7px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.searchProductInput input {
+    height: 100%;
+    width: 100%;
+    background-color: #f0f0f0;
+    font-family: "Noto Sans JP", sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    padding: 10px 5px 11px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    border-radius: 3px;
+}
+
+.searchProductInput input:focus {
+    outline: none;
+}
+
+.icons ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.icons ul li a svg {
+    font-size: 20px;
+}
+
+.speedDialBody .css-11u3b1d-MuiSpeedDial-root {
+    height: 43px;
+    width: 43px;                                     
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+.css-11u3b1d-MuiSpeedDial-root button {
+    box-shadow: none !important;
+    min-height: 43px;
+    width: 43px;
+    border: none;
+    background: transparent !important;
+}
+
+.speedDialBody img {
+    height: 43px;
+    width: 43px;
+    object-fit: cover;
+    border-radius: 50%;  
+}
+
+.css-11u3b1d-MuiSpeedDial-root button {
+    background: #f0f0f0 !important;
+    transition: none !important;
+}
+
+.css-11u3b1d-MuiSpeedDial-root button svg {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.MuiMenu-paper {
+    transition-duration: 0s !important;
+}

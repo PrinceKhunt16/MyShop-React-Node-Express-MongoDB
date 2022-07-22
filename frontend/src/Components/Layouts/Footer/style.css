@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .logo {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 10px;
+}
+
+.rides {
+    margin-top: 10px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: rgba(0, 0, 0, 0.9);
+}
