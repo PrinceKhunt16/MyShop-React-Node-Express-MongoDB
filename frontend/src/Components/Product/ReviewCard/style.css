@@ -1,0 +1,45 @@
+.reviewCard {
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    padding-top: 15px;
+    width: 100%;
+}
+
+.reviewCard .imgAndName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.reviewCard .imgAndName img {
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.reviewCard .imgAndName p {
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.reviewCard h4 {
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .reviewCard {
+        width: 100%;
+    }
+}

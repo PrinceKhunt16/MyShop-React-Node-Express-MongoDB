@@ -26,6 +26,29 @@ export const getProducts = () => async (dispatch) => {
 
 }
 
+export const getProductDetails = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.PRODUCT_DETAIL_REQUEST
+        });
+
+        const { data } = await axios.get(`/api/v1/product/${id}`);
+
+        dispatch({
+            type: actions.PRODUCT_DETAIL_SUCCESS,
+            payload: data.product,
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.PRODUCT_DETAIL_FAIL,
+            payload: error.response.data.message,
+        });
+
+    }
+
+}
+
 export const clearErrors = () => async (dispatch) => {
     dispatch({
         type: actions.CLEAR_ERRORS,

@@ -3,7 +3,7 @@ import BannerPhoto from "../../Utils/BannerPhoto.jpeg"
 import "./style.css"
 import ProductCard from './ProductCard'
 import MetaData from "../Layouts/MetaData"
-import { getProducts } from '../../Redux/action/productAction'
+import { clearErrors, getProducts } from '../../Redux/action/productAction'
 import { useDispatch, useSelector } from "react-redux";
 import Loading from '../Layouts/Loading'
 import Toast from '../Layouts/Toast'
@@ -21,6 +21,8 @@ const Homepage = () => {
       Toast({
         msg: error
       });
+
+      dispatch(clearErrors());
     }
     
     dispatch(getProducts());

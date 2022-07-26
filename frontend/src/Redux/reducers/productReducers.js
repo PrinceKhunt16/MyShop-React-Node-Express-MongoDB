@@ -28,3 +28,30 @@ export const productsReducers = (state = { products: [] }, action) => {
             return state;
     }
 };
+
+export const productDetailsReducers = (state = { product: {} }, action) => {
+    switch (action.type) {
+        case actions.PRODUCT_DETAIL_REQUEST:
+            return {
+                loading: true,
+                ...state,
+            }
+        case actions.PRODUCT_DETAIL_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload,
+            }
+        case actions.PRODUCT_DETAIL_FAIL:
+            return {
+                loading: false,
+                error: action.payload,
+            }
+        case actions.CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            }
+        default:
+            return state;
+    }
+};
