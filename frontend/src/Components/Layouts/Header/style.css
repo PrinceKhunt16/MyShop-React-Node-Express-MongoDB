@@ -19,6 +19,7 @@
 
 .header a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .header a .logo {
@@ -65,33 +66,6 @@
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.01);
     padding: 2px;
-}
-
-.searchProductInput {
-    margin: auto 7px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    box-sizing: border-box;
-}
-
-.searchProductInput input {
-    height: 100%;
-    width: 100%;
-    background-color: #f0f0f0;
-    font-family: "Noto Sans JP", sans-serif;
-    border: 1px solid rgba(0, 0, 0, 0.01);
-    padding: 10px 5px 11px 5px;
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.9);
-    border-radius: 3px;
-}
-
-.searchProductInput input:focus {
-    outline: none;
 }
 
 .icons ul li a {

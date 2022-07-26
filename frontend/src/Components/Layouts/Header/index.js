@@ -1,18 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css"
-import { IoIosSearch } from "react-icons/io"
 import { AiOutlineUser } from "react-icons/ai"
 import { BsFillCartCheckFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
-const Header = () => {
-     return (
+const Header = ({ history }) => {
+    return (
         <>
             <div className='header'>
                 <div className='contant'>
-                    <a to="/">
+                    <Link to="/">
                         <div className='logo'>My Shop</div>
-                    </a>
+                    </Link>
                     <div className='otherRoutes'>
                         <ul>
                             <li>
@@ -31,9 +30,6 @@ const Header = () => {
                     </div>
                     <div className='icons'>
                         <ul>
-                            <li className='searchProductInput'>
-                                <input type="text" placeholder='Search Product' />
-                            </li>
                             <li className='iconsBody'>
                                 <Link to="/login">
                                     <AiOutlineUser />

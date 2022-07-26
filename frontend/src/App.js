@@ -5,6 +5,7 @@ import Header from './Components/Layouts/Header';
 import ScrollToTop from './ScrollToTop';
 import Homepage from './Components/Homepage';
 import ProductDetails from './Components/Product/ProductDetails';
+import Products from "./Components/Product/Products";
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/product/:id'} component={ProductDetails} />
+          <Route exact path={'/products'} component={Products} />
+          <Route path={'/products/:keyword'} component={Products} />
         </Switch>
         <Footer />
       </Router>
