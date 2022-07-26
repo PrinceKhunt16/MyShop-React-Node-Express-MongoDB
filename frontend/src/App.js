@@ -6,6 +6,7 @@ import ScrollToTop from './ScrollToTop';
 import Homepage from './Components/Homepage';
 import ProductDetails from './Components/Product/ProductDetails';
 import Products from "./Components/Product/Products";
+import LoginSignup from './Components/User/LoginSignup';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route exact path={'/product/:id'} component={ProductDetails} />
           <Route exact path={'/products'} component={Products} />
           <Route path={'/products/:keyword'} component={Products} />
+          <Route path={'/login'} component={LoginSignup} />
         </Switch>
         <Footer />
       </Router>
