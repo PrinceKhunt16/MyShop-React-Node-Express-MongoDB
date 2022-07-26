@@ -1,11 +1,15 @@
 const express = require("express");
 const cokkieParser = require('cookie-parser');
 const app = express();
+const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 
 const errorMiddleware = require("./middleware/error");
 
 app.use(express.json());
 app.use(cokkieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
 
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoutes");

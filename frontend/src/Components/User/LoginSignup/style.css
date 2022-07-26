@@ -14,7 +14,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    border-radius: 11px;
 }
 
 .login_signUp_toggle {
@@ -30,6 +30,7 @@
     transition: all 0.5s;
     cursor: pointer;
     display: grid;
+    padding-top: 3px;
     place-items: center;
     width: 100%;
 }
