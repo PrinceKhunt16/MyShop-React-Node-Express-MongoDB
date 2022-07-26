@@ -6,6 +6,8 @@ import MetaData from "../Layouts/MetaData"
 import { getProducts } from '../../Redux/action/productAction'
 import { useDispatch, useSelector } from "react-redux";
 import Loading from '../Layouts/Loading'
+import Toast from '../Layouts/Toast'
+import ToastContainerBox from '../Layouts/ToastContainerBox'
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -15,11 +17,19 @@ const Homepage = () => {
   );
 
   useEffect(() => {
+    if(error){
+      Toast({
+        msg: error
+      });
+    }
+    
     dispatch(getProducts());
+
   }, [dispatch]);
 
   return (
     <div>
+      <ToastContainerBox />
       <MetaData title={"My Shop Homepage"} />
       <div className='homepage'>
         <img src={BannerPhoto} />
