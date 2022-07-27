@@ -10,6 +10,7 @@ import LoginSignup from './Components/User/LoginSignup';
 import Profile from './Components/User/Profile';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import UpdateProfile from './Components/User/UpdateProfile';
+import UpdatePassword from './Components/User/UpdatePassword';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path={'/login'} component={LoginSignup} />
           <ProtectedRoute path={'/account'} component={Profile} />
           <ProtectedRoute path={'/me/update'} component={UpdateProfile} />
+          <ProtectedRoute path={'/password/update'} component={UpdatePassword} />
         </Switch>
         <Footer />
       </Router>

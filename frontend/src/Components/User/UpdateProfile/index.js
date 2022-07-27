@@ -6,6 +6,8 @@ import MetaData from "../../Layouts/MetaData";
 import Loading from '../../Layouts/Loading';
 import { clearErrors } from '../../../Redux/action/productAction';
 import { loadUser, updateProfile } from '../../../Redux/action/userAction';
+import Toast from "../../Layouts/Toast";
+import ToastContainerBox from "../../Layouts/ToastContainerBox";
 
 const UpdateProfile = ({ history }) => {
     const dispatch = useDispatch();
@@ -27,6 +29,10 @@ const UpdateProfile = ({ history }) => {
         myForm.set("email", email);
         myForm.set("avatar", avatar);
         dispatch(updateProfile(myForm));
+        
+        Toast({
+            msg: "Profile Update Successfully"
+        })
     };
 
     const updateProfileDataChange = (e) => {
@@ -50,6 +56,10 @@ const UpdateProfile = ({ history }) => {
         }
 
         if (error) {
+            Toast({
+                msg: error
+            })
+
             dispatch(clearErrors());
         }
 
@@ -71,6 +81,7 @@ const UpdateProfile = ({ history }) => {
             ) : (
                 <>
                     <MetaData title="Update Profile" />
+                    <ToastContainerBox />
                     <div className="updateProfileContainer">
                         <div className="updateProfileBox">
                             <form className="updateProfile" encType="multipart/form-data" onSubmit={updateProfileSubmit}>
