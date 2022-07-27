@@ -10,6 +10,7 @@ import ReviewCard from '../ReviewCard';
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import ToastContainerBox from "../../Layouts/ToastContainerBox";
 import Toast from "../../Layouts/Toast";
+import { addItemsToCart } from '../../../Redux/action/cartAction';
 
 const ProductDetails = ({ match }) => {
     const [open, setOpen] = useState(false);
@@ -18,6 +19,28 @@ const ProductDetails = ({ match }) => {
     const dispatch = useDispatch();
 
     const { product, loading, error } = useSelector((state) => state.productDetail);
+
+    const increaseQuantity = () => {
+        if (product.stock <= quantity) return;
+
+        const qty = quantity + 1;
+        setQuantity(qty);
+    };
+
+    const decreaseQuantity = () => {
+        if (1 >= quantity) return;
+
+        const qty = quantity - 1;
+        setQuantity(qty);
+    };
+
+    const addToCartHendler = () => {
+        dispatch(addItemsToCart(match.params.id, quantity));
+        
+        Toast({
+            msg: `${quantity} items added in your cart`
+        });
+    }
 
     useEffect(() => {
         if(error){
@@ -79,9 +102,9 @@ const ProductDetails = ({ match }) => {
                                 <div className='priceAndAddRemove'>
                                     <h1><span>Rs {product.price}</span></h1>
                                     <div className='addRemoveButtons'>
-                                        <button><AiOutlineMinus /></button>
+                                        <button onClick={decreaseQuantity}><AiOutlineMinus /></button>
                                         <h2>{quantity}</h2>
-                                        <button><AiOutlinePlus /></button>
+                                        <button onClick={increaseQuantity}><AiOutlinePlus /></button>
                                     </div>
                                 </div>
                                 <div className='status'>
@@ -93,7 +116,7 @@ const ProductDetails = ({ match }) => {
                                 </div>
                                 <div className='twoButtons'>
                                     <div className='addToCart'>
-                                        <button disabled={product.Stock < 1 ? true : false}>Add To Cart</button>
+                                        <button disabled={product.Stock < 1 ? true : false} onClick={addToCartHendler}>Add To Cart</button>
                                     </div>
                                     <div className='submitReview'>
                                         <button>Submit Review</button>

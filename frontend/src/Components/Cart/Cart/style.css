@@ -1,0 +1,170 @@
+.cartPage {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.cartHeader {
+    display: flex;
+    padding: 6px 19px 7px 19px;
+    border-radius: 3px;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgba(243, 243, 243, 0.550);
+}
+
+.cartHeader p {
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+}
+
+.cartHeader #productNames, .cartCardItem {
+    width: 60%;
+}
+
+.cartHeader #productQuantity, .cartInput {
+    width: 20%;
+    text-align: center;
+}
+
+.cartHeader #productSubTotal {
+    width: 20%;
+    text-align: right;
+}
+
+.cardItemTotal {
+    width: 20%;
+    text-align: right;
+}
+
+.cartContainer {
+    display: flex;
+    margin-top: calc(40px / 2);
+    margin-bottom: calc(40px / 2);
+    align-items: center;
+}
+
+.cartInput button {
+    background-color: rgb(248, 248, 248);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 3px;
+    border: 1px solid rgba(243, 243, 243, 0.550);
+    cursor: pointer;
+}
+
+.cartInput input {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.cartInput input:focus {
+    outline: none;
+}
+
+.cardItemTotal p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    width: 92px;
+    margin-left: auto;
+    text-align: left;
+}
+
+.cartGrossProfit {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgba(243, 243, 243, 0.550);
+    border-radius: 3px;
+    padding: 6px 10px 7px 10px;
+}
+
+.cartGrossProfitBox {
+    display: flex;
+}
+
+.cartGrossProfitBox p {
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+}
+
+.cartGrossProfitBox h3 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.checkOutBtn {
+    margin-left: 20px;
+}
+
+.checkOutBtn button {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 17px;
+    font-weight: 400;
+    padding: 10px 15px 11px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.noNoItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 42px;
+    font-weight: 300;
+}
+
+.addRemoveButtons {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+}
+
+.addRemoveButtons button {
+    background-color: rgb(246, 246, 246);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+    border: 1px solid rgb(235, 235, 235);
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+.addRemoveButtons h2 {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 3px;
+}
