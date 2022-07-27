@@ -1,10 +1,12 @@
 import React from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./style.css"
 
 const ToastContainerBox = () => {
   return (
-    <ToastContainer 
+    <div className='toastContainer'>
+      <ToastContainer
         autoClose={3000}
         hideProgressBar
         newestOnTop
@@ -13,6 +15,7 @@ const ToastContainerBox = () => {
         pauseOnFocusLoss
         draggable
       />
+    </div>
   )
 }
 

@@ -11,6 +11,7 @@ const Toast = ({ msg }) => {
         draggable: true,
         progress: 0,
         closeButton: false,
+        theme: "light"
     })
   )
 }

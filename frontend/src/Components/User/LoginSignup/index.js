@@ -29,6 +29,10 @@ const LoginSignup = ({ history, location }) => {
     const loginSubmit = (e) => {
         e.preventDefault();
         dispatch(login(loginEmail, loginPassword));
+
+        Toast({
+            msg: "Login Succesfully"
+        });
     }
 
     const registerSubmit = (e) => {
@@ -41,6 +45,10 @@ const LoginSignup = ({ history, location }) => {
         myForm.set("password", password);
         myForm.set("avatar", avatar);
         dispatch(register(myForm));
+
+        Toast({
+            msg: "Register Succesfully"
+        });
     }
 
     const registerDataChange = (e) => {
