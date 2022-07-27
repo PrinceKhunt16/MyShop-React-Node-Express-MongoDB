@@ -88,3 +88,41 @@ export const profileReducer = (state = {}, action) => {
             return state;
     }
 };
+
+export const forgotPasswordReducer = (state = {}, action) => {
+    switch (action.type) {
+        case actions.FORGOT_PASSWORD_REQUEST:
+        case actions.RESET_PASSWORD_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
+        case actions.FORGOT_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                message: action.payload,
+            };
+        case actions.FORGOT_PASSWORD_FAIL:
+        case actions.RESET_PASSWORD_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+        case actions.RESET_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                success: action.payload,
+            };
+        case actions.CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+        default:
+            return state;
+    }
+};

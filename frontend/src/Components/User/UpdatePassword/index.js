@@ -5,6 +5,8 @@ import Loading from '../../Layouts/Loading';
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updatePassword } from '../../../Redux/action/userAction';
 import { UPDATE_PASSWORD_RESET } from '../../../Redux/constant/userConstant';
+import Toast from "../../Layouts/Toast";
+import ToastContainerBox from "../../Layouts/ToastContainerBox";
 
 const UpdatePassword = ({ history }) => {
     const dispatch = useDispatch();
@@ -29,7 +31,10 @@ const UpdatePassword = ({ history }) => {
 
     useEffect(() => {
         if (error) {
-            alert.error(error);
+            Toast({
+                msg: error
+            })
+
             dispatch(clearErrors());
         }
 
@@ -45,6 +50,7 @@ const UpdatePassword = ({ history }) => {
     return (
         <>
             <MetaData title={`Update Password`} />
+            <ToastContainerBox />
             {loading ? (
                 <Loading />
             ) : (
@@ -53,7 +59,6 @@ const UpdatePassword = ({ history }) => {
                         <form className='passwordbox' onSubmit={updatePasswordSubmit}>
                             <h2>Update Password</h2>
                             <div className='updatePasswordInput'>
-
                                 <input
                                     type="password"
                                     placeholder="Old Password"
@@ -61,7 +66,6 @@ const UpdatePassword = ({ history }) => {
                                     value={oldPassword}
                                     onChange={(e) => setOldPassword(e.target.value)}
                                 />
-
                             </div>
                             <div className='updatePasswordInput'>
                                 <input

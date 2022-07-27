@@ -151,6 +151,66 @@ export const updatePassword = (passwords) => async (dispatch) => {
     }
 };
 
+// Forgot Password
+export const forgotPassword = (email) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.FORGOT_PASSWORD_REQUEST
+        });
+
+        const config = {
+            headers: { "Content-Type": "application/json" }
+        };
+
+        const { data } = await axios.post(
+            `/api/v1/password/forgot`,
+            email,
+            config
+        );
+
+        dispatch({
+            type: actions.FORGOT_PASSWORD_SUCCESS,
+            payload: data.message
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.FORGOT_PASSWORD_FAIL,
+            payload: error.response.data.message
+        });
+    }
+}
+
+// Reset Password
+export const resetPassword = (token, passwords) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.RESET_PASSWORD_REQUEST
+        });
+
+        const config = {
+            headers: { "Content-Type": "application/json" }
+        };
+
+        const { data } = await axios.put(
+            `/api/v1/password/reset/${token}`,
+            passwords,
+            config
+        );
+
+        dispatch({
+            type: actions.RESET_PASSWORD_SUCCESS,
+            payload: data.success
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.RESET_PASSWORD_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+}
+
 export const clearErrors = () => async (dispatch) => {
     dispatch({
         type: actions.CLEAR_ERRORS,

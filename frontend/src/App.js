@@ -11,6 +11,8 @@ import Profile from './Components/User/Profile';
 import ProtectedRoute from './Components/Route/ProtectedRoute';
 import UpdateProfile from './Components/User/UpdateProfile';
 import UpdatePassword from './Components/User/UpdatePassword';
+import ForgotPassword from './Components/User/ForgotPassword';
+import ResetPassword from './Components/User/ResetPassword';
 
 const App = () => {
   return (
@@ -23,10 +25,12 @@ const App = () => {
           <Route exact path={'/product/:id'} component={ProductDetails} />
           <Route exact path={'/products'} component={Products} />
           <Route path={'/products/:keyword'} component={Products} />
-          <Route path={'/login'} component={LoginSignup} />
-          <ProtectedRoute path={'/account'} component={Profile} />
-          <ProtectedRoute path={'/me/update'} component={UpdateProfile} />
-          <ProtectedRoute path={'/password/update'} component={UpdatePassword} />
+          <Route exact path={'/login'} component={LoginSignup} />
+          <ProtectedRoute exact path={'/account'} component={Profile} />
+          <ProtectedRoute exact path={'/me/update'} component={UpdateProfile} />
+          <ProtectedRoute exact path={'/password/update'} component={UpdatePassword} />
+          <Route exact path={'/password/forgot'} component={ForgotPassword} />
+          <Route exact path={'/password/reset/:token'} component={ResetPassword} />
         </Switch>
         <Footer />
       </Router>
