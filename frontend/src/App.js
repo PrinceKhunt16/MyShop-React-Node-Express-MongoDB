@@ -8,6 +8,8 @@ import ProductDetails from './Components/Product/ProductDetails';
 import Products from "./Components/Product/Products";
 import LoginSignup from './Components/User/LoginSignup';
 import Profile from './Components/User/Profile';
+import ProtectedRoute from './Components/Route/ProtectedRoute';
+import UpdateProfile from './Components/User/UpdateProfile';
 
 const App = () => {
   return (
@@ -21,7 +23,8 @@ const App = () => {
           <Route exact path={'/products'} component={Products} />
           <Route path={'/products/:keyword'} component={Products} />
           <Route path={'/login'} component={LoginSignup} />
-          <Route path={'/account'} component={Profile} />
+          <ProtectedRoute path={'/account'} component={Profile} />
+          <ProtectedRoute path={'/me/update'} component={UpdateProfile} />
         </Switch>
         <Footer />
       </Router>

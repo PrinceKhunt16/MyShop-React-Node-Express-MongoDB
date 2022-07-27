@@ -41,7 +41,6 @@ const Profile = ({ history }) => {
                             </div>
                             <div className='profileOtherRoot'>
                                 <Link to="/me/update">Edit Profile</Link>
-                                <Link to="/orders">My Orders</Link>
                                 <Link to="/password/update">Change Password</Link>
                             </div>
                         </div>

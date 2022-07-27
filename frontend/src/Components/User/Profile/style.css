@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
 }
 
 .profileDetails {
@@ -39,18 +40,13 @@
 }
 
 .profileContent>div:first-child>img {
-    width: 100%;
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    margin-bottom: 20px;
     transition: all 0.5s;
+    margin-bottom: 20px;
     object-fit: cover;
-    border: 1px solid #00000020;
-}
-
-.profileContent>div:first-child>img:hover {
-    transform: scale(1.05);
+    padding: 2px;
 }
 
 .profileContent>div:first-child>a {
