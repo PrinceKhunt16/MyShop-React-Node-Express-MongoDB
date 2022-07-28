@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './Components/Layouts/Footer';
 import Header from './Components/Layouts/Header';
@@ -16,8 +16,26 @@ import ResetPassword from './Components/User/ResetPassword';
 import Cart from './Components/Cart/Cart';
 import Shipping from './Components/Cart/Shipping';
 import ConfirmOrder from './Components/Cart/ConfirmOrder';
+import axios from 'axios';
+import Payment from './Components/Cart/Payment';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 const App = () => {
+  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  async function getStripeApiKey() {
+    const { data } = await axios.get("/api/v1/stripeapikey");
+
+    setStripeApiKey(data.stripeApiKey);
+  }
+
+  useEffect(() => {
+
+    getStripeApiKey();
+
+  }, []);
+
   return (
     <div>
       <Router>
@@ -37,6 +55,11 @@ const App = () => {
           <Route exact path={'/cart'} component={Cart} />
           <ProtectedRoute exact path={'/shipping'} component={Shipping} />
           <ProtectedRoute exact path={'/order/confirm'} component={ConfirmOrder} />
+          {stripeApiKey &&
+            <Elements stripe={loadStripe(stripeApiKey)}>
+              <ProtectedRoute exact path={'/process/payment'} component={Payment} />
+            </Elements>
+          }
         </Switch>
         <Footer />
       </Router>
