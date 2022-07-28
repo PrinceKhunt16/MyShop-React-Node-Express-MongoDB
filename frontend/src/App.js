@@ -15,6 +15,7 @@ import ForgotPassword from './Components/User/ForgotPassword';
 import ResetPassword from './Components/User/ResetPassword';
 import Cart from './Components/Cart/Cart';
 import Shipping from './Components/Cart/Shipping';
+import ConfirmOrder from './Components/Cart/ConfirmOrder';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Route exact path={'/password/reset/:token'} component={ResetPassword} />
           <Route exact path={'/cart'} component={Cart} />
           <ProtectedRoute exact path={'/shipping'} component={Shipping} />
+          <ProtectedRoute exact path={'/order/confirm'} component={ConfirmOrder} />
         </Switch>
         <Footer />
       </Router>

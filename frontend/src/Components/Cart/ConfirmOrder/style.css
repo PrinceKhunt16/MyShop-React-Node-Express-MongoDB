@@ -1,0 +1,133 @@
+.confirmContainer {
+    width: 100vw;
+    max-width: 100%;
+}
+
+.confirmBox {
+    width: 400px;
+    margin: 50px auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 35px 29px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmBox h2 {
+    color: rgba(0, 0, 0);
+    font-size: 19px;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.confirmshippingAreaBox div {
+    display: flex;
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+}
+
+.confirmshippingAreaBox div p {
+    width: 80px;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+}
+
+.confirmshippingAreaBox div span {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.ItemBoxConfirm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.ItemBoxConfirm img {
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    border-radius: 3px;
+    object-fit: contain;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgba(243, 243, 243, 0.65);
+}
+
+.itemConfirmBox {
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+}
+
+.itemConfirmDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+.itemConfirmDetails h4 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: rgb(95, 95, 95);
+    margin: 0;
+}
+
+.itemConfirmDetails h4 span,
+.itemConfirmDetails h4 a {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: black;
+    margin: 0;
+}
+
+.totalGrossAreaBox div p {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+}
+
+.totalGrossAreaBox div span {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    width: 60px;
+    text-align: left;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.totalGrossAreaBox div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+}
+
+.proceedToPaymentBtn {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    margin: 20px auto auto auto;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-weight: 500;
+    padding: 7px 0px 10px 0px;
+    width: 190px;
+    height: 50px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
