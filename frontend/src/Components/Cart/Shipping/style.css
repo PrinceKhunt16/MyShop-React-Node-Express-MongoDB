@@ -1,0 +1,112 @@
+.shippingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    min-height: calc(100vh - 92px);
+}
+
+.shippingBox {
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 11px;
+}
+
+.shippingForm {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 35px 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.shippingForm h2{
+    color: rgba(0, 0, 0);
+    font-size: 19px;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.shippingInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.shippingInput input {
+    width: 100%;
+    margin-top: calc(30px / 2);
+    margin-bottom: calc(30px / 2);
+    font-family: "Noto Sans JP", sans-serif;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 55px;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.shippingInput input:focus {
+    outline: none;
+}
+
+.shippingBtn input {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0);
+    font-size: 17px;
+    font-weight: 500;
+    padding: 7px 0px 10px 0px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.stateBox {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.countryBox select, .stateBox select{
+    width: 100%;
+    margin-top: calc(30px / 2);
+    margin-bottom: calc(30px / 2);
+    height: 55px;
+    font-family: "Noto Sans JP", sans-serif;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+    padding-right: 10px;
+}
+
+.countryBox select option, 
+.stateBox select option{
+    background-color: #e8e8e8;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.countryBox select:focus,
+.stateBox select:focus {
+    outline: none;
+}

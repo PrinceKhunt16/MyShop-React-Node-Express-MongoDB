@@ -75,7 +75,7 @@
 
 .cardItemTotal p {
     font-family: "Noto Sans JP", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.9);
     width: 92px;
@@ -137,13 +137,13 @@
     font-weight: 300;
 }
 
-.addRemoveButtons {
+.addRemoveButtonsCart {
     display: flex;
     width: 20%;
     justify-content: center;
 }
 
-.addRemoveButtons button {
+.addRemoveButtonsCart button {
     background-color: rgb(246, 246, 246);
     border: none;
     width: 38px;
@@ -157,13 +157,13 @@
     padding-top: 3px;
 }
 
-.addRemoveButtons h2 {
+.addRemoveButtonsCart h2 {
     background-color: transparent;
     border: none;
     width: 40px;
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 400;
     margin: 0;
     padding-top: 3px;

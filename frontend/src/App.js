@@ -14,6 +14,7 @@ import UpdatePassword from './Components/User/UpdatePassword';
 import ForgotPassword from './Components/User/ForgotPassword';
 import ResetPassword from './Components/User/ResetPassword';
 import Cart from './Components/Cart/Cart';
+import Shipping from './Components/Cart/Shipping';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route exact path={'/password/forgot'} component={ForgotPassword} />
           <Route exact path={'/password/reset/:token'} component={ResetPassword} />
           <Route exact path={'/cart'} component={Cart} />
+          <ProtectedRoute exact path={'/shipping'} component={Shipping} />
         </Switch>
         <Footer />
       </Router>

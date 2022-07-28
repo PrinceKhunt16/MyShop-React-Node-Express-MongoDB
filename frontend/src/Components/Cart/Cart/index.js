@@ -56,7 +56,7 @@ const Cart = ({ history }) => {
                                         <div className='cartCardItem'>
                                             <CartItemCard item={item} deleteCartItem={removeCardItem} />
                                         </div>
-                                        <div className='addRemoveButtons'>
+                                        <div className='addRemoveButtonsCart'>
                                             <button onClick={() => decreaseQuantity(item.product, item.quantity)}><AiOutlineMinus /></button>
                                             <h2>{item.quantity}</h2>
                                             <button onClick={() => increaseQuantity(item.product, item.quantity, item.stock)}><AiOutlinePlus /></button>
