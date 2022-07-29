@@ -1,0 +1,43 @@
+.orderDetailContainer {
+    width: 100%;
+}
+
+.processOrderBox form div {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.processOrderBox form p {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+}
+
+.processOrderBox form .selectBox select {
+    width: 150px;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-left: 10px;
+}
+
+.processOrderBox form .selectBox select:focus {
+    outline: none;
+}
+
+.processOrderBox form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proceedToPaymentBtn {
+    margin-top: 30px;
+}

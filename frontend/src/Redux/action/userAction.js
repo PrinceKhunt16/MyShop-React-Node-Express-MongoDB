@@ -211,6 +211,100 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     }
 }
 
+// get All Users
+export const getAllUsers = () => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.ALL_USERS_REQUEST
+        });
+
+        const { data } = await axios.get(`/api/v1/admin/users`);
+
+        dispatch({
+            type: actions.ALL_USERS_SUCCESS,
+            payload: data.users
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.ALL_USERS_FAIL,
+            payload: error.response.data.message
+        });
+    }
+};
+
+// get User Details
+export const getUserDetails = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.USER_DETAILS_REQUEST
+        });
+
+        const { data } = await axios.get(`/api/v1/admin/user/${id}`);
+
+        dispatch({
+            type: actions.USER_DETAILS_SUCCESS,
+            payload: data.user
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.USER_DETAILS_FAIL,
+            payload: error.response.data.message
+        });
+    }
+};
+
+// Update User
+export const updateUser = (id, userData) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.UPDATE_USER_REQUEST
+        });
+
+        const config = { headers: { "Content-Type": "application/json" } };
+
+        const { data } = await axios.put(
+            `/api/v1/admin/user/${id}`,
+            userData,
+            config
+        );
+
+        dispatch({
+            type: actions.UPDATE_USER_SUCCESS,
+            payload: data.success
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.UPDATE_USER_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+};
+
+// Delete User
+export const deleteUser = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.DELETE_USER_REQUEST
+        });
+
+        const { data } = await axios.delete(`/api/v1/admin/user/${id}`);
+
+        dispatch({
+            type: actions.DELETE_USER_SUCCESS,
+            payload: data
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.DELETE_USER_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+};
+
 export const clearErrors = () => async (dispatch) => {
     dispatch({
         type: actions.CLEAR_ERRORS,

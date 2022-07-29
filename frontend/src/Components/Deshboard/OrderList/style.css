@@ -1,0 +1,25 @@
+.productListContainer {
+    width: 100%;
+    padding: 30px;
+}
+
+.productListContainer h1 {
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.95);
+    font-size: 26px;
+    font-weight: 300;
+    margin: 14px; 
+}
+
+svg {
+    fill: rgba(0, 0, 0, 0.85) !important;
+}
+
+.productListGrid .MuiDataGrid-columnSeparator {
+    display: none !important;
+}
+
+#deleteIconDeshboard:hover {
+    background-color: transparent;
+}

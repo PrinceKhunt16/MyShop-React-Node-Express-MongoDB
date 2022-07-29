@@ -1,20 +1,56 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from '../Sidebar'
 import "./style.css"
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { getAdminProducts } from '../../../Redux/action/productAction';
+import { getAllOrders } from '../../../Redux/action/orderAction';
+import { getAllUsers } from '../../../Redux/action/userAction';
 
 const Deshboard = () => {
+    const dispatch = useDispatch();
+
+    const { products } = useSelector((state) => state.products);
+
+    const { orders } = useSelector((state) => state.allOrders);
+
+    const { users } = useSelector((state) => state.allUsers);
+
     let outOfStock = 0;
     let totalProducts = 0;
     let totalAmount = 0;
     let totalStock = 0;
-    let users = 0;
-    let orders = 0;
+
+    products &&
+        products.forEach((item) => {
+            if (item.stock === 0) {
+                outOfStock += 1;
+            }
+
+            totalStock += item.stock;
+
+            totalProducts += 1;
+
+        });
+
+    orders &&
+        orders.forEach((item) => {
+            totalAmount += item.totalPrice;
+        });
+
+    useEffect(() => {
+        dispatch(getAdminProducts());
+
+        dispatch(getAllOrders());
+
+        dispatch(getAllUsers());
+
+    }, [dispatch]);
 
     return (
         <div className='deshboardContent'>
             <div className='deshboard'>
-                <Sidebar /> 
+                <Sidebar />
             </div>
             <div className='deshboardContainer'>
                 <h2>Deshboard</h2>

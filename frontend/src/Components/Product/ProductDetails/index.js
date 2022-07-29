@@ -116,7 +116,7 @@ const ProductDetails = ({ match }) => {
                                         isHalf={true}
                                         color={"#dfdfdf"}
                                         activeColor={"#9a9a9a"}
-                                        size={38}
+                                        size={30}
                                         count={5}
                                         value={product.ratings}
                                     />

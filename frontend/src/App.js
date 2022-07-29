@@ -27,6 +27,9 @@ import Deshboard from './Components/Deshboard/Deshboard';
 import ProductList from './Components/Deshboard/ProductList';
 import NewProduct from './Components/Deshboard/NewProduct';
 import UpdateProduct from './Components/Deshboard/UpdateProduct';
+import OrderList from './Components/Deshboard/OrderList';
+import ProcessOrder from './Components/Deshboard/ProcessOrder';
+import UsersList from './Components/Deshboard/UsersList';
 
 const App = () => {
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -68,6 +71,9 @@ const App = () => {
           <ProtectedRoute isAdmin={true} exact path={"/admin/products"} component={ProductList} />
           <ProtectedRoute isAdmin={true} exact path={"/admin/product"} component={NewProduct} />
           <ProtectedRoute isAdmin={true} exact path={"/admin/product/:id"} component={UpdateProduct} />
+          <ProtectedRoute isAdmin={true} exact path={"/admin/orders"} component={OrderList} />
+          <ProtectedRoute isAdmin={true} exact path={"/admin/order/:id"} component={ProcessOrder} />
+          <ProtectedRoute isAdmin={true} exact path={"/admin/users"} component={UsersList} />
           {stripeApiKey &&  
             <Elements stripe={loadStripe(stripeApiKey)}>
               <ProtectedRoute exact path={'/process/payment'} component={Payment} />

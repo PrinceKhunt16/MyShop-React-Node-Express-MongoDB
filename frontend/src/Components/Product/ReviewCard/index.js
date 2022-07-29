@@ -16,7 +16,7 @@ const ReviewCard = ({ review }) => {
                         isHalf={true}
                         color={"#dfdfdf"}
                         activeColor={"#9a9a9a"}
-                        size={34}
+                        size={30}
                         value={review.rating}
                         count={5}
                     />
