@@ -100,7 +100,7 @@ const Products = ({ match, history }) => {
     const [search, setSearch] = useState("");
     const [catogery, setCategory] = useState("");
     const [ratings, setRating] = useState(0);
-    const [price, setPrice] = useState([0, 25000]);
+    const [price, setPrice] = useState([0, 100000]);
 
     const dispatch = useDispatch();
 

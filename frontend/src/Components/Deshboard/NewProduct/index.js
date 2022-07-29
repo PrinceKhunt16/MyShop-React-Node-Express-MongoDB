@@ -5,12 +5,12 @@ import MetaData from "../../Layouts/MetaData";
 import Sidebar from "../Sidebar";
 import { NEW_PRODUCT_RESET } from '../../../Redux/constant/productConstant';
 import { clearErrors, createProduct } from '../../../Redux/action/productAction';
+import Toast from "../../Layouts/Toast"
+import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
 const NewProduct = ({ history }) => {
     const dispatch = useDispatch();
-
     const { loading, error, success } = useSelector((state) => state.newProduct);
-
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
@@ -24,17 +24,25 @@ const NewProduct = ({ history }) => {
         "Footwear",
         "Bottom",
         "Tops",
-        "Attire",
+        "Watch",
         "Camera",
         "SmartPhones",
     ];
 
     useEffect(() => {
         if (error) {
+            Toast({
+                msg: error
+            });
+
             dispatch(clearErrors());
         }
 
         if (success) {
+            Toast({
+                msg: "Product Creat succesfully"
+            });
+
             history.push("/admin/deshboard");
             dispatch({ type: NEW_PRODUCT_RESET });
         }
@@ -57,7 +65,6 @@ const NewProduct = ({ history }) => {
         });
 
         dispatch(createProduct(myForm));
-
     };
 
     const createProductImagesChange = (e) => {
@@ -65,7 +72,7 @@ const NewProduct = ({ history }) => {
         const files = Array.from(e.target.files);
 
         setImages([]);
-        setImagesPreview([]);
+        setImagesPreview([]); 
 
         files.forEach((file) => {
             const reader = new FileReader();
@@ -78,14 +85,13 @@ const NewProduct = ({ history }) => {
             };
 
             reader.readAsDataURL(file);
-
         });
-
     };
 
     return (
         <>
             <MetaData title={`Create Product - Admin`} />
+            <ToastContainerBox />
             <div className='deshboardContent'>
                 <div className='deshboard'>
                     <Sidebar />
