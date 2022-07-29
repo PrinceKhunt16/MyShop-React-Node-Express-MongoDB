@@ -20,22 +20,22 @@ const MyOrders = () => {
         {
             field: "id",
             headerName: "Order ID",
-            minWidth: 300,
+            minWidth: 240,
             sortable: false,
-            flex: 1
+            flex: 0.5 
         }, {
             field: "itemsQty",
             headerName: "Items",
             type: "number",
             minWidth: 150,
             sortable: false,
-            flex: 0.4
+            flex: 0.4,
         }, {
             field: "status",
             headerName: "Status",
             type: "number",
-            minWidth: 150,
-            flex: 0.4,
+            minWidth: 180,  
+            flex: 0.5,
             sortable: false,
             cellClassName: (params) => {
                 return params.getValue(params.id, "status") === "Delivered"
@@ -46,15 +46,15 @@ const MyOrders = () => {
             field: "amount",
             headerName: "Amount",
             type: "number",
-            minWidth: 270,
+            minWidth: 200, 
             sortable: false,
-            flex: 0.4
+            flex: 0.5
         }, {
             field: "actions",
             flex: 0.3,
             headerName: "About",
             minWidth: 150,
-            type: "number",
+            type: "number",  
             sortable: false,
             renderCell: (params) => {
                 return (

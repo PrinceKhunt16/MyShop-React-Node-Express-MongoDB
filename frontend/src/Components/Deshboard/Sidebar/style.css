@@ -1,0 +1,18 @@
+.sidebar {
+    width: 285px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 92px);
+}
+
+.sidebarItem div a div {
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    font-weight: 400;
+    height: 50px;
+    padding-top: calc(20px / 2);
+    padding-bottom: calc(24px / 2);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

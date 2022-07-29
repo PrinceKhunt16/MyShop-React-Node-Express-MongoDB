@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "./App.css"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './Components/Layouts/Footer';
 import Header from './Components/Layouts/Header';
@@ -22,6 +23,9 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import MyOrders from './Components/Order/MyOrders';
 import OrderDetails from './Components/Order/OrderDetails';
+import Deshboard from './Components/Deshboard/Deshboard';
+import ProductList from './Components/Deshboard/ProductList';
+import NewProduct from './Components/Deshboard/NewProduct';
 
 const App = () => {
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -39,7 +43,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className='app'>
       <Router>
         <Header />
         <ScrollToTop />
@@ -59,12 +63,15 @@ const App = () => {
           <ProtectedRoute exact path={'/order/confirm'} component={ConfirmOrder} />
           <ProtectedRoute exact path={'/orders'} component={MyOrders} />
           <ProtectedRoute exact path={"/order/:id"} component={OrderDetails} />
-          {stripeApiKey &&
+          <ProtectedRoute isAdmin={true} exact path={"/admin/deshboard"} component={Deshboard} />
+          <ProtectedRoute isAdmin={true} exact path={"/admin/products"} component={ProductList} />
+          <ProtectedRoute isAdmin={true} exact path={"/admin/product"} component={NewProduct} />
+          {stripeApiKey &&  
             <Elements stripe={loadStripe(stripeApiKey)}>
               <ProtectedRoute exact path={'/process/payment'} component={Payment} />
             </Elements>
           }
-        </Switch>
+        </Switch>  
         <Footer />
       </Router>
     </div>

@@ -55,11 +55,14 @@ const ProductDetails = ({ match }) => {
         const myForm = new FormData();
 
         myForm.set("rating", rating);
-        myForm.set("comment", comment);
+        myForm.set("comment", comment); 
         myForm.set("productId", match.params.id);
 
         dispatch(newReview(myForm));
         setOpen(false);
+        Toast({
+            msg: "Review submited succesfully"
+        });
     };
 
     useEffect(() => {

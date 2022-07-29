@@ -1,0 +1,78 @@
+.deshboardContent {
+    display: flex;
+}
+
+.deshboardContainer {
+    width: 100%;
+}
+
+.deshboardContainer h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 36px;
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+    height: 100px;
+}
+
+.deshboardSummary .deshboardSummaryOne {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-bottom: 5px;
+}
+
+.deshboardSummary .deshboardSummaryOne p {
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.deshboardSummaryTwo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deshboardSummaryTwo .linkWithDetails {
+    width: 33.333333%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    border-right: none;
+    height: 100px;
+}
+
+.deshboardSummaryTwo .linkWithDetails:nth-child(3n+1) {
+    border-left: none;
+}
+
+.deshboardSummaryTwo .linkWithDetails a {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.deshboardSummaryTwo .linkWithDetails a p {
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+}

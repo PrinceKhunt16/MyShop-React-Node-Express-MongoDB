@@ -1,0 +1,148 @@
+.newProductContainer {
+    width: 100%;
+    min-height: calc(100vh - 102px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newProductContent {
+    width: 450px;
+    margin: 50px auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 30px 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.newProductContent form {
+    width: 100%;
+}
+
+.newProductContent form h2 {
+    color: rgba(0, 0, 0);
+    font-size: 19px;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.newProductContent form div {
+    width: 100%;
+    margin-top: calc(40px / 2);
+    margin-bottom: calc(40px / 2);
+}
+
+.newProductContent form input,
+.newProductContent form select {
+    width: 100%;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 55px;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.newProductContent form textarea {
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.newProductContent form input:focus,
+.newProductContent form textarea:focus,
+.newProductContent form select:focus {
+    outline: none;
+}
+
+#createProductFormFile>input {
+    padding: 0px !important;
+}
+
+#createProductFormFile>input::file-selector-button {
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 55px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 2px;
+    background-color: transparent;
+    border-radius: 3px;
+}
+
+#createProductFormImage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#createProductFormImage .outerBodyImage {
+    width: 25%;
+    object-fit: contain;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+#createProductFormImage .InnerBodyImage {
+    padding: 3px;
+    margin: 5px;
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgba(243, 243, 243, 0.95);
+}
+
+#createProductFormImage .outerBodyImage .InnerBodyImage img {
+    object-fit: contain;
+    height: 100px;
+    width: 100%;
+}
+
+.submitBtnCreateProdcuct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newProductContent form button {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0);
+    font-size: 17px;
+    font-weight: 500;
+    padding: 7px 0px 10px 0px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    border-radius: 2px;
+    margin-top: 20px;
+    cursor: pointer;
+}
