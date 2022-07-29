@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import "./style.css"
 import { Link } from "react-router-dom";
-import { clearErrors, getAdminProducts } from "../../../Redux/action/productAction";
+import { clearErrors, deleteProduct, getAdminProducts } from "../../../Redux/action/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../../Layouts/MetaData"
 import Sidebar from "../Sidebar"
@@ -9,6 +9,9 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { DELETE_PRODUCT_RESET } from '../../../Redux/constant/productConstant';
+import Toast from "../../Layouts/Toast"
+import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
 const ProductList = ({ history }) => {
 
@@ -16,12 +19,12 @@ const ProductList = ({ history }) => {
 
     const { error, products } = useSelector((state) => state.products);
 
-    // const { error: deleteError, isDeleted } = useSelector(
-    //     (state) => state.product
-    // );  
+    const { error: deleteError, isDeleted } = useSelector(
+        (state) => state.product
+    );  
 
     const deleteProductHandler = (id) => {
-        // dispatch(deleteProduct(id));
+        dispatch(deleteProduct(id));
     }
 
     const columns = [
@@ -91,25 +94,38 @@ const ProductList = ({ history }) => {
 
     useEffect(() => {
         if (error) {
+            Toast({
+                msg: error
+            });
+            
             dispatch(clearErrors());
         }
 
-        // if (deleteError) {
-        //     dispatch(clearErrors());
-        // }
+        if (deleteError) {
+            Toast({
+                msg: deleteError
+            });
 
-        // if (isDeleted) {
-        //     history.push("/admin/deshboard");
-        //     dispatch({ type: DELETE_PRODUCT_RESET });
-        // }
+            dispatch(clearErrors());
+        }
+
+        if (isDeleted) { 
+            Toast({
+                msg: "Product Deleted succesfully"
+            });
+
+            history.push("/admin/products");
+            dispatch({ type: DELETE_PRODUCT_RESET });
+        }
 
         dispatch(getAdminProducts());
 
-    }, [dispatch, error, history]);
+    }, [dispatch, error, deleteError, isDeleted, history]);
 
     return (
         <>
-            <MetaData title={`All Products - Admin`} />
+            <MetaData title={`All Products Admin`} />
+            <ToastContainerBox />
             <div className='deshboardContent'>
                 <div className='deshboard'>
                     <Sidebar />

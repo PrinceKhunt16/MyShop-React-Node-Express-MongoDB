@@ -131,6 +131,59 @@ export const createProduct = (productData) => async (dispatch) => {
     }
 };
 
+// Delete Product
+export const deleteProduct = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.DELETE_PRODUCT_REQUEST
+        });
+
+        const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
+
+        dispatch({
+            type: actions.DELETE_PRODUCT_SUCCESS,
+            payload: data.success,
+        });
+
+    } catch (error) {
+
+        dispatch({
+            type: actions.DELETE_PRODUCT_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+};
+
+// Update Product
+export const updateProduct = (id, productData) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.UPDATE_PRODUCT_REQUEST
+        });
+
+        const config = {
+            headers: { "Content-Type": "application/json" },
+        };
+
+        const { data } = await axios.put(
+            `/api/v1/admin/product/${id}`,
+            productData,
+            config
+        );
+
+        dispatch({
+            type: actions.UPDATE_PRODUCT_SUCCESS,
+            payload: data.success,
+        });
+
+    } catch (error) {
+        dispatch({
+            type: actions.UPDATE_PRODUCT_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+};
+
 export const clearErrors = () => async (dispatch) => {
     dispatch({
         type: actions.CLEAR_ERRORS,

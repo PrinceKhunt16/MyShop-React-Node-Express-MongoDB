@@ -2,6 +2,7 @@
     width: 285px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     min-height: calc(100vh - 92px);
+    height: 100%;
 }
 
 .sidebarItem div a div {
