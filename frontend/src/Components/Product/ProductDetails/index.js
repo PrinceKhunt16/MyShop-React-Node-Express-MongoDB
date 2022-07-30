@@ -153,7 +153,9 @@ const ProductDetails = ({ match }) => {
                                 <div className='ratingComment'>
                                     <Rating
                                         name="simple-controlled"
-                                        value={rating}
+                                        value={rating} 
+                                        color={"#dfdfdf"}
+                                        activeColor={"#9a9a9a"}
                                         precision={0.5}
                                         className={"productDetailRating"}
                                         onChange={(e) => setRating(e.target.value)}

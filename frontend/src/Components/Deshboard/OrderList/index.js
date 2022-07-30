@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "../Sidebar"
 import { DataGrid } from '@mui/x-data-grid';
-import { Button } from '@mui/material';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 import { clearErrors, deleteOrder, getAllOrders } from '../../../Redux/action/orderAction';
@@ -29,8 +26,8 @@ const ProductList = ({ history }) => {
             field: "id",
             headerName: "Order ID",
             sortable: false,
-            minWidth: 250, 
-            flex: 0.6
+            minWidth: 220, 
+            flex: 0.5
         },
         {
             field: "status",
@@ -38,7 +35,7 @@ const ProductList = ({ history }) => {
             type: "number",
             minWidth: 160,
             sortable: false,
-            flex: 0.5,
+            flex: 0.4,
             cellClassName: (params) => {
                 return params.getValue(params.id, "status") === "Delivered"
                     ? "greenColor"
@@ -64,7 +61,7 @@ const ProductList = ({ history }) => {
         {
             field: "actions",
             flex: 0.5,
-            headerName: "Actions",
+            headerName: "Edit & Delete",
             minWidth: 200,
             type: "number",  
             sortable: false,
@@ -72,11 +69,11 @@ const ProductList = ({ history }) => {
                 return (
                     <>
                         <Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
-                            <ModeEditIcon />
+                           Edit
                         </Link>
-                        <Button id="deleteIconDeshboard" onClick={() => deleteOrderHandler(params.getValue(params.id, "id"))}>
-                            <DeleteIcon />
-                        </Button>
+                        <Link to={"#"} id="deleteLink"  onClick={() => deleteOrderHandler(params.getValue(params.id, "id"))}>
+                            Delete
+                        </Link>
                     </>
                 );
             },

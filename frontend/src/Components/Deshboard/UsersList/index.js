@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "../Sidebar"
 import { DataGrid } from '@mui/x-data-grid';
-import { Button } from '@mui/material';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { clearErrors, deleteUser, getAllUsers } from '../../../Redux/action/userAction';
 import { DELETE_USER_RESET } from '../../../Redux/constant/userConstant';
 import Metadata from '../../Layouts/MetaData';
@@ -68,14 +65,14 @@ const UsersList = ({ history }) => {
             type: "number",
             sortable: false,
             renderCell: (params) => {
-                return (
+                return ( 
                     <>
                         <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
-                            <ModeEditIcon />
+                           Edit 
                         </Link>
-                        <Button id="deleteIconDeshboard" onClick={() => deleteUserHandler(params.getValue(params.id, "id"))}>
-                            <DeleteIcon />
-                        </Button>
+                        <Link to={"#"} id="deleteLink" onClick={() => deleteUserHandler(params.getValue(params.id, "id"))}>
+                           Delete
+                        </Link>
                     </>
                 );
             },

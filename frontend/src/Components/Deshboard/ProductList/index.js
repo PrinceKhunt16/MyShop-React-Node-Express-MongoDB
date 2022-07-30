@@ -6,9 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../../Layouts/MetaData"
 import Sidebar from "../Sidebar"
 import { DataGrid } from '@mui/x-data-grid';
-import { Button } from '@mui/material';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { DELETE_PRODUCT_RESET } from '../../../Redux/constant/productConstant';
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
@@ -69,11 +66,11 @@ const ProductList = ({ history }) => {
                 return (
                     <> 
                         <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
-                            <ModeEditIcon />
+                            Edit
                         </Link>
-                        <Button id="deleteIconDeshboard" onClick={() => deleteProductHandler(params.getValue(params.id, "id"))}>
-                            <DeleteIcon />
-                        </Button>
+                        <Link to={"#"} id="deleteLink"  onClick={() => deleteProductHandler(params.getValue(params.id, "id"))}>
+                            Delete
+                        </Link>
                     </>
                 ); 
             },

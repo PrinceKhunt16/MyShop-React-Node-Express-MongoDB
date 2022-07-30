@@ -1,0 +1,92 @@
+.UpdateUserContainer {
+    width: 100%;
+    min-height: calc(100vh - 102px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.updateUserContent {
+    width: 400px;
+    margin: 50px auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 30px 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.updateUserContent form {
+    width: 100%;
+}
+
+.updateUserForm h2 {
+    color: rgba(0, 0, 0);
+    font-size: 26px;
+    font-weight: 300;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.updateUserForm div {
+    width: 100%;
+    margin-top: calc(40px / 2);
+    margin-bottom: calc(40px / 2);
+}
+
+.updateUserForm div input {
+    width: 100%;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 55px;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.updateUserForm div select {
+    width: 100%;
+    border: 1px solid #87878730;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 55px;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.updateUserForm div select:focus,
+.updateUserForm div input:focus {
+    outline: none;
+}
+
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitUpdateUser {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0);
+    font-size: 17px;
+    font-weight: 500;
+    padding: 7px 0px 10px 0px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    border-radius: 2px;
+    margin-top: 30px;
+    cursor: pointer;
+}
