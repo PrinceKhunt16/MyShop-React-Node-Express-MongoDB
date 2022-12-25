@@ -8,20 +8,24 @@
 
 .header .contant {
     max-width: 1328px;
-    padding: 3px 15px;
+    padding: 7px 15px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logoContant {
+    min-width: 110px;
+}
+
 .searchBox {
-    padding: 5px 5px 5px 0px;
     position: relative;
+    max-width: 400px;
+    width: 100%;
 }
 
 .searchBox form {
-    min-width: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -38,16 +42,20 @@
     font-weight: 400;
     border: 1px solid #87878750;
     border-radius: 25px;
-    letter-spacing: 0.2px;    
+    letter-spacing: 0.2px;
 }
 
 .searchBox form input:focus {
     outline: none;
 }
 
+#searchIconDiv {
+    display: none;
+}
+
 .searchBox form img {
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 9px;
     width: 26px;
 }
@@ -65,7 +73,11 @@
     padding-bottom: 3px;
 }
 
-.icons ul{
+.icons {
+    width: 110px;
+}
+
+.icons ul {
     display: flex;
     align-items: center;
     list-style: none;
@@ -102,54 +114,19 @@
     fill: #f43397 !important;
 }
 
-.speedDialBody .css-11u3b1d-MuiSpeedDial-root {
-    height: 43px;
-    width: 43px;                                     
-    padding: 0 !important;
-    background-color: transparent !important;
-}
-
-.css-11u3b1d-MuiSpeedDial-root button {
-    box-shadow: none !important;
-    min-height: 43px;
-    width: 43px;
-    border: none;
-    background: transparent !important;
-}
-
 .userIcon {
     height: 43px;
     width: 43px;
     object-fit: cover;
-    border-radius: 50%;  
-}
-
-.speedDialBody img {
-    height: 43px;
-    width: 43px;
-    object-fit: cover;
-    border-radius: 50%; 
-}
-
-.css-11u3b1d-MuiSpeedDial-root button {
-    background: #f4339770 !important;
-    transition: none !important;
-    color: #f43397 !important;
-} 
-
-.css-11u3b1d-MuiSpeedDial-root button svg {
-    color: #f43397;
-}
-
-.MuiMenu-paper {
-    transition-duration: 0s !important;
+    border-radius: 50%;
 }
 
 .categoryHeader {
     position: sticky;
-    top: 62px;
+    top: 61px;
     width: 100%;
-    background-color: white;
+    background-color: #ffffff99;
+    backdrop-filter: blur(10px);
     z-index: 10;
     margin: 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -162,10 +139,105 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
+    overflow-x: scroll;
+}
+
+.categoryHeader .contant::-webkit-scrollbar {
+    display: none;
 }
 
 .categoryHeader .contant .item a {
     font-family: 'Roboto';
     color: #727272;
     letter-spacing: 0.2px;
+}
+
+.categoryHeader .contant .item a:hover {
+    color: #f43397;
+}
+
+.searchBoxSmall {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .searchBox {
+        max-width: auto;
+        width: 100%;
+    }
+
+    .searchBox {
+        display: none;
+    }
+
+    .icons {
+        width: auto;
+    }
+
+    #searchIconDiv {
+        display: flex;
+    }
+    
+    #searchIconDiv div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #searchIconDiv div img {
+        cursor: pointer;
+        width: 24px;
+    }
+
+    .searchBoxSmall {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 60px;
+    }
+    
+    .searchBoxSmall form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    
+    .searchBoxSmall form input {
+        width: 100%;
+        height: 45px;
+        padding: 0px 38px 0px 38px;
+        margin: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #87878750;
+        border-radius: 25px;
+        letter-spacing: 0.2px;
+    }
+
+    .searchBoxSmall form #searchIcon {
+        position: absolute;
+        top: 18px; 
+        left: 20px;
+        width: 26px;
+    }
+
+    .searchBoxSmall form #closeIcon {
+        position: absolute;
+        top: 22px; 
+        right: 25px;
+        width: 16px;
+        cursor: pointer;
+    }
+    
+    .searchBoxSmall form input:focus {
+        outline: none;
+    }
 }

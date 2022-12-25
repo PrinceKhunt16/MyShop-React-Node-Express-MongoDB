@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #f4339720; 
+  background: #f4339720;
 }
  
 body::-webkit-scrollbar-thumb {
@@ -37,7 +37,7 @@ a {
 
 .routeWrapper {
   max-width: 1328px;
-  margin: auto;
+  margin: 0px auto;
 }
 
 input::-webkit-outer-spin-button,

@@ -1,38 +1,44 @@
 .homepage {
-    height: 650px;
+    display: flex;
 }
 
 .homepage img {
     width: 100%;
+    min-height: 400px;
     height: 100%;
     object-fit: cover;
 }
 
-.products {
-    width: 95%;
-    margin: auto;
+.productPhotoGrid {
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.products .bodyProducts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    margin: 5px;
+.productPhoto{
+    width: 100%;
+    height: 550px;
 }
 
-.productHeading h2 {
-    text-align: center;
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 35px;
-    margin: 20px;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.95);
+.productPhoto a {
+    height: 100%;
+    width: 100%;
 }
 
-@media only screen and (max-width: 1000px) {
-    .homepage {
-        height: auto;
+.productPhoto a img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .productPhotoGrid {
+        grid-template-columns: 1fr 1fr; 
     }
-    
+}
+
+@media only screen and (max-width: 600px) {
+    .productPhotoGrid {
+        grid-template-columns: 1fr 1fr; 
+    }
 }
