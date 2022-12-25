@@ -6,6 +6,7 @@ import Pagination from "react-js-pagination";
 import { getProducts } from "../../../Redux/action/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../Layouts/Loading";
+import { useHistory } from 'react-router-dom';
 
 const categories = [
     "All",
@@ -95,7 +96,7 @@ const reviewsvalue = [
     }
 ]
 
-const Products = ({ match, history }) => {
+const Products = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [search, setSearch] = useState("");
     const [catogery, setCategory] = useState("");
@@ -106,10 +107,8 @@ const Products = ({ match, history }) => {
 
     const searchSubmitHandler = (e) => {
         e.preventDefault();
-        if (search.trim()){
-            history.push(`products/${search}`);
-        } else {
-            history.push("/products");
+        if (search.trim()) {
+            
         }
     }
 

@@ -37,7 +37,7 @@ const App = () => {
 
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey");
-
+    
     setStripeApiKey(data.stripeApiKey);
   }
 
@@ -76,12 +76,12 @@ const App = () => {
           <ProtectedRoute isAdmin={true} exact path={"/admin/order/:id"} component={ProcessOrder} />
           <ProtectedRoute isAdmin={true} exact path={"/admin/users"} component={UsersList} />
           <ProtectedRoute isAdmin={true} exact path={"/admin/user/:id"} component={UpdateUser} />
-          {stripeApiKey &&  
+          {stripeApiKey &&
             <Elements stripe={loadStripe(stripeApiKey)}>
               <ProtectedRoute exact path={'/process/payment'} component={Payment} />
             </Elements>
           }
-        </Switch>  
+        </Switch>
         <Footer />
       </Router>
     </div>

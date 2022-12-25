@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
 import Metadata from '../../Layouts/MetaData'
 import "./style.css"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loading from '../../Layouts/Loading';
 import { Link } from 'react-router-dom';
+import { logout } from '../../../Redux/action/userAction';
 
 const Profile = ({ history }) => {
     const { user, loading, isAuthenticated } = useSelector((state) => state.user);
+    const dispatch = useDispatch()
+
+    const logoutUser = () => {
+        dispatch(logout())
+    }
 
     useEffect(() => {
         if (isAuthenticated === false) {
@@ -40,8 +46,11 @@ const Profile = ({ history }) => {
                                 <p>{String(user.createdAt).substr(0, 10)}</p>
                             </div>
                             <div className='profileOtherRoot'>
+                                <Link to="/admin/deshboard">Dashboard</Link>
+                                <Link to="/orders">Orders</Link>
                                 <Link to="/me/update">Edit Profile</Link>
                                 <Link to="/password/update">Change Password</Link>
+                                <Link to="/" onClick={() => logoutUser()}>Log out</Link>
                             </div>
                         </div>
                     </div>
