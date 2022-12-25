@@ -135,7 +135,7 @@ const Products = ({ match }) => {
                     <Metadata title="My Market Products" />
                     <div className='productsPageBody'>
                         <div className='ratingBoxMainBody'>
-                            <div className='searchBox'>
+                            {/* <div className='searchBox'>
                                 <form className='searchbox' onSubmit={searchSubmitHandler}>
                                     <input
                                         type="text"
@@ -143,7 +143,7 @@ const Products = ({ match }) => {
                                         onChange={(e) => setSearch(e.target.value)}
                                     />
                                 </form>
-                            </div>
+                            </div> */} 
                             <div className='coverOfSelectBox'>
                                 <div className='priceBody'>
                                     <select onChange={(e) => setPrice([prices[e.target.value].start, prices[e.target.value].end])}>

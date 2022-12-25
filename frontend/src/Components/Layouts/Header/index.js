@@ -70,15 +70,16 @@ const Header = () => {
             </div>
             <div className='categoryHeader'>
                 <div className='contant'>
-                    <div className='item'><Link to="#">Women Ethnic</Link></div>
-                    <div className='item'><Link to="#">Women Western</Link></div>
-                    <div className='item'><Link to="#">Men</Link></div>
-                    <div className='item'><Link to="#">Kids</Link></div>
-                    <div className='item'><Link to="#">Home & Kitchen</Link></div>
-                    <div className='item'><Link to="#">Beauty</Link></div>
-                    <div className='item'><Link to="#">Jewellery & Accessories</Link></div>
-                    <div className='item'><Link to="#">Bags & Footwear</Link></div>
-                    <div className='item'><Link to="#">Electronics</Link></div>
+                    <div className='item'><Link to="/products">View All</Link></div>
+                    <div className='item'><Link to="/products/women-ethnic">Women Ethnic</Link></div>
+                    <div className='item'><Link to="/products/women-western">Women Western</Link></div>
+                    <div className='item'><Link to="/products/men">Men</Link></div>
+                    <div className='item'><Link to="/products/kids">Kids</Link></div>
+                    <div className='item'><Link to="/products/home-kitchen">Home & Kitchen</Link></div>
+                    <div className='item'><Link to="/products/beauty">Beauty</Link></div>
+                    <div className='item'><Link to="/products/jewellery-accessories">Jewellery & Accessories</Link></div>
+                    <div className='item'><Link to="/products/bags-footwear">Bags & Footwear</Link></div>
+                    <div className='item'><Link to="/products/electronics">Electronics</Link></div>
                 </div>
             </div>
         </>

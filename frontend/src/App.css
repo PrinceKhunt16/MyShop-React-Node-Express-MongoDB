@@ -8,6 +8,22 @@
   scroll-behavior: smooth;
   margin: 0;
 }
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f4339720; 
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background: #f4339725;  
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #f4339730;   
+}
  
 a {
   text-decoration: none;
@@ -17,6 +33,11 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.routeWrapper {
+  max-width: 1328px;
+  margin: auto;
 }
 
 input::-webkit-outer-spin-button,

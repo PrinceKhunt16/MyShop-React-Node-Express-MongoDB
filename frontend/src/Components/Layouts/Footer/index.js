@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <div className='footer'>
         <div className='logo'>My Shop</div>
-        <div className='rides'>© 2022 My Shop All rights reserved.</div>
+        <div className='rides'>© 2023 My Shop All rights reserved.</div>
       </div>
     </>
   )
