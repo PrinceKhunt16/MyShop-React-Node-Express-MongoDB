@@ -73,21 +73,21 @@ const Products = ({ match }) => {
         setSize('')
     }
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const { loading, error, products, productsCount, resultPerPage } = useSelector(
         (state) => state.products
     );
 
-    // const setCurrentPageNo = (e) => {
-    //     setCurrentPage(e);
-    // }
+    const setCurrentPageNo = (e) => {
+        setCurrentPage(e);
+    }
 
-    // const keyword = match.params.keyword;
+    const keyword = match.params.keyword;
 
-    // useEffect(() => {
-    //     dispatch(getProducts(keyword, currentPage, catogery, ratings, price));
-    // }, [dispatch, keyword, currentPage, catogery, ratings, price]);
+    useEffect(() => {
+        dispatch(getProducts(keyword, currentPage, category, ratings, price));
+    }, [dispatch, keyword, currentPage, category, ratings, price]);
 
     return (
         <>
@@ -234,9 +234,14 @@ const Products = ({ match }) => {
                                 }
                             </div>
                         </div>
-                        {/* <div className="productsContainer">
-                            {products &&
-                                products.map((product) => <ProductsCard product={product} />)}
+                        <div className="productsContainer">
+                            <div className='productsBody'>
+                                {products &&
+                                    // products.map((product) => <ProductsCard product={product} />)}
+                                    products.map((product) => (
+                                        <div>Hellow</div>
+                                    ))}
+                            </div>
                             {resultPerPage < productsCount &&
                                 <div className='paginationBox'>
                                     <Pagination
@@ -244,10 +249,10 @@ const Products = ({ match }) => {
                                         itemsCountPerPage={resultPerPage}
                                         totalItemsCount={productsCount}
                                         onChange={setCurrentPageNo}
-                                        nextPageText="Next"
-                                        prevPageText="Prev"
-                                        firstPageText={"First"}
-                                        lastPageText={"Last"}
+                                        nextPageText="NEXT"
+                                        prevPageText="PREV"
+                                        firstPageText={false}
+                                        lastPageText={false}
                                         itemClass="pageItem"
                                         linkClass="pageLink"
                                         activeClass="pageItemActive"
@@ -255,7 +260,7 @@ const Products = ({ match }) => {
                                     />
                                 </div>
                             }
-                        </div> */}
+                        </div>
                     </div>
                 </>
             )}

@@ -1,5 +1,5 @@
 .bodyProductsCard {
-    width: 25%;
+    width: 100%;
 }
 
 .productsCard {
@@ -11,7 +11,7 @@
     margin: calc(10px / 2);
 }
 
-.productsCard>img {
+.productsCard > img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 400px; 
