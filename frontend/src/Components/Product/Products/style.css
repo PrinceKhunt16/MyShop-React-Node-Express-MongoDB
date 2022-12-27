@@ -1,8 +1,7 @@
 .productsPageBody {
-    max-width: 95%;
-    width: 100%;
-    margin: 30px auto;
-    display: flex;
+    margin: 30px 15px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 
 .productsContainer {
@@ -52,16 +51,101 @@
     color: black;
 }
 
-.filterBox {
-    width: 200px;
-}
-
-.ratingBoxMainBody {
-    display: flex;
+.filterBoxMainBody {
+    /* display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border-radius: 8px;
+    border-radius: 8px; */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.filterBoxMainBody .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.openCategory {
+    color: #f43397;
+}
+
+.filledCheckBox {
+    background-color: #f654a8;
+}
+
+.filterBoxMainBody .heading h1 {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.filterBoxMainBody .heading button {
+    color: #f43397;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+}
+
+.filterBoxMainBody .category {
+    padding: 15px;
+}
+
+.filterBoxMainBody .category .categoryHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.categoryBorderBottom {
+    border-bottom: 1px solid #0000001a;
+}
+
+.categoryWrapper {
+    margin-top: 10px;
+}
+
+.filterBoxMainBody .category .categoryHeading h1 {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.categoryItem {
+    padding: 8px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.categoryItem .checkBox {
+    height: 15px;
+    width: 15px;
+    border: 1px solid #f4339760;
+    border-radius: 50%;
+}
+
+.categoryItem .itemName {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
 }
 
 .coverOfSelectBox {

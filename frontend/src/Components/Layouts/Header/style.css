@@ -213,7 +213,7 @@
         width: 100%;
         height: 45px;
         padding: 0px 38px 0px 38px;
-        margin: 10px;
+        margin: 7px 15px;
         font-family: "Roboto", sans-serif;
         font-size: 16px;
         font-weight: 400;
@@ -225,14 +225,14 @@
     .searchBoxSmall form #searchIcon {
         position: absolute;
         top: 18px; 
-        left: 20px;
+        left: 25px;
         width: 26px;
     }
 
     .searchBoxSmall form #closeIcon {
         position: absolute;
         top: 22px; 
-        right: 25px;
+        right: 30px;
         width: 16px;
         cursor: pointer;
     }

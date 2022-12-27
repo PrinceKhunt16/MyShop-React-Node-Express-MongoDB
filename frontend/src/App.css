@@ -37,6 +37,7 @@ a {
 
 .routeWrapper {
   max-width: 1328px;
+  width: 100%;
   margin: 0px auto;
 }
 
