@@ -12,6 +12,7 @@ import Jawallry from '../../Utils/jawallry.jpg'
 import Pant from '../../Utils/pant.jpg'
 import Kids from '../../Utils/kids.jpg'
 import Kurti from '../../Utils/kurti.webp'
+import Products from '../Product/Products'
 
 const Homepage = () => {
   return (

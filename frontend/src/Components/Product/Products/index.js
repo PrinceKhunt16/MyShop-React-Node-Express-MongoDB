@@ -236,11 +236,11 @@ const Products = ({ match }) => {
                         </div>
                         <div className="productsContainer">
                             <div className='productsBody'>
-                                {products &&
+                                {products &&  
                                     // products.map((product) => <ProductsCard product={product} />)}
                                     products.map((product) => (
-                                        <div>Hellow</div>
-                                    ))}
+                                        <ProductsCard product={product} />
+                                    ))} 
                             </div>
                             {resultPerPage < productsCount &&
                                 <div className='paginationBox'>
