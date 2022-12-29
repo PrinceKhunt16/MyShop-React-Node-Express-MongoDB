@@ -237,7 +237,6 @@ const Products = ({ match }) => {
                         <div className="productsContainer">
                             <div className='productsBody'>
                                 {products &&  
-                                    // products.map((product) => <ProductsCard product={product} />)}
                                     products.map((product) => (
                                         <ProductsCard product={product} />
                                     ))} 

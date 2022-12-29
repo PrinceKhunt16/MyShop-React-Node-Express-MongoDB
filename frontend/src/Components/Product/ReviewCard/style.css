@@ -1,15 +1,18 @@
 .reviewCard {
-    margin-top: calc(20px / 2);
-    margin-bottom: calc(20px / 2);
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
-    padding-top: 15px;
     width: 100%;
+    border-top: 1px solid #58585820;
+    padding-top: 10px;
 }
 
 .reviewCard .imgAndName {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.ratingOfComment {
+    display: flex;
+    gap: 10px;
 }
 
 .reviewCard .imgAndName img {
@@ -22,20 +25,49 @@
 }
 
 .reviewCard .imgAndName p {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 18px;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    color: #2f2f2fe6;
+    font-size: 14px;
+    font-weight: 500;
     margin: 0;
+    letter-spacing: 0.2px;
 }
 
 .reviewCard h4 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
+    font-family: "Roboto", sans-serif;
+    color: #3e3e3e;
     font-size: 16px;
     font-weight: 400;
     margin: 0;
-    line-height: 30px;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+
+.reviewsItem div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.2px;
+    background-color: #4f4f4f15;
+    border-radius: 25px;
+    padding: 7px 0px;
+    width: 55px;
+}
+
+.reviewCard div h3 {
+    text-align: center;
+    border-radius: 25px;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.reviewsItem div img {
+    object-fit: contain;
+    height: 9px;
 }
 
 @media screen and (max-width: 1200px) {

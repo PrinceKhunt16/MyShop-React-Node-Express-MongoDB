@@ -1,0 +1,28 @@
+.imageWrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+}
+
+.imageWrapper .smallImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imageWrapper .smallImagesWrapper img {
+  width: 100%;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.imageWrapper .bigImagesWrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.imageWrapper .bigImagesWrapper img {
+  width: 100%;
+  object-fit: contain;
+}

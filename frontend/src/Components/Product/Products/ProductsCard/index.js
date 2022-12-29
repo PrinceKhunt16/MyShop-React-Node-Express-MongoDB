@@ -1,6 +1,7 @@
 import React from 'react'
 import "./style.css"
 import { Link } from "react-router-dom"
+import PinkStar from '../../../../Utils/pinkstar.png'
 
 const ProductCard = ({ product }) => {
     return (
@@ -16,6 +17,7 @@ const ProductCard = ({ product }) => {
                         <div className='reviews'>
                             <div>
                                 <h3>{product.ratings.toFixed(1)}</h3>
+                                <img src={PinkStar} alt='' />
                             </div>
                             <h2>{product.numOfReviews} Reviews</h2>
                         </div>

@@ -1,7 +1,5 @@
 .bodyProductDetails {
-    max-width: 95%;
-    width: 100%;
-    margin: auto;
+    margin: 20px 15px;
 }
 
 .mainHeading {
@@ -17,307 +15,140 @@
 }
 
 .productDetailsContent {
-    box-sizing: border-box;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    display: flex;
-    width: 100%;
-}
-
-.imageContent {
-    width: 100%;
-}
-
-.imageContent img {
-    width: 450px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-}
-
-.css-1abc02a,
-.css-hn784z,
-.css-1m9128y {
-    display: none;
-}
-
-.detailsContent {
-    width: 100%;
-}
-
-.detailsContent .nameAndId h2 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 35px;
-    font-weight: 300;
-    margin: 0;
-}
-
-.detailsContent .nameAndId p {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 19px;
-    font-weight: 400;
-    margin: 10px 0px;
-}
-
-.detailsContent .nameAndId span {
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.detailsContent .ratingAndReview{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.detailsContent .ratingAndReview h5 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-    padding-left: 10px;
-}
-
-.detailsContent .ratingAndReview h5 span{
-    font-size: 19px;
-    font-weight: 400;
-}
-
-.detailsContent .priceAndAddRemove h1 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 30px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-.addRemoveButtons{
-    display: flex;
-}
-
-.addRemoveButtons button {
-    background-color: #dfdfdf;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 2px;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 16px;
-    cursor: pointer;
-    padding-top: 3px;
-} 
-
-.addRemoveButtons h2 {
-    background-color: transparent;
-    border: none;
-    width: 40px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0;
-    padding-top: 3px;
-}
-
-.detailsContent .status p {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 19px;
-    font-weight: 400;
-    margin: 20px 0px;
-}
-
-.detailsContent .status span{
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.detailsContent .description {
-    display: flex;
-    margin: 20px 0px;
-}
-
-.detailsContent .description h5 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 19px;
-    font-weight: 400;
-    padding-right: 10px;
-    margin: 0;
-}
-
-.detailsContent .description p {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-}
-
-.addToCartAndButtons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     gap: 20px;
 }
 
-.addToCartAndButtons .addToCart button {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 17px;
-    font-weight: 400;
-    padding: 7px 15px 8px 15px;
-    border-radius: 2px;
-    margin-right: 13px;
-    cursor: pointer;
+.detailsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.submitReview button {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 17px;
+.headerDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.detailsContent .headerDetails .reviews {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.detailsContent .headerDetails .reviews h2 {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.4px;
+    color: #3b3b3b;
+}
+
+.detailsContent .headerDetails .reviews div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.2px;
+    background-color: #4f4f4f15;
+    border-radius: 25px;
+    padding: 7px 0px;
+    width: 55px;
+}
+
+.detailsContent .headerDetails .reviews div h3 {
+    text-align: center;
+    border-radius: 25px;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.detailsContent .headerDetails .reviews div img {
+    object-fit: contain;
+    height: 9px;
+}
+
+.detailsContent .headerDetails .description p {
+    font-family: "Roboto", sans-serif;
+    color: #3e3e3e;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+}
+
+.detailsContent .nameAndId h2 {
+    font-family: "Roboto", sans-serif;
+    color: #383838;
+    font-size: 18px;
     font-weight: 400;
-    padding: 7px 15px 8px 15px;
-    border-radius: 2px;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.headerDetails h1 {
+    color: #383838;
+    font-size: 26px;
+    font-weight: 400;
+    font-family: sans-serif;
+    letter-spacing: 0.2px;
+}
+
+.contentDetails {
+    display: flex;
+    gap: 10px;
+}
+
+.contentDetails button {
+    color: #4c4c4c;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #44404210;
+    width: 100%;
+    padding: 15px 15px;
+    border: none;
     cursor: pointer;
+    letter-spacing: 0.4px;
 }
 
 .reviewsContent {
-    box-sizing: border-box;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #fafafa;
 }
 
-.reviewsContent h1{
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 34px;
-    font-weight: 300;
-    margin: 0;
-}
-
-.reviewsContent h6{
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 100px;
-    margin: 0;
+.reviewsContent h1 {
+    color: #383838;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto';
 }
 
 .reviewCardBody {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.productDetailRating span{
-    color: rgb(154, 154, 154);
-    font-size: 30px;
-}
-
-.dialogBox .MuiDialog-paper{
-    width: 320px;
-    padding: 15px;
-    margin: auto; 
-    padding: 30px 20px;
-}
-
-.dialogBox .MuiDialogContent-root{
-    padding: 0px !important;
-}
-
-.dialogBox h2 {
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 19px;
-    font-weight: 400;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.submitCommentContent textarea{
-    height: 100px;
-    min-height: 100px;
-    max-height: 100px;
-    max-width: 100%;
-    min-width: 100%;
-    margin: 20px 0px;
-    margin: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #87878730;
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: 18px;
-    padding: 10px;
-    box-sizing: border-box;
-    font-weight: 400;
-}
-
-.submitCommentContent textarea:focus {
-    outline: none;
-}
-
-.submitCommentButtons {
-    display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     gap: 10px;
 }
 
-.submitCommentButtons button {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 17px;
-    font-weight: 400;
-    padding: 7px 15px 8px 15px;
-    border-radius: 2px;
-    cursor: pointer;
+.noReivews {
+    color: #383838;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto';
 }
 
-.ratingComment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 1150px) {
-    .productDetailsContent {
-        flex-direction: column;
-    }
-
-    .imageContent {
-        padding-bottom: 60px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .productDetailsContent {
-        padding: 60px 30px;
-    }
-
-    .imageContent {
-        padding-bottom: 40px;
-    }
-
-    .imageContent img {
-        width: 100%;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
+@media screen and (max-width: 800px) {
+    .productDetailsContent{
+        grid-template-columns: 1fr;
     }
 }
