@@ -1,9 +1,11 @@
 import React from 'react'
 import "./style.css"
 import { useSelector, useDispatch } from "react-redux";
-import CartItemCard from '../CartItemCard';
+import CloseImage from '../../../Utils/cancel.png'
+import Plus from '../../../Utils/plus.png'
+import Minus from '../../../Utils/minus.png'
 import { addItemsToCart, removeItemsFromCart } from '../../../Redux/action/cartAction';
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Cart = ({ history }) => {
     const dispatch = useDispatch();
@@ -42,38 +44,46 @@ const Cart = ({ history }) => {
             {
                 cartItems.length === 0
                     ? (
-                        <p className='noNoItem'> No Items...</p>
+                        <p className='noNoItem'>NO ITEMS</p>
                     ) : (
-                        <div className='cartPage'>
-                            <div className='cartHeader'>
-                                <p id="productNames">Product</p>
-                                <p id="productQuantity">Quantity</p>
-                                <p id="productSubTotal">SubTotal</p>
+                        <div className='cart'>
+                            <div className='heading'>
+                                <h1>Shopping Cart</h1>
                             </div>
-                            {
-                                cartItems && cartItems.map((item) => (
-                                    <div className='cartContainer' key={item.product}>
-                                        <div className='cartCardItem'>
-                                            <CartItemCard item={item} deleteCartItem={removeCardItem} />
+                            <div className='cartBody'>
+                                {
+                                    cartItems && cartItems.map((item, idx) => (
+                                        <div className='cartItem' key={idx}>
+                                            <div className='cartCardImage'>
+                                                <img src={item.image} alt="" />
+                                            </div>
+                                            <div className='cartCardName'><Link to={`/product/${item.product}`}> {item.name} </Link></div>
+                                            <div className='addRemoveButtonsCart'>
+                                                <div className='addRemoveButtonbody'>
+                                                    <button onClick={() => decreaseQuantity(item.product, item.quantity)}><img src={Minus} alt="" /></button>
+                                                    <h2>{item.quantity}</h2>
+                                                    <button onClick={() => increaseQuantity(item.product, item.quantity, item.stock)}><img src={Plus} alt="" /></button>
+                                                </div>
+                                            </div>
+                                            <div className='cardItemTotal'>
+                                                <h4>₹{item.price * item.quantity}</h4>
+                                            </div>
+                                            <div className='cartItemCancle'>
+                                                <p onClick={() => removeCardItem(item.product)}><img src={CloseImage} alt="" /></p>
+                                            </div>
                                         </div>
-                                        <div className='addRemoveButtonsCart'>
-                                            <button onClick={() => decreaseQuantity(item.product, item.quantity)}><AiOutlineMinus /></button>
-                                            <h2>{item.quantity}</h2>
-                                            <button onClick={() => increaseQuantity(item.product, item.quantity, item.stock)}><AiOutlinePlus /></button>
-                                        </div>
-                                        <div className='cardItemTotal'>
-                                            <p>₹{item.price * item.quantity}</p>
-                                        </div>
-                                    </div>
-                                ))
-                            }
+                                    ))
+                                }
+                            </div>
                             <div className="cartGrossProfit">
-                                <div className="cartGrossProfitBox">
-                                    <p>Gross Total</p>
-                                    <h3>₹{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)}</h3>
+                                <div className='totalPayment'>
+                                    <div>
+                                        <h3>TOTAL</h3>
+                                        <h4>₹{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)}</h4>
+                                    </div>
                                 </div>
                                 <div className="checkOutBtn">
-                                    <button onClick={checkoutHendler}>Check Out</button>
+                                    <button onClick={checkoutHendler}>BUY NOW</button>
                                 </div>
                             </div>
                         </div>

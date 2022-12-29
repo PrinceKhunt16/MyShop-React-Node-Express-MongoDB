@@ -1,170 +1,201 @@
-.cartPage {
-    width: 90%;
-    margin: 40px auto;
-}
-
-.cartHeader {
-    display: flex;
-    padding: 6px 19px 7px 19px;
-    border-radius: 3px;
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgba(243, 243, 243, 0.550);
-}
-
-.cartHeader p {
-    font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
+.noNoItem {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: 'Caveat';
+    color: #f43397;
+    letter-spacing: 2px;
     font-weight: 400;
 }
 
-.cartHeader #productNames, .cartCardItem {
-    width: 60%;
+.cart {
+    margin: 20px 15px;
 }
 
-.cartHeader #productQuantity, .cartInput {
-    width: 20%;
+.cart .heading h1 {
+    font-family: 'Caveat';
+    color: #f43397;
+    font-size: 34px;
+    font-weight: 400;
+    padding-bottom: 3px;
     text-align: center;
+    letter-spacing: 0.2px;
 }
 
-.cartHeader #productSubTotal {
-    width: 20%;
-    text-align: right;
+.cart .cartBody {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid #0000001a;
+    overflow: scroll;
 }
 
-.cardItemTotal {
-    width: 20%;
-    text-align: right;
+.cart .cartBody::-webkit-scrollbar {
+    display: none;
 }
 
-.cartContainer {
+.cart .cartItem {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 100px;
+    gap: 10px;
+    padding: 10px 0px;
+    border-bottom: 1px solid #0000001a;
+}
+
+.cart .cartItem:last-child {
+    border-bottom: none;
+}
+
+.cartItem .cartCardImage {
+    height: 100px;
+}
+
+.cartItem .cartCardImage img {
+    width: 100%;
+    margin: auto;
+    height: 100px;
+    object-fit: contain;
+}
+
+.cartItem .cartItemCancle {
     display: flex;
-    margin-top: calc(40px / 2);
-    margin-bottom: calc(40px / 2);
+    justify-content: center;
     align-items: center;
 }
 
-.cartInput button {
-    background-color: rgb(248, 248, 248);
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 400;
-    padding-bottom: 3px;
-    border: 1px solid rgba(243, 243, 243, 0.550);
+.cartItem .cartItemCancle img {
+    height: 16px;
     cursor: pointer;
 }
 
-.cartInput input {
-    background-color: transparent;
+.cartItem .cartCardName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem .cartCardName a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2f2f2f;
+}
+
+.cartItem .cardItemTotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem .cardItemTotal h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2f2f2f;
+}
+
+.cartItem .addRemoveButtonsCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem .addRemoveButtonsCart .addRemoveButtonbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0000001a;
+    padding: 10px;
+    border-radius: 1px;
+    gap: 10px;
+}
+
+.cartItem .addRemoveButtonsCart .addRemoveButtonbody button {
+    width: 20px;
     border: none;
-    width: 40px;
-    font-family: "Noto Sans JP", sans-serif;
+    background-color: transparent;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.cartItem .addRemoveButtonsCart .addRemoveButtonbody button img {
+    width: 12px;
+}
+
+.cartItem .addRemoveButtonsCart .addRemoveButtonbody h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2f2f2f;
+    width: 25px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 19px;
-    font-weight: 400;
-}
-
-.cartInput input:focus {
-    outline: none;
-}
-
-.cardItemTotal p {
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.9);
-    width: 92px;
-    margin-left: auto;
-    text-align: left;
 }
 
 .cartGrossProfit {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgba(243, 243, 243, 0.550);
-    border-radius: 3px;
-    padding: 6px 10px 7px 10px;
+    background-color: #fafafa;
+    gap: 15px;
+    padding: 15px;
 }
 
-.cartGrossProfitBox {
-    display: flex;
-}
-
-.cartGrossProfitBox p {
-    font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: 400;
-}
-
-.cartGrossProfitBox h3 {
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: "Noto Sans JP", sans-serif;
-}
-
-.checkOutBtn {
-    margin-left: 20px;
-}
-
-.checkOutBtn button {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 17px;
-    font-weight: 400;
-    padding: 10px 15px 11px 15px;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.noNoItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cartGrossProfit .checkOutBtn {
     width: 100%;
-    font-size: 42px;
-    font-weight: 300;
-}
-
-.addRemoveButtonsCart {
     display: flex;
-    width: 20%;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.addRemoveButtonsCart button {
-    background-color: rgb(246, 246, 246);
+.cartGrossProfit .checkOutBtn button{
+    color: #414141;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #44404210;
+    padding: 15px 25px;
     border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 16px;
-    border: 1px solid rgb(235, 235, 235);
     cursor: pointer;
-    padding-top: 3px;
+    letter-spacing: 0.4px;
 }
 
-.addRemoveButtonsCart h2 {
-    background-color: transparent;
-    border: none;
-    width: 40px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0;
-    padding-top: 3px;
+.totalPayment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.totalPayment div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #44404210;
+    padding-top: 10px;
+    padding-bottom: 11px;
+}
+
+.totalPayment div h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2f2f2f;
+    letter-spacing: 0.2px;
+}
+
+.totalPayment div h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2f2f2f;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 800px) {
+    .cart .cartItem {
+        grid-template-columns: 3fr 2fr 3fr 2fr 70px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .cart .cartItem {
+        grid-template-columns: 130px 150px 150px 100px 70px;
+    }
 }
