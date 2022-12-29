@@ -12,9 +12,25 @@ import ImageShow from './ImageShow';
 import StarImage from '../../../Utils/graystar.png'
 
 const ProductDetails = ({ match }) => {
+    const [open, setOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState("");
+    const [submitComment, setSubmitComment] = useState(false);
     const dispatch = useDispatch();
-
     const { product, loading, error } = useSelector((state) => state.productDetail);
+
+    const reviewSubmitHandler = () => {
+        const myForm = new FormData();
+
+        myForm.set("rating", rating);
+        myForm.set("comment", comment);
+        myForm.set("productId", match.params.id);
+
+        dispatch(newReview(myForm));
+        setSubmitComment(!submitComment);
+        
+        setOpen(false);
+    };
 
     const addToCartHendle = () => {
         dispatch(addItemsToCart(match.params.id, 1));
@@ -35,7 +51,7 @@ const ProductDetails = ({ match }) => {
 
         dispatch(getProductDetails(match.params.id));
 
-    }, [dispatch, match.params.id, error]);
+    }, [dispatch, match.params.id, error, submitComment]);
 
     return (
         <>
@@ -69,8 +85,25 @@ const ProductDetails = ({ match }) => {
                                 </div>
                                 <div className='contentDetails'>
                                     <button disabled={product.Stock < 1 ? true : false} onClick={addToCartHendle}>ADD TO CART</button>
-                                    <button>GIVE REVIEW</button>
+                                    <button onClick={() => setOpen(!open)}>GIVE REVIEW</button>
                                 </div>
+                                {open &&
+                                    <div className='giveReview'>
+                                        <textarea onChange={(e) => setComment(e.target.value)} placeholder={`Review on ${product.name}`}></textarea>
+                                        <div className='postReview'>
+                                            <div className='ratingNumber'>
+                                                {
+                                                    [1, 2, 3, 4, 5].map((item) => (
+                                                        <div key={item} id={`${rating === item && 'selectedRate'}`} onClick={() => setRating(item)}>
+                                                            <h4>{item}</h4>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                            <button onClick={() => reviewSubmitHandler()}>SUBMIT</button>
+                                        </div>
+                                    </div>
+                                }
                                 <div className='reviewsContent'>
                                     <h1>Reivews</h1>
                                     {product.reviews && product.reviews[0] ? (
