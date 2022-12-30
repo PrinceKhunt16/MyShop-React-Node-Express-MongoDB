@@ -25,13 +25,13 @@ const OrderDetails = ({ match }) => {
                 <Loading />
             ) : (
                 <>
-                    {order &&
+                    {order &&  
                         <>
                             <Metadata title="Order Details" />
-                            <div className="confirmContainer">
-                                <div className="confirmBox">
-                                    <h2>Order {order && order._id}</h2>
-                                    <div className="confirmshippingAreaBox">
+                            <div className="myordersContainer">
+                                <div className="myordersBox">
+                                    <h2>ORDER {order && order._id}</h2>
+                                    <div className="myordersshippingAreaBox">
                                         <div>
                                             <p>Name</p>
                                             <span>{order.user && order.user.name}</span>
@@ -70,11 +70,11 @@ const OrderDetails = ({ match }) => {
                                     <div className="itemConfirmBox">
                                         {order.orderItems &&
                                             order.orderItems.map((item) => (
-                                                <div className="ItemBoxConfirm" style={{ margin: "5px auto" }} key={item.product}>
+                                                <div className="itemBoxConfirm" style={{ margin: "5px auto" }} key={item.product}>
                                                     <img src={item.image} alt="productimage" />
                                                     <div className='itemConfirmDetails'>
-                                                        <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
-                                                        <h4> Price <span> {`₹${item.price}`} </span> </h4>
+                                                        <h4><Link to={`/product/${item.product}`}> {item.name}</Link></h4>
+                                                        <h4><span>Price {`₹${item.price}`}</span></h4>
                                                         <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
                                                     </div>
                                                 </div>

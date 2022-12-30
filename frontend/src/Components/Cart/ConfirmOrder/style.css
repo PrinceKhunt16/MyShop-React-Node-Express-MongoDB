@@ -4,9 +4,6 @@
 }
 
 .confirmBox {
-    width: 400px;
-    margin: 50px auto;
-    box-sizing: border-box;
     padding: 30px 29px;
     display: flex;
     flex-direction: column;

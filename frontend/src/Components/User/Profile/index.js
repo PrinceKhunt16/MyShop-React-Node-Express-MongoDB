@@ -57,7 +57,7 @@ const Profile = ({ history }) => {
                             </div>
                             <div className='profileOtherRoot'>
                                 <Link to="/admin/deshboard">DASHBOARD</Link>
-                                <Link to="/orders">ORDERS</Link>
+                                <Link to="/orders">MY ORDERS</Link>
                                 <Link to="/me/update">EDIT PROFILE</Link>
                                 <Link to="/password/update">CHANGE PASSWORD</Link>
                                 <Link to="/" onClick={() => logoutUser()}>LOGOUT</Link>

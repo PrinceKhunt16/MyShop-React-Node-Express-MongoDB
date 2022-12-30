@@ -1,0 +1,12 @@
+.pageNotFound {
+  width: 100%;
+  height: calc(100vh - 110px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Caveat';
+  color: #f43397;
+  font-size: 34px;
+  font-weight: 400;
+  padding-bottom: 3px;
+}

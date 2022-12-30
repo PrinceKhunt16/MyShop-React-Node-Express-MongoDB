@@ -133,7 +133,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #fafafa;
+    background: #cf559210;
     gap: 15px;
     padding: 15px;
 }
@@ -146,12 +146,13 @@
 }
 
 .cartGrossProfit .checkOutBtn button{
-    color: #414141;
+    width: 120px;
+    color: #252525;
     font-size: 14px;
     font-weight: 600;
     font-family: "Roboto", sans-serif;
-    background-color: #44404210;
-    padding: 15px 25px;
+    background-color: #dd509720;
+    padding: 15px 15px;
     border: none;
     cursor: pointer;
     letter-spacing: 0.4px;
@@ -177,14 +178,14 @@
 .totalPayment div h3 {
     font-size: 15px;
     font-weight: 500;
-    color: #2f2f2f;
+    color: #252525;
     letter-spacing: 0.2px;
 }
 
 .totalPayment div h4 {
     font-size: 16px;
     font-weight: 500;
-    color: #2f2f2f;
+    color: #252525;
     text-transform: uppercase;
 }
 

@@ -1,20 +1,62 @@
-.orderDetailsBox {
-    width: 600px;
-    margin: 50px auto;
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgba(243, 243, 243, 0.550);
-    box-sizing: border-box;
-    padding: 40px 40px;
-    border-radius: 8px;
+.myordersContainer {
+    width: 100vw;
+    max-width: 100%;
+    height: calc(100vh - 110px);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.orderDetailsBox h3 {
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 35px;
-    font-weight: 300;
-    margin-bottom: 20px;
+.myordersBox {
+    padding: 30px 29px;
+    display: flex;
+    flex-direction: column;
+    background: #cf559210;
+    width: 400px;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+
+.myordersBox h2 {
+    color: #252525;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
     text-align: center;
-    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
+}
+
+.myordersshippingAreaBox div {
+    display: flex;
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+}
+
+.myordersshippingAreaBox div p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    width: 90px;
+    letter-spacing: 0.2px;
+    color: #252525;
+}
+
+.myordersshippingAreaBox div span {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
+}
+
+@media screen and (max-width: 600px) {
+    .myordersBox {
+        width: 100%;
+        margin: 15px;
+        padding: 30px 15px;
+    }
 }
