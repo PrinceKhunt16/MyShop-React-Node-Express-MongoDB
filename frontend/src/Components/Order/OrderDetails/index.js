@@ -17,7 +17,6 @@ const OrderDetails = ({ match }) => {
         }
 
         dispatch(getOrderDetails(match.params.id));
-
     }, [dispatch, error, match.params.id]);
 
     return (
@@ -26,64 +25,69 @@ const OrderDetails = ({ match }) => {
                 <Loading />
             ) : (
                 <>
-                    <Metadata title="Order Details" />
-                    <div className="confirmContainer">
-                        <div className="confirmBox">
-                            <h2>Order {order && order._id}</h2>
-                            <div className="confirmshippingAreaBox">
-                                <div>
-                                    <p>Name</p>
-                                    <span>{order.user && order.user.name}</span>
-                                </div>
-                                <div>
-                                    <p>Phone</p>
-                                    <span>{order.shippingInfo && order.shippingInfo.phoneNo}</span>
-                                </div>
-                                <div>
-                                    <p>Address</p>
-                                    <span>{order.shippingInfo && order.shippingInfo.address}</span>
-                                </div>
-                                <div>
-                                    <p>City</p>
-                                    <span>{order.shippingInfo && order.shippingInfo.city}, {order.shippingInfo && order.shippingInfo.state}</span>
-                                </div>
-                                <div>
-                                    <p>Pincode</p>
-                                    <span>{order.shippingInfo && order.shippingInfo.pincode}, {order.shippingInfo && order.shippingInfo.country}</span>
-                                </div>
-                                <div>
-                                    <p>Payment</p>
-                                    <span>
-                                        {order.paymentInfo &&
-                                            order.paymentInfo.status === "succeeded"
-                                            ? "Paid"
-                                            : "Not Paid"
-                                        }
-                                    </span>
-                                </div>
-                                <div>
-                                    <p>Amount</p>
-                                    <span>₹{order.totalPrice && order.totalPrice}</span>
-                                </div>
-                            </div>
-                            <div className="itemConfirmBox">
-                                {order.orderItems &&
-                                    order.orderItems.map((item) => (
-                                        <div className="ItemBoxConfirm" style={{margin: "5px auto"}} key={item.product}>
-                                            <img src={item.image} alt="productimage" />
-                                            <div className='itemConfirmDetails'>
-                                                <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
-                                                <h4> Price <span> {`₹${item.price}`} </span> </h4>
-                                                <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
-                                            </div>
+                    {order &&
+                        <>
+                            <Metadata title="Order Details" />
+                            <div className="confirmContainer">
+                                <div className="confirmBox">
+                                    <h2>Order {order && order._id}</h2>
+                                    <div className="confirmshippingAreaBox">
+                                        <div>
+                                            <p>Name</p>
+                                            <span>{order.user && order.user.name}</span>
                                         </div>
-                                    ))
-                                }
+                                        <div>
+                                            <p>Phone</p>
+                                            <span>{order.shippingInfo && order.shippingInfo.phoneNo}</span>
+                                        </div>
+                                        <div>
+                                            <p>Address</p>
+                                            <span>{order.shippingInfo && order.shippingInfo.address}</span>
+                                        </div>
+                                        <div>
+                                            <p>City</p>
+                                            <span>{order.shippingInfo && order.shippingInfo.city}, {order.shippingInfo && order.shippingInfo.state}</span>
+                                        </div>
+                                        <div>
+                                            <p>Pincode</p>
+                                            <span>{order.shippingInfo && order.shippingInfo.pincode}, {order.shippingInfo && order.shippingInfo.country}</span>
+                                        </div>
+                                        <div>
+                                            <p>Payment</p>
+                                            <span>
+                                                {order.paymentInfo &&
+                                                    order.paymentInfo.status === "succeeded"
+                                                    ? "Paid"
+                                                    : "Not Paid"
+                                                }
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p>Amount</p>
+                                            <span>₹{order.totalPrice && order.totalPrice}</span>
+                                        </div>
+                                    </div>
+                                    <div className="itemConfirmBox">
+                                        {order.orderItems &&
+                                            order.orderItems.map((item) => (
+                                                <div className="ItemBoxConfirm" style={{ margin: "5px auto" }} key={item.product}>
+                                                    <img src={item.image} alt="productimage" />
+                                                    <div className='itemConfirmDetails'>
+                                                        <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
+                                                        <h4> Price <span> {`₹${item.price}`} </span> </h4>
+                                                        <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
+                                                    </div>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </>
+                    }
                 </>
-            )}
+            )
+            }
         </>
     )
 }

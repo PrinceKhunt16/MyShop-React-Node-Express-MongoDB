@@ -6,23 +6,25 @@
 .confirmBox {
     width: 400px;
     margin: 50px auto;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    padding: 35px 29px;
-    border-radius: 8px;
+    padding: 30px 29px;
     display: flex;
     flex-direction: column;
+    background: #cf559210;
+    width: 400px;
+    margin: 50px auto;
+    box-sizing: border-box;
 }
 
 .confirmBox h2 {
-    color: rgba(0, 0, 0);
-    font-size: 19px;
-    font-weight: 400;
-    font-family: "Noto Sans JP", sans-serif;
+    color: #252525;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
 }
 
 .confirmshippingAreaBox div {
@@ -32,19 +34,22 @@
 }
 
 .confirmshippingAreaBox div p {
-    width: 80px;
-    color: rgba(0, 0, 0, 0.9);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
     margin: 0;
+    width: 90px;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
 .confirmshippingAreaBox div span {
-    color: rgba(0, 0, 0, 0.9);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
 .ItemBoxConfirm {
@@ -76,7 +81,7 @@
 }
 
 .itemConfirmDetails h4 {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 17px;
     font-weight: 300;
     color: rgb(95, 95, 95);
@@ -85,7 +90,7 @@
 
 .itemConfirmDetails h4 span,
 .itemConfirmDetails h4 a {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 17px;
     font-weight: 400;
     color: black;
@@ -93,20 +98,23 @@
 }
 
 .totalGrossAreaBox div p {
-    color: rgba(0, 0, 0, 0.9);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
     margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
 .totalGrossAreaBox div span {
-    color: rgba(0, 0, 0, 0.9);
-    font-weight: 400;
-    font-size: 18px;
     width: 60px;
     text-align: left;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
 .totalGrossAreaBox div {
@@ -117,17 +125,27 @@
 }
 
 .proceedToPaymentBtn {
-    background-color: rgb(224, 223, 223);
-    border: none;
     margin: 20px auto auto auto;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 17px;
-    font-weight: 500;
-    padding: 7px 0px 10px 0px;
-    width: 190px;
     height: 50px;
     text-align: center;
     border-radius: 2px;
     cursor: pointer;
+    width: 190px;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 600px) {
+    .confirmBox {
+        width: auto;
+        margin: 15px;
+        padding: 30px 15px;
+    }
 }

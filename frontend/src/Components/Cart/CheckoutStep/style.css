@@ -3,20 +3,26 @@
     padding: 30px;
     box-sizing: border-box;
     margin: 50px auto auto auto;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background: #cf559210;
 }
 
 .stepLebel p,
 .stepLebel span {
-    font-family: "Noto Sans JP", sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
 }
 
 .changeIcon svg {
-    fill: black !important;
-}
+    fill: #fa6cb5 !important;
+} 
 
 .doNotChange svg {
-    fill: rgba(0, 0, 0, 0.4) !important;
+    fill: #f4339740 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .stepperBody {
+        margin: 15px 15px auto 15px;
+        width: auto;
+        padding: 30px 15px;
+    }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css"
 import { useSelector, useDispatch } from "react-redux";
 import { Country, State } from "country-state-city";
@@ -11,13 +11,16 @@ import Toast from '../../Layouts/Toast';
 const Shipping = ({ history }) => {
     const dispatch = useDispatch();
     const { shippingInfo } = useSelector((state) => state.cart);
-
     const [address, setAddress] = useState(shippingInfo.address);
     const [city, setCity] = useState(shippingInfo.city);
     const [state, setState] = useState(shippingInfo.state);
     const [country, setCountry] = useState(shippingInfo.country);
     const [pincode, setPincode] = useState(shippingInfo.pincode);
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
+    const [displayCountry, setDisplayCountry] = useState(false);
+    const [displayState, setDisplayState] = useState(false);
+    const [countryName, setCountryName] = useState('');
+    const [stateName, setStateName] = useState('');
 
     const shippingSubmit = (e) => {
         e.preventDefault();
@@ -34,8 +37,28 @@ const Shipping = ({ history }) => {
             saveShippingInfo({ address, city, state, country, pincode, phoneNo })
         );
 
-        history.push("/order/confirm");
+        history.push("/yourorder/confirm");
     }
+
+    useEffect(() => {
+        const countries = Country.getAllCountries()
+
+        for (const i of countries) {
+            if (country === i.isoCode) {
+                setCountryName(i.name)
+                break;
+            }
+        }
+
+        const states = State.getStatesOfCountry(country)
+
+        for (const i of states) {
+            if (state === i.isoCode) {
+                setStateName(i.name)
+                break;
+            }
+        }
+    }, [country, state, displayCountry, displayState])
 
     return (
         <>
@@ -45,7 +68,7 @@ const Shipping = ({ history }) => {
             <div className="shippingContainer">
                 <div className="shippingBox">
                     <form className="shippingForm" encType="multipart/form-data" onSubmit={(e) => shippingSubmit(e)}>
-                        <h2>Shipping</h2>
+                        <h2>SHIPPING</h2>
                         <div className="shippingInput">
                             <input
                                 type="text"
@@ -84,47 +107,49 @@ const Shipping = ({ history }) => {
                             />
                         </div>
                         <div className="countryBox">
-                            <select
-                                required
-                                value={country}
-                                onChange={(e) => setCountry(e.target.value)}
-                            >
-                                <option
-                                    value=""
-                                >
-                                    Country
-                                </option>
+                            <h2 className='heading' onClick={() => setDisplayCountry(!displayCountry)}>
+                                {countryName !== '' ?
+                                    `${countryName}`
+                                    :
+                                    'Country'
+                                }
+                            </h2>
+                            <div className='countryList' style={{ display: `${displayCountry ? 'block' : 'none'}` }}>
                                 {Country &&
                                     Country.getAllCountries().map((item) => (
-                                        <option key={item.isoCode} value={item.isoCode}>
+                                        <div key={item.isoCode} value={item.isoCode} onClick={() => {
+                                            setCountry(item.isoCode)
+                                            setDisplayCountry(!displayCountry)
+                                        }}>
                                             {item.name}
-                                        </option>
+                                        </div>
                                     ))}
-                            </select>
+                            </div>
                         </div>
                         <div className="stateBox">
-                            <select
-                                required
-                                value={state}
-                                onChange={(e) => setState(e.target.value)}
-                            >
-                                <option
-                                    value=""
-                                >
-                                    State
-                                </option>
+                            <h2 className='heading' onClick={() => setDisplayState(!displayState)}>
+                                {stateName !== '' ?
+                                    `${stateName}`
+                                    :
+                                    'State'
+                                }
+                            </h2>
+                            <div className='stateList' style={{ display: `${displayState ? 'block' : 'none'}` }}>
                                 {State &&
                                     State.getStatesOfCountry(country).map((item) => (
-                                        <option key={item.isoCode} value={item.isoCode}>
+                                        <div key={item.isoCode} value={item.isoCode} onClick={() => {
+                                            setState(item.isoCode)
+                                            setDisplayState(!displayState)
+                                        }}>
                                             {item.name}
-                                        </option>
+                                        </div>
                                     ))}
-                            </select>
+                            </div>
                         </div>
                         <div className="shippingBtn">
                             <input
                                 type="submit"
-                                value="Shipping"
+                                value="SHIPPING"
                                 className="loginBtn"
                             />
                         </div>

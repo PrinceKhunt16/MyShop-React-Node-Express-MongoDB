@@ -23,29 +23,29 @@ const ConfirmOrder = ({ history }) => {
     const address = `${shippingInfo.address}`;
 
     const city = `${shippingInfo.city}, ${shippingInfo.state}`;
-    
+
     const Pincode = `${shippingInfo.pincode}, ${shippingInfo.country}`;
 
     const proceedToPayment = () => {
         const data = {
-          subtotal,
-          shippingCharges,
-          tax,
-          totalPrice,
+            subtotal,
+            shippingCharges,
+            tax,
+            totalPrice,
         };
-    
+
         sessionStorage.setItem("orderInfo", JSON.stringify(data));
-    
+
         history.push("/process/payment");
-      };
+    };
 
     return (
         <>
-            <Metadata title="Confirm Order" />
+            <Metadata title="Confirm Your Order" />
             <CheckoutStep activeStep={1} />
             <div className="confirmContainer">
                 <div className="confirmBox">
-                    <h2>Shipping Info</h2>
+                    <h2>SHIPPING INFO</h2>
                     <div className="confirmshippingAreaBox">
                         <div>
                             <p>Name</p>
@@ -99,7 +99,7 @@ const ConfirmOrder = ({ history }) => {
                             <span>₹{totalPrice}</span>
                         </div>
                     </div>
-                    <button onClick={proceedToPayment} className='proceedToPaymentBtn'>Proceed To Payment</button>
+                    <button onClick={proceedToPayment} className='proceedToPaymentBtn'>PROCEED TO PAYMENT</button>
                 </div>
             </div>
         </>

@@ -1,41 +1,30 @@
-.shippingContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    min-height: calc(100vh - 92px);
-}
-
 .shippingBox {
-    background-color: rgb(255, 255, 255);
+    background: #cf559210;
     width: 400px;
     margin: 50px auto;
     box-sizing: border-box;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 11px;
 }
 
 .shippingForm {
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-    padding: 35px 29px;
+    padding: 30px 29px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.shippingForm h2{
-    color: rgba(0, 0, 0);
-    font-size: 19px;
-    font-weight: 400;
-    font-family: "Noto Sans JP", sans-serif;
+.shippingForm h2 {
+    color: #252525;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
 }
 
 .shippingInput {
@@ -48,65 +37,161 @@
     width: 100%;
     margin-top: calc(30px / 2);
     margin-bottom: calc(30px / 2);
-    font-family: "Noto Sans JP", sans-serif;
-    border: 1px solid #87878730;
-    border-radius: 3px;
-    background-color: transparent;
+    border: none;
+    border-radius: 1px;
     height: 55px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     padding: 0px 10px;
-    color: rgba(0, 0, 0, 0.9);
+    color: #252525;
+    letter-spacing: 0.2px;
+    background: #dd509712;
 }
 
 .shippingInput input:focus {
     outline: none;
 }
 
+.shippingInput input::placeholder {
+    color: #2f2f2f;
+}
+
 .shippingBtn input {
-    background-color: rgb(224, 223, 223);
+    width: 120px;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
     border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0);
-    font-size: 17px;
-    font-weight: 500;
-    padding: 7px 0px 10px 0px;
-    width: 140px;
-    height: 50px;
-    text-align: center;
-    border-radius: 2px;
     cursor: pointer;
-    margin-top: 20px;
+    letter-spacing: 0.4px;
+}
+
+.countryBox {
+    width: 100%;
+    height: 100%;
+}
+
+.countryBox .heading {
+    margin-top: calc(30px / 2);
+    margin-bottom: calc(30px / 2);
+    width: 100%;
+    border: none;
+    border-radius: 1px;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 10px;
+    color: #252525;
+    letter-spacing: 0.2px;
+    background: #dd509712;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.countryList {
+    background: #dd509712;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.countryList div {
+    padding: 7px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.countryList div:hover {
+    background: #dd509710;
+}
+
+.countryList::-webkit-scrollbar {
+    width: 10px;
+}
+
+.countryList::-webkit-scrollbar-track {
+    background: #dd509710;
+}
+
+.countryList::-webkit-scrollbar-thumb {
+    background: #dd509725;
 }
 
 .stateBox {
-    margin-bottom: 20px;
     width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
 }
 
-.countryBox select, .stateBox select{
-    width: 100%;
+.stateBox .heading {
     margin-top: calc(30px / 2);
-    margin-bottom: calc(30px / 2);
+    margin-bottom:  calc(30px / 2);
+    width: 100%;
+    border: none;
+    border-radius: 1px;
     height: 55px;
-    font-family: "Noto Sans JP", sans-serif;
-    border: 1px solid #87878730;
-    border-radius: 3px;
-    background-color: transparent;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     padding: 0px 10px;
-    color: rgba(0, 0, 0, 0.9);
-    padding-right: 10px;
+    color: #252525;
+    letter-spacing: 0.2px;
+    background: #dd509712;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.countryBox select option, 
-.stateBox select option{
-    background-color: #e8e8e8;
-    color: rgba(0, 0, 0, 0.9);
+.stateList {
+    background: #dd509712;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
 }
 
-.countryBox select:focus,
-.stateBox select:focus {
-    outline: none;
+.stateList div {
+    padding: 7px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stateList div:hover {
+    background: #dd509710;
+}
+
+.stateList::-webkit-scrollbar {
+    width: 10px;
+}
+
+.stateList::-webkit-scrollbar-track {
+    background: #dd509710;
+}
+
+.stateList::-webkit-scrollbar-thumb {
+    background: #dd509725;
+}
+  
+@media screen and (max-width: 600px) {
+    .shippingBox {
+        width: auto;
+        margin: 15px;
+    }
+
+    .shippingForm {
+        padding: 30px 15px;
+    }
 }

@@ -14,6 +14,16 @@ const Profile = ({ history }) => {
         dispatch(logout())
     }
 
+    const formatDate = (d) => {
+        const date = new Date(d).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+    
+        return date
+    }
+
     useEffect(() => {
         if (isAuthenticated === false) {
             history.push("/login");
@@ -43,7 +53,7 @@ const Profile = ({ history }) => {
                             </div>
                             <div>
                                 <h4>Joined On</h4>
-                                <p>{String(user.createdAt).substr(0, 10)}</p>
+                                <p>{formatDate(user.createdAt)}</p>
                             </div>
                             <div className='profileOtherRoot'>
                                 <Link to="/admin/deshboard">DASHBOARD</Link>

@@ -66,9 +66,9 @@ const App = () => {
             <Route exact path={'/password/reset/:token'} component={ResetPassword} />
             <Route exact path={'/cart'} component={Cart} />
             <ProtectedRoute exact path={'/shipping'} component={Shipping} />
-            <ProtectedRoute exact path={'/order/confirm'} component={ConfirmOrder} />
-            <ProtectedRoute exact path={'/orders'} component={MyOrders} />
+            <ProtectedRoute exact path={'/yourorder/confirm'} component={ConfirmOrder} />
             <ProtectedRoute exact path={"/order/:id"} component={OrderDetails} />
+            <ProtectedRoute exact path={'/orders'} component={MyOrders} />
             <ProtectedRoute isAdmin={true} exact path={"/admin/deshboard"} component={Deshboard} />
             <ProtectedRoute isAdmin={true} exact path={"/admin/products"} component={ProductList} />
             <ProtectedRoute isAdmin={true} exact path={"/admin/product"} component={NewProduct} />

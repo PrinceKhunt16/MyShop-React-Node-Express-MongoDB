@@ -14,15 +14,15 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #f4339720;
+  background: #f4339710;
 }
  
 body::-webkit-scrollbar-thumb {
-  background: #f4339725;  
+  background: #f4339715;  
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #f4339730;   
+  background: #f4339720;   
 }
  
 a {
