@@ -68,14 +68,14 @@ const ConfirmOrder = ({ history }) => {
                             <span>{Pincode}</span>
                         </div>
                     </div>
-                    <div className="itemConfirmBox">
+                    <div className="itemBoxConfirmContainer">
                         {cartItems &&
                             cartItems.map((item) => (
-                                <div className="ItemBoxConfirm" key={item.product}>
+                                <div className="itemBoxConfirm" key={item.product}>
                                     <img src={item.image} alt="productimage" />
                                     <div className='itemConfirmDetails'>
-                                        <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
-                                        <h4> Price <span> {`₹${item.price}`} </span> </h4>
+                                        <h4><Link to={`/product/${item.product}`}> {item.name}</Link></h4>
+                                        <h4><span> Price {`₹${item.price}`}</span></h4>
                                         <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
                                     </div>
                                 </div>

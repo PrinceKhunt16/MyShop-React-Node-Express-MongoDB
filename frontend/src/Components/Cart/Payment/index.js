@@ -94,7 +94,6 @@ const Payment = ({ history }) => {
         } catch (error) {
             payBtn.current.disabled = false;
         }
-
     }
 
     useEffect(() => {
@@ -116,7 +115,7 @@ const Payment = ({ history }) => {
             <div className="paymentContainer">
                 <div className="paymentBox">
                     <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-                        <h2>Payment</h2>
+                        <h2>PAYMENT</h2>
                         <div className="paymentAreaBox">
                             <span>Card Info</span>
                             <div>

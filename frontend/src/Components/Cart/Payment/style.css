@@ -1,27 +1,17 @@
-.paymentContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-}
-
 .paymentBox {
-    background-color: rgb(255, 255, 255);
+    background-color: #cf559210;;
+    background: #cf559210;
     width: 400px;
-    height: 500px;
+    height: 450px;
     margin: 50px auto;
     box-sizing: border-box;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 11px;
 }
 
 .paymentForm {
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-    padding: 35px 29px;
+    padding: 30px 29px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,13 +19,14 @@
 }
 
 .paymentForm h2 {
-    color: rgba(0, 0, 0);
-    font-size: 19px;
-    font-weight: 400;
-    font-family: "Noto Sans JP", sans-serif;
+    color: #252525;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
 }
 
 .paymentAreaBox {
@@ -46,7 +37,7 @@
     color: rgba(0, 0, 0, 0.9);
     font-weight: 400;
     font-size: 16px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .paymentAreaBox div {
@@ -59,7 +50,7 @@
     color: rgba(0, 0, 0, 0.9);
     font-weight: 400;
     font-size: 16px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: left;
 }
 
@@ -70,22 +61,30 @@
 }
 
 .paymentFormBtn {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    margin-top: 20px;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0);
-    font-size: 17px;
-    font-weight: 500;
-    padding: 7px 0px 10px 0px;
     width: 130px;
-    height: 50px;
-    text-align: center;
-    border-radius: 2px;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
+    border: none;
     cursor: pointer;
+    letter-spacing: 0.4px;
 }
 
 .paymentBtnBox {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .paymentBox {
+        width: auto;
+        margin: 15px;
+    }
+
+    .paymentForm {
+        padding: 30px 15px;
+    }
 }
