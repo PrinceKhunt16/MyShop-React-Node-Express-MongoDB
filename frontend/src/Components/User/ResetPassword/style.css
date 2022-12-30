@@ -1,0 +1,99 @@
+.passwordResetContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  min-height: calc(100vh - 110px);
+}
+
+.passwordResetBox {
+  width: 400px;
+  height: 500px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1px;
+  background: #cf559210;
+}
+
+.passwordResetBody {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 23px 29px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.passwordResetBody h2{
+  color: #252525;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding-top: 8px;
+  padding-bottom: 13px;
+}
+
+.resetPasswordInput {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.passwordResetBody .resetPasswordInput input {
+  width: 100%;
+  margin-top: calc(30px / 2);
+  margin-bottom: calc(30px / 2);
+  border: none;
+  border-radius: 1px;
+  height: 55px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 10px;
+  color: #252525;
+  letter-spacing: 0.2px;
+  background: #dd509712;
+}
+
+.passwordResetBody .resetPasswordInput input:focus {
+  outline: none;
+}
+
+.passwordResetBody .resetPasswordInput input::placeholder {
+  color: #2f2f2f;
+}
+
+.resetPasswordBtn {
+  position: absolute;
+  bottom: 50px;
+}
+
+.resetPasswordBtn input {
+  width: 120px;
+  color: #252525;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  background-color: #dd509720;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 600px) {
+  .passwordResetBox {
+      margin: 15px 15px;   
+  }
+
+  .passwordResetBody {
+      padding: 23px 15px;
+  }
+}

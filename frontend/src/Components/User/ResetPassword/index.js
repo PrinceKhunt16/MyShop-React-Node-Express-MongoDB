@@ -55,11 +55,11 @@ const ResetPassword = ({ match, history }) => {
                 loading ? (
                     <Loading />
                 ) : (
-                    <div className="passwordChangeContainer">
-                        <div className="passwordChangeBox">
-                            <form className='passwordbox' onSubmit={resetPasswordSubmit}>
-                                <h2>CHANGE PASSWORD</h2>
-                                <div className='updatePasswordInput'>
+                    <div className="passwordResetContainer">
+                        <div className="passwordResetBox">
+                            <form className='passwordResetBody' onSubmit={resetPasswordSubmit}>
+                                <h2>RESET PASSWORD</h2>
+                                <div className='resetPasswordInput'>
                                     <input
                                         type="password"
                                         placeholder="New Password"
@@ -68,7 +68,7 @@ const ResetPassword = ({ match, history }) => {
                                         onChange={(e) => setNewPassword(e.target.value)}
                                     />
                                 </div>
-                                <div className='updatePasswordInput'>
+                                <div className='resetPasswordInput'>
                                     <input
                                         type="password"
                                         placeholder="Confirm Password"
@@ -77,10 +77,10 @@ const ResetPassword = ({ match, history }) => {
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                     />
                                 </div>
-                                <div className="updatePasswordBtn">
+                                <div className="resetPasswordBtn">
                                     <input
                                         type="submit"
-                                        value="CHANGE"
+                                        value="RESET"
                                     />
                                 </div>
                             </form>
