@@ -115,8 +115,8 @@ const LoginSignup = ({ history, location }) => {
                         <div className="LoginSignUpBox">
                             <div className="buttonsBox">
                                 <div className="login_signUp_toggle">
-                                    <p onClick={(e) => switchTabs(e, "login")}>Login</p>
-                                    <p onClick={(e) => switchTabs(e, "register")}>Register</p>
+                                    <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
+                                    <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
                                 </div>
                                 <button ref={switcherTab}></button>
                             </div>
@@ -141,7 +141,7 @@ const LoginSignup = ({ history, location }) => {
                                 </div>
                                 <div className="loginSubmitBtn">
                                     <Link to="/password/forgot">Forgot Password ?</Link>
-                                    <input type="submit" value="Login" className="loginBtn" />
+                                    <input type="submit" value="LOGIN" className="loginBtn" />
                                 </div>
                             </form>
                             <form className="signupForm" ref={registerTab} encType="multipart/form-data" onSubmit={(e) => { registerSubmit(e) }}>
@@ -187,7 +187,7 @@ const LoginSignup = ({ history, location }) => {
                                 <div className="signupSubmitBtn">
                                     <input
                                         type="submit"
-                                        value="Ragister"
+                                        value="RAGISTER"
                                         className="signupBtn"
                                     />
                                 </div>

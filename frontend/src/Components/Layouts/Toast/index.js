@@ -5,7 +5,7 @@ const Toast = ({ msg }) => {
   return (
     toast(msg, {
         position: "bottom-center",
-        autoClose: 3000,
+        autoClose: true,
         hideProgressBar: true,
         pauseOnHover: true,
         draggable: true,
@@ -13,7 +13,7 @@ const Toast = ({ msg }) => {
         closeButton: false,
         theme: "light"
     })
-  )
+  ) 
 }
 
 export default Toast;
