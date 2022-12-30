@@ -51,7 +51,7 @@ const ForgotPassword = () => {
                 <div className="forgotPasswordContainer">
                     <div className="forgotPasswordChangeBox">
                         <form className='forgotPassword' onSubmit={forgotPasswordSubmit}>
-                            <h2>Forgot Password</h2>
+                            <h2>FORGOT PASSWORD</h2>
                             <div className='forgotPasswordInput'>
                                 <input
                                     type="email"
@@ -65,7 +65,7 @@ const ForgotPassword = () => {
                             <div className='submitForgotPassword'>
                                 <input
                                     type="submit"
-                                    value="Send Mail"
+                                    value="SEND MAIL"
                                     className="forgotPasswordBtn"
                                 />
                             </div>

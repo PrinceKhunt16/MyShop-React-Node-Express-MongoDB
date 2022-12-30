@@ -2,27 +2,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    min-height: calc(100vh - 92px);
+    background-color: #ffffff;
+    min-height: calc(100vh - 110px);
 }
 
 .updateProfileBox {
-    background-color: rgb(255, 255, 255);
     width: 400px;
     height: 500px;
     margin: 50px auto;
     box-sizing: border-box;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 11px;
+    border-radius: 1px;
+    background: #cf559210;
 }
 
 .updateProfileBox .updateProfile {
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-    padding: 35px 29px;
+    padding: 30px 29px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,13 +28,16 @@
 }
 
 .updateProfile h2 {
-    color: rgba(0, 0, 0);
-    font-size: 19px;
-    font-weight: 400;
-    font-family: "Noto Sans JP", sans-serif;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 20px;
+    color: #252525;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    padding-bottom: 10px;
 }
 
 .updateProfile .updateInput{
@@ -49,19 +50,23 @@
     width: 100%;
     margin-top: calc(30px / 2);
     margin-bottom: calc(30px / 2);
-    font-family: "Noto Sans JP", sans-serif;
-    border: 1px solid #87878730;
-    border-radius: 3px;
-    background-color: transparent;
+    border: none;
+    border-radius: 1px;
     height: 55px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     padding: 0px 10px;
-    color: rgba(0, 0, 0, 0.9);
+    color: #252525;
+    letter-spacing: 0.2px;
+    background: #dd509712;
 }
 
 .updateProfile .updateInput input:focus {
     outline: none;
+}
+
+.updateProfile .updateInput input::placeholder {
+    color: #2f2f2f;
 }
 
 .updateSubmitBtn {
@@ -82,4 +87,99 @@
     text-align: center;
     border-radius: 2px;
     cursor: pointer;
+}
+
+.updateImage {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.updateImage img {
+    min-width: 55px;
+    max-width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: none;
+    margin-right: 10px;
+}
+
+.updateImage input::file-selector-button {
+    width: 100%;
+    height: 55px;
+    padding-bottom: 2px;
+    z-index: 2;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #252525;
+    background-color: #dd509710;
+    cursor: pointer;
+    border: none;
+    border-radius: 1px;
+    letter-spacing: 0.2px;
+}
+
+.updateImage {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.updateImage input {
+    display: flex;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: max-content;
+    width: 100%;
+}
+ 
+.updateImage input::file-selector-button {
+    width: 100%;
+    height: 55px;
+    padding-bottom: 2px;
+    margin-top: calc(30px / 2);
+    margin-bottom: calc(30px / 2);
+    z-index: 2;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #252525;
+    background-color: #dd509711;
+    cursor: pointer;
+    border: none;
+    border-radius: 1px;
+    letter-spacing: 0.2px;
+}
+
+.updateSubmitBtn {
+    position: absolute;
+    bottom: 50px;
+}
+
+.updateSubmitBtn input {
+    width: 120px;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 600px) {
+    .updateProfileBox {
+        margin: 15px 15px;   
+    }
+
+    .updateProfileBox .updateProfile {
+        padding: 30px 15px;
+    }
 }

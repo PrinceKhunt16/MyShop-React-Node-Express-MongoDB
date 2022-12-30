@@ -85,7 +85,7 @@ const UpdateProfile = ({ history }) => {
                     <div className="updateProfileContainer">
                         <div className="updateProfileBox">
                             <form className="updateProfile" encType="multipart/form-data" onSubmit={updateProfileSubmit}>
-                                <h2>Update Profile</h2>
+                                <h2>UPDATE PROFILE</h2>
                                 <div className="updateInput">
                                     <input
                                         type="text"
@@ -106,9 +106,10 @@ const UpdateProfile = ({ history }) => {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
-                                <div className="registerImage">
+                                <div className="updateImage">
                                     <img src={avatarPreview} alt="Avatar Preview" />
                                     <input
+                                        className='fileChange'
                                         type="file"
                                         name="avatar"
                                         accept="image/*"
@@ -118,8 +119,8 @@ const UpdateProfile = ({ history }) => {
                                 <div className="updateSubmitBtn">
                                     <input
                                         type="submit"
-                                        value="Update Profile"
-                                        className="signupBtn"
+                                        value="UPDATE"
+                                        className="submitBrn"
                                     />
                                 </div>
                             </form>

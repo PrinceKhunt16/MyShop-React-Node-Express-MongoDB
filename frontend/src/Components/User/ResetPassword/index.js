@@ -58,7 +58,7 @@ const ResetPassword = ({ match, history }) => {
                     <div className="passwordChangeContainer">
                         <div className="passwordChangeBox">
                             <form className='passwordbox' onSubmit={resetPasswordSubmit}>
-                                <h2>Change Password</h2>
+                                <h2>CHANGE PASSWORD</h2>
                                 <div className='updatePasswordInput'>
                                     <input
                                         type="password"
@@ -80,7 +80,7 @@ const ResetPassword = ({ match, history }) => {
                                 <div className="updatePasswordBtn">
                                     <input
                                         type="submit"
-                                        value="Password Change"
+                                        value="CHANGE"
                                     />
                                 </div>
                             </form>

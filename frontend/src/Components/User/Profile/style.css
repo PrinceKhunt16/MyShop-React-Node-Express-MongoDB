@@ -1,22 +1,21 @@
 .profileContainer {
-    min-height: calc(100vh - 92px);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 110px);
 }
 
 .profileContent {
     width: 400px;
     margin: 50px auto;
-    padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background: #cf559210;
 }
 
 .profileContent .profilePicture {
@@ -35,11 +34,11 @@
     align-items: center;
 }
 
-.profileDetails>div {
+.profileDetails div {
     display: flex;
 }
 
-.profileContent>div:first-child>img {
+.profileContent div:first-child img {
     width: 150px;
     height: 150px;
     border-radius: 100%;
@@ -49,10 +48,10 @@
     padding: 2px;
 }
 
-.profileContent>div:first-child>a {
+.profileContent div:first-child a {
     background-color: rgb(224, 223, 223);
     border: none;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: rgba(0, 0, 0, 0.9);
     font-size: 17px;
     font-weight: 400;
@@ -65,46 +64,71 @@
     text-decoration: none;
 }
 
-.profileContent>div:last-child {
+.profileContent .profileDetails {
     justify-content: center;
     align-items: flex-start;
     box-sizing: border-box;
 }
 
-.profileContent>div:last-child>div>h4 {
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 17px;
-    font-weight: 500;
+.profileContent .profileDetails div h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     margin: 0;
     width: 90px;
     line-height: 40px;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
-.profileContent>div:last-child>div>p {
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 17px;
+.profileContent .profileDetails div p {
+    font-family: "Roboto", sans-serif;
+    line-height: 40px;
+    font-size: 16px;
     font-weight: 400;
     margin: 0;
-    line-height: 40px;
+    letter-spacing: 0.2px;
+    color: #252525;
 }
 
-.profileContent>div:last-child>div:last-child {
+.profileContent .profileDetails div:last-child {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.profileContent>div:last-child>div:last-child>a {
-    background-color: rgb(224, 223, 223);
-    border: none;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 17px;
-    font-weight: 400;
-    padding: 7px 15px 8px 15px;
-    border-radius: 2px;
-    margin-top: 20px;
-    cursor: pointer;
+.profileContent .profileDetails div:last-child a {
+    margin-top: 15px;
     text-align: center;
     text-decoration: none;
+    width: 100%;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 600px) {
+    .profileDetails div {
+        flex-direction: column;
+    }
+
+    .profileContent .profileDetails div h4,
+        .profileContent .profileDetails div p {
+        line-height: 30px;
+    }
+    
+    .profileContent {
+        margin: 15px 15px;   
+        padding: 30px 15px;
+    }
+
+    .passwordbox {
+        padding: 23px 15px;
+    }
 }

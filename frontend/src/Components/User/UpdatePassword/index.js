@@ -57,9 +57,9 @@ const UpdatePassword = ({ history }) => {
                 <div className="passwordChangeContainer">
                     <div className="passwordChangeBox">
                         <form className='passwordbox' onSubmit={updatePasswordSubmit}>
-                            <h2>Update Password</h2>
+                            <h2>UPDATE PASSWORD</h2>
                             <div className='updatePasswordInput'>
-                                <input
+                                <input 
                                     type="password"
                                     placeholder="Old Password"
                                     required
@@ -88,7 +88,7 @@ const UpdatePassword = ({ history }) => {
                             <div className="updatePasswordBtn">
                                 <input
                                     type="submit"
-                                    value="Password Change"
+                                    value="CHANGE"
                                 />
                             </div>
                         </form>
