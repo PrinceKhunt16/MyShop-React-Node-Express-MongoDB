@@ -8,19 +8,19 @@ const Sidebar = () => {
             <div className='sidebar'>
                 <div className='sidebarItem'>
                     <Link to="/admin/deshboard">
-                        <div className='dashboardBorderBottom'>Dashboard</div>
+                        <div>DASHBOARD</div>
                     </Link>
                     <Link to="/admin/products">
-                        <div className='dashboardBorderBottom'>All Products</div>
+                        <div>ALL PRODUCTS</div>
                     </Link>
                     <Link to="/admin/product">
-                        <div className='dashboardBorderBottom'>Create Product</div>
+                        <div>CREATE PRODUCT</div>
                     </Link>
                     <Link to="/admin/orders">
-                        <div className='dashboardBorderBottom'>Users Orders</div>
+                        <div>USERS ORDERS</div>
                     </Link>
                     <Link to="/admin/users">
-                        <div>Your Users</div>
+                        <div>YOUR USERS</div>
                     </Link>
                 </div>
             </div>

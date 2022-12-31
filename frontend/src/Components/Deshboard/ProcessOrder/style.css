@@ -1,43 +1,164 @@
 .processOrderContainer {
-    width: 100%;
-}
-
-.processOrderBox form div {
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.processOrderBox form p {
-    color: rgba(0, 0, 0, 0.9);
-    font-weight: 400;
-    font-size: 18px;
-    text-align: left;
-}
-
-.processOrderBox form .selectBox select {
-    width: 150px;
-    border: 1px solid #87878730;
-    border-radius: 3px;
-    background-color: transparent;
-    height: 40px;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 0px 10px;
-    color: rgba(0, 0, 0, 0.9);
-    margin-left: 10px;
-}
-
-.processOrderBox form .selectBox select:focus {
-    outline: none;
-}
-
-.processOrderBox form button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.processOrderBox {
+    padding: 30px 29px;
+    display: flex;
+    flex-direction: column;
+    background: #cf559210;
+    width: 400px;
+    box-sizing: border-box;
+}
+
+.processOrderBox h2 {
+    color: #252525;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
+}
+ 
+.processOrderShippingBox div {
+    display: flex;
+    margin-top: calc(20px / 2);
+    margin-bottom: calc(20px / 2);
+}
+
+.processOrderShippingBox div p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    width: 90px;
+    letter-spacing: 0.2px;
+    color: #252525;
+}
+
+.processOrderShippingBox div span {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
+}
+
+.processOrderConfirmBox .processOrderBoxConfirm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.processOrderBoxConfirm img {
+    width: 90px;
+    height: 100px;
+    padding: 3px;
+    border-radius: 1px;
+    object-fit: contain;
+    background-color: #f4339715;
+}
+
+.processOrderConfirmDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+.processOrderConfirmDetails h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4f4f4f;
+    margin: 0;
+}
+
+.processOrderConfirmDetails h4 a {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #252525;
+    margin: 0;
+}
+
+.detectProcessOrderContainer {
+    margin-top: 10px;
+}
+
+.detectProcessOrderForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.detectProcessOrderContainer .detectProcessOrderForm p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.2px;
+    color: #252525;
+}
+
 .proceedToPaymentBtn {
-    margin-top: 30px;
+    margin: 40px auto auto auto;
+    height: 50px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 190px;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509720;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+
+.detectProcessOrderForm .processCheckbox {
+    display: flex;
+    align-items: center;
+}
+
+.processCheckbox p {
+    width: 90px;
+}
+
+.processingItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.processingItem .processSelectBox {
+    height: 16px;
+    width: 16px;
+    border: 1px solid #f4339760;
+    border-radius: 50%;
+}
+
+.processingItem .processName {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding-top: 3px;
+}
+
+@media only screen and (max-width: 900px) {
+    .processOrderBox {
+        width: 100%;
+        padding: 30px 15px;
+    }    
 }

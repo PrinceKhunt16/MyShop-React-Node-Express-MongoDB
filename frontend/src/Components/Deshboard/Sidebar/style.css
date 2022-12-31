@@ -1,19 +1,38 @@
 .sidebar {
-    border: 1px solid #e0e0e0;
     height: fit-content;
     border-radius: 1px;
 }
 
-.dashboardBorderBottom {
-    border-bottom: 1px solid #e0e0e0;
+.sidebarItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.sidebarItem a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebarItem a div {
-    padding: 15px;
-    color: #000;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.2px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    background-color: #dd509719;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+
+@media only screen and (max-width: 900px) {
+    .sidebarItem {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }  
 }

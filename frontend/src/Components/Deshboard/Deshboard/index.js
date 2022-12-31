@@ -91,7 +91,7 @@ const Deshboard = () => {
                         </div>
                         <div className='linkWithDetails'>
                             <Link to="#">
-                                <p>TotalStock</p>
+                                <p>Total Stock</p>
                                 <p>{totalStock}</p>
                             </Link>
                         </div>

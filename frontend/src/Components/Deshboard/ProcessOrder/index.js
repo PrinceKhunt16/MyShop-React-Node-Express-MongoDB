@@ -15,6 +15,7 @@ const ProcessOrder = ({ history, match }) => {
     const { error: updateError, isUpdated } = useSelector((state) => state.order);
 
     const [status, setStatus] = useState("");
+    const [statusDisplay, setStatusDisplay] = useState("");
 
     const dispatch = useDispatch();
 
@@ -26,6 +27,9 @@ const ProcessOrder = ({ history, match }) => {
         myForm.set("status", status);
 
         dispatch(updateOrder(match.params.id, myForm));
+
+        setStatus('')
+        setStatusDisplay(false)
     };
 
     useEffect(() => {
@@ -36,7 +40,7 @@ const ProcessOrder = ({ history, match }) => {
         if (updateError) {
             dispatch(clearErrors());
         }
- 
+
         if (isUpdated) {
             Toast({
                 msg: "Update Order succesfully"
@@ -62,8 +66,8 @@ const ProcessOrder = ({ history, match }) => {
                 ) : (
                     <div className="processOrderContainer">
                         <div className="processOrderBox">
-                            <h2>Order</h2> 
-                            <div className="processOrderShippingAreaBox">
+                            <h2>ORDER</h2>
+                            <div className="processOrderShippingBox">
                                 <div>
                                     <p>Name</p>
                                     <span>{order.user && order.user.name}</span>
@@ -117,7 +121,7 @@ const ProcessOrder = ({ history, match }) => {
                                         <div className="processOrderBoxConfirm" key={item.product}>
                                             <img src={item.image} alt="productimage" />
                                             <div className='processOrderConfirmDetails'>
-                                                <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
+                                                <h4> <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
                                                 <h4> Price <span> {`₹${item.price}`} </span> </h4>
                                                 <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
                                             </div>
@@ -125,35 +129,54 @@ const ProcessOrder = ({ history, match }) => {
                                     ))}
                             </div>
                             <div
-                                className="processOrderBox"
+                                className="detectProcessOrderContainer"
                                 style={{
                                     display: order.orderStatus === "Delivered" ? "none" : "block",
                                 }}
                             >
                                 <form
-                                    className="processOrderForm"
+                                    className="detectProcessOrderForm"
                                     onSubmit={(e) => updateOrderSubmitHandler(e)}
                                 >
-                                    <div>
-                                        <p>Process Order</p>
-                                        <div className='selectBox'>
-                                            <select onChange={(e) => setStatus(e.target.value)}>
-                                                <option value="">Order Status</option>
-                                                {order.orderStatus === "Processing" && (
-                                                    <option value="Shipped">Shipped</option>
-                                                )}
-                                                {order.orderStatus === "Shipped" && (
-                                                    <option value="Delivered">Delivered</option>
-                                                )}
-                                            </select>
-                                        </div>
+                                    <div className='processCheckbox'>
+                                        <p>Process</p>
+                                        {order.orderStatus === "Processing" && (
+                                            <div className='processingItem' onClick={() => {
+                                                setStatusDisplay(!statusDisplay)
+                                                if (!statusDisplay) {
+                                                    setStatus('Shipped') 
+                                                } else {
+                                                    setStatus('')
+                                                }
+                                            }}>
+                                                <div className='processName'>
+                                                    Shipped
+                                                </div>
+                                                <div className={`processSelectBox ${statusDisplay ? 'filledCheckBox' : ''}`}></div>
+                                            </div>
+                                        )}
+                                        {order.orderStatus === "Shipped" && (
+                                            <div className='processingItem' onClick={() => {
+                                                setStatusDisplay(!statusDisplay)
+                                                if (!statusDisplay) {
+                                                    setStatus('Delivered')
+                                                } else {
+                                                    setStatus('')
+                                                }
+                                            }}>
+                                                <div className='processName'>
+                                                    Delivered
+                                                </div>
+                                                <div className={`processSelectBox ${statusDisplay ? 'filledCheckBox' : ''}`}></div>
+                                            </div>
+                                        )}
                                     </div>
                                     <button
                                         type="submit"
                                         disabled={loading ? true : false || status === "" ? true : false}
                                         className='proceedToPaymentBtn'
                                     >
-                                        Process
+                                        PROCESS
                                     </button>
                                 </form>
                             </div>
