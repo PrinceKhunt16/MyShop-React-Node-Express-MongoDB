@@ -1,5 +1,8 @@
 .deshboardContent {
-    display: flex;
+    margin: 20px 15px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
 }
 
 .deshboardContainer {
@@ -10,7 +13,7 @@
     text-align: center;
     width: 100%;
     margin: 0;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: rgba(0, 0, 0, 0.9);
     font-size: 36px;
     font-weight: 300;
@@ -35,7 +38,7 @@
 
 .deshboardSummary .deshboardSummaryOne p {
     text-align: center;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
     font-weight: 300;
@@ -70,9 +73,25 @@
 
 .deshboardSummaryTwo .linkWithDetails a p {
     text-align: center;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
     font-weight: 300;
     margin: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+    .deshboardContent {
+        margin: 15px 15px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }    
+}
+
+@media only screen and (max-width: 900px) {
+    .deshboardContent {
+        margin: 15px 15px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }    
 }

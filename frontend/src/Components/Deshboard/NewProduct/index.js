@@ -8,26 +8,31 @@ import { clearErrors, createProduct } from '../../../Redux/action/productAction'
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
+const categories = ["Women Ethnic", "Women Western", "Men", "Tops", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear"];
+
+const subCategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
+
+const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS']
+
+const colors = ['Beige', 'Black', 'Blue', 'Brown', 'Grey', 'Khaki', 'Maroon', 'White', 'Multicolor', 'Nude', 'Olive', 'Orange', 'Pink']
+
 const NewProduct = ({ history }) => {
     const dispatch = useDispatch();
     const { loading, error, success } = useSelector((state) => state.newProduct);
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
     const [Stock, setStock] = useState(0);
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
-
-    const categories = [
-        "Laptop",
-        "Footwear",
-        "Bottom",
-        "Tops",
-        "Watch",
-        "Camera",
-        "SmartPhones",
-    ];
+    const [category, setCategory] = useState('');
+    const [displayCategory, setDisplayCategory] = useState(false);
+    const [subCategory, setSubCategory] = useState('');
+    const [displaySubCategory, setDisplaySubCategory] = useState(false);
+    const [size, setSize] = useState('');
+    const [displaySize, setDisplaySize] = useState(false);
+    const [color, setColor] = useState('');
+    const [displayColor, setDisplayColor] = useState(false);
 
     useEffect(() => {
         if (error) {
@@ -72,7 +77,7 @@ const NewProduct = ({ history }) => {
         const files = Array.from(e.target.files);
 
         setImages([]);
-        setImagesPreview([]); 
+        setImagesPreview([]);
 
         files.forEach((file) => {
             const reader = new FileReader();
@@ -96,15 +101,15 @@ const NewProduct = ({ history }) => {
                 <div className='deshboard'>
                     <Sidebar />
                 </div>
-                <div className='newProductContainer'>
-                    <div className='newProductContent'>
+                <div className='createProductContainer'>
+                    <div className='createProductContent'>
                         <form
                             className="createProductForm"
                             encType="multipart/form-data"
-                            onSubmit={(e) => {createProductSubmitHandler(e)}}
+                            onSubmit={(e) => { createProductSubmitHandler(e) }}
                         >
-                            <h2>Create Product</h2>
-                            <div>
+                            <h2>CREATE PRODUCT</h2>
+                            <div className="inputField">
                                 <input
                                     type="text"
                                     placeholder="Product Name"
@@ -113,7 +118,7 @@ const NewProduct = ({ history }) => {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
-                            <div>
+                            <div className="inputField">
                                 <input
                                     type="number"
                                     placeholder="Price"
@@ -121,7 +126,7 @@ const NewProduct = ({ history }) => {
                                     onChange={(e) => setPrice(e.target.value)}
                                 />
                             </div>
-                            <div>
+                            <div className="textareaField">
                                 <textarea
                                     placeholder="Product Description"
                                     value={description}
@@ -130,17 +135,7 @@ const NewProduct = ({ history }) => {
                                     rows="1"
                                 ></textarea>
                             </div>
-                            <div>
-                                <select onChange={(e) => setCategory(e.target.value)}>
-                                    <option value="">Choose Category</option>
-                                    {categories.map((cate) => (
-                                        <option key={cate} value={cate}>
-                                            {cate}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            <div>
+                            <div className="inputField">
                                 <input
                                     type="number"
                                     placeholder="Stock"
@@ -148,7 +143,87 @@ const NewProduct = ({ history }) => {
                                     onChange={(e) => setStock(e.target.value)}
                                 />
                             </div>
-                            <div id="createProductFormFile">
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplayCategory(!displayCategory)}>
+                                    {category !== '' ?
+                                        `${category}`
+                                        :
+                                        'Category'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displayCategory ? 'block' : 'none'}` }}>
+                                    {categories &&
+                                        categories.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setCategory(item)
+                                                setDisplayCategory(!displayCategory)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplaySubCategory(!displaySubCategory)}>
+                                    {subCategory !== '' ?
+                                        `${subCategory}`
+                                        :
+                                        'Subcategory'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displaySubCategory ? 'block' : 'none'}` }}>
+                                    {subCategories &&
+                                        subCategories.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setSubCategory(item)
+                                                setDisplaySubCategory(!displaySubCategory)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplaySize(!displaySize)}>
+                                    {size !== '' ?
+                                        `${size}`
+                                        :
+                                        'Size'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displaySize ? 'block' : 'none'}` }}>
+                                    {sizes &&
+                                        sizes.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setSize(item)
+                                                setDisplaySize(!displaySize)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplayColor(!displayColor)}>
+                                    {color !== '' ?
+                                        `${color}`
+                                        :
+                                        'Color'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displayColor ? 'block' : 'none'}` }}>
+                                    {colors &&
+                                        colors.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setColor(item)
+                                                setDisplayColor(!displayColor)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div id="createProductFile">
                                 <input
                                     type="file"
                                     name="avatar"
@@ -157,7 +232,7 @@ const NewProduct = ({ history }) => {
                                     multiple
                                 />
                             </div>
-                            <div id="createProductFormImage">
+                            <div id="createProductImage">
                                 {imagesPreview.map((image, index) => (
                                     <div className="outerBodyImage">
                                         <div className="InnerBodyImage">
@@ -172,7 +247,7 @@ const NewProduct = ({ history }) => {
                                     type="submit"
                                     disabled={loading ? true : false}
                                 >
-                                    Create
+                                    CREATE
                                 </button>
                             </div>
                         </form>

@@ -30,45 +30,45 @@ const ProductList = ({ history }) => {
             headerName: "Product ID",
             sortable: false, 
             minWidth: 280, 
-            flex: 0.8
+            flex: 1
         },
         {
             field: "name",
             headerName: "Name",
-            minWidth: 160,
+            minWidth: 90, 
             sortable: false,
-            flex: 0.4,
+            flex: 2,
         },
         {
             field: "stock",
             headerName: "Stock",
             type: "number",
             sortable: false,
-            minWidth: 150,
-            flex: 0.3,
+            minWidth: 100,
+            flex: 2,
         },
-        {
+        { 
             field: "price",
             headerName: "Price",
             type: "number",
             sortable: false,
-            minWidth: 200,
-            flex: 0.5,
-        },
+            minWidth: 150,
+            flex: 3,
+        }, 
         {
             field: "actions",
-            flex: 0.5,
+            flex: 3.5,
             headerName: "Edit & Delete",
             minWidth: 200, 
             type: "number",
             sortable: false,
             renderCell: (params) => {
                 return (
-                    <> 
-                        <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
+                    <>  
+                        <Link className="editLink" to={`/admin/product/${params.getValue(params.id, "id")}`}>
                             Edit
                         </Link>
-                        <Link to={"#"} id="deleteLink"  onClick={() => deleteProductHandler(params.getValue(params.id, "id"))}>
+                        <Link to={"#"} className="deleteLink" onClick={() => deleteProductHandler(params.getValue(params.id, "id"))}>
                             Delete
                         </Link>
                     </>
@@ -126,16 +126,16 @@ const ProductList = ({ history }) => {
             <div className='deshboardContent'>
                 <div className='deshboard'>
                     <Sidebar />
-                </div>
-                <div className="productListContainer">
-                    <h1 id="productListHeading">All Products</h1>
+                </div> 
+                <div className="productsListContainer">
+                    <h1>All Products</h1>
                     <DataGrid
                         rows={rows}
                         columns={columns}
                         pageSize={10}
                         disableSelectionOnClick
                         disableColumnMenu
-                        className="productListGrid"
+                        className="productsListTable"
                         autoHeight
                     />
                 </div>

@@ -27,15 +27,15 @@ const ProductList = ({ history }) => {
             headerName: "Order ID",
             sortable: false,
             minWidth: 220, 
-            flex: 0.5
+            flex: 1
         },
         {
             field: "status",
             headerName: "Status",
             type: "number",
-            minWidth: 160,
+            minWidth: 140,
             sortable: false,
-            flex: 0.4,
+            flex: 2,
             cellClassName: (params) => {
                 return params.getValue(params.id, "status") === "Delivered"
                     ? "greenColor"
@@ -47,31 +47,31 @@ const ProductList = ({ history }) => {
             headerName: "Items",
             type: "number",
             sortable: false,
-            minWidth: 150,
-            flex: 0.3,
+            minWidth: 130,
+            flex: 2,
         },
         {
             field: "amount",
             headerName: "Amount",
             type: "number",
             sortable: false,
-            minWidth: 200,
-            flex: 0.5,
+            minWidth: 140,
+            flex: 2,
         }, 
         {
             field: "actions",
-            flex: 0.5,
+            flex: 2,
             headerName: "Edit & Delete",
-            minWidth: 200,
+            minWidth: 150,
             type: "number",  
             sortable: false,
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
+                        <Link className='editLink' to={`/admin/order/${params.getValue(params.id, "id")}`}>
                            Edit
                         </Link>
-                        <Link to={"#"} id="deleteLink"  onClick={() => deleteOrderHandler(params.getValue(params.id, "id"))}>
+                        <Link to={"#"} className="deleteLink"  onClick={() => deleteOrderHandler(params.getValue(params.id, "id"))}>
                             Delete
                         </Link>
                     </>
@@ -130,15 +130,15 @@ const ProductList = ({ history }) => {
                 <div className='deshboard'>
                     <Sidebar />
                 </div>
-                <div className="productListContainer">
-                    <h1 id="productListHeading">All Orders</h1>
+                <div className="orderListContainer">
+                    <h1>All Orders</h1>
                     <DataGrid
                         rows={rows}
                         columns={columns}
                         pageSize={10}
                         disableSelectionOnClick
                         disableColumnMenu
-                        className="productListGrid"
+                        className="orderListTable"
                         autoHeight
                     />
                 </div>

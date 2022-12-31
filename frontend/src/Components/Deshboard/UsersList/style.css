@@ -1,3 +1,30 @@
-#deleteLink {
-    margin-left: 10px;
+.userListContainer h1 {
+    text-align: center;
+    font-family: "Caveat", sans-serif;
+    color: #f43397;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.2px;
+}
+
+.userListTable {
+    border-radius: 1px !important;
+}
+
+.userListTable .MuiDataGrid-virtualScroller::-webkit-scrollbar {
+    height: 0px;
+}
+
+.userListTable .MuiDataGrid-columnSeparator {
+    display: none !important;
+}
+
+.userListTable .editLink {
+    color: #1d5606;
+    margin-right: 17px;
+}
+
+.userListTable .deleteLink {
+    color: #630d0d;
 }

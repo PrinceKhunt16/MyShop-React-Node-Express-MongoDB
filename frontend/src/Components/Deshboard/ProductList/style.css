@@ -1,25 +1,30 @@
-.productListContainer {
-    width: 100%;
-    padding: 30px;
-}
-
-.productListContainer h1 {
+.productsListContainer h1 {
     text-align: center;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.95);
-    font-size: 26px;
-    font-weight: 300;
-    margin: 14px;
+    font-family: "Caveat", sans-serif;
+    color: #f43397;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.2px;
 }
 
-svg {
-    fill: rgba(0, 0, 0, 0.85) !important;
+.productsListTable {
+    border-radius: 1px !important;
 }
 
-.productListGrid .MuiDataGrid-columnSeparator {
+.productsListTable .MuiDataGrid-virtualScroller::-webkit-scrollbar {
+    height: 0px;
+}
+
+.productsListTable .MuiDataGrid-columnSeparator {
     display: none !important;
 }
 
-#deleteIconDeshboard:hover {
-    background-color: transparent;
+.productsListTable .editLink {
+    color: #1d5606;
+    margin-right: 17px;
+}
+
+.productsListTable .deleteLink {
+    color: #630d0d;
 }

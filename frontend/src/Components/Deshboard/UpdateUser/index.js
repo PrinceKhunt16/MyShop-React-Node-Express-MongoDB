@@ -15,20 +15,20 @@ const UpdateUser = ({ history, match }) => {
     const { loading: updateLoading, error: updateError, isUpdated } = useSelector((state) => state.profile);
  
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [role, setRole] = useState("");
+    const [email, setEmail] = useState('');
+    const [role, setRole] = useState('');
 
     const userId = match.params.id;
 
     useEffect(() => {
         if (user && user._id !== userId) {
             dispatch(getUserDetails(userId));
-        } else {
+        } else { 
             setName(user.name);
             setEmail(user.email);
             setRole(user.role);
         }
-
+ 
         if (error) {
             dispatch(clearErrors());
         }
@@ -43,7 +43,7 @@ const UpdateUser = ({ history, match }) => {
         }
 
     }, [dispatch, error, history, isUpdated, updateError, user, userId]);
-
+ 
     const updateUserSubmitHandler = (e) => {
         e.preventDefault();
 
@@ -66,13 +66,13 @@ const UpdateUser = ({ history, match }) => {
                 {loading ? (
                     <Loading />
                 ) : (
-                    <div className='UpdateUserContainer'>
+                    <div className='updateUserContainer'>
                         <div className='updateUserContent'>
                             <form
                                 className="updateUserForm"
                                 onSubmit={(e) => { updateUserSubmitHandler(e) }}
                             >
-                                <h2>Update User</h2>
+                                <h2>UPDATE USER</h2>
                                 <div>
                                     <input
                                         type="text"
@@ -91,12 +91,13 @@ const UpdateUser = ({ history, match }) => {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
-                                <div>
-                                    <select value={role} onChange={(e) => setRole(e.target.value)}>
-                                        <option value="">Choose Role</option>
-                                        <option value="admin">Admin</option>
-                                        <option value="user">User</option>
-                                    </select>
+                                <div className='updateUserBtns'>
+                                    <div style={{background: `${role === 'admin' ? '#dd509720' : '#dd509715'}`}} onClick={() => setRole('admin')}>
+                                        Admin
+                                    </div>
+                                    <div style={{background: `${role === 'user' ? '#dd509720' : '#dd509715'}`}} onClick={() => setRole('user')}>
+                                        User
+                                    </div>
                                 </div>
                                 <div className='submitBtn'>
                                     <button
@@ -106,7 +107,7 @@ const UpdateUser = ({ history, match }) => {
                                             updateLoading ? true : false || role === "" ? true : false
                                         }
                                     >
-                                        Update
+                                        UPDATE
                                     </button>
                                 </div>
                             </form>

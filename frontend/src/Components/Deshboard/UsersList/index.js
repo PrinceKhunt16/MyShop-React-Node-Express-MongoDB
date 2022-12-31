@@ -26,14 +26,14 @@ const UsersList = ({ history }) => {
             field: "id",
             headerName: "User ID",
             sortable: false,
-            minWidth: 250,
+            minWidth: 220,
             flex: 0.8,
         },
         {
             field: "email",
             headerName: "Email",
             sortable: false,
-            minWidth: 280,
+            minWidth: 240,
             flex: 0.8,
         }, 
         {
@@ -41,7 +41,7 @@ const UsersList = ({ history }) => {
             headerName: "Name",
             type: "string",
             sortable: false, 
-            minWidth: 200,
+            minWidth: 140,
             flex: 0.5,
         },
         {
@@ -49,7 +49,7 @@ const UsersList = ({ history }) => {
             headerName: "Role",
             type: "string",
             sortable: false,
-            minWidth: 120,
+            minWidth: 80,
             flex: 0.3,
             cellClassName: (params) => {
                 return params.getValue(params.id, "role") === "admin"
@@ -67,10 +67,10 @@ const UsersList = ({ history }) => {
             renderCell: (params) => {
                 return ( 
                     <>
-                        <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
+                        <Link className="editLink" to={`/admin/user/${params.getValue(params.id, "id")}`}>
                            Edit 
                         </Link>
-                        <Link to={"#"} id="deleteLink" onClick={() => deleteUserHandler(params.getValue(params.id, "id"))}>
+                        <Link to={"#"} className="deleteLink" onClick={() => deleteUserHandler(params.getValue(params.id, "id"))}>
                            Delete
                         </Link>
                     </>
@@ -116,15 +116,15 @@ const UsersList = ({ history }) => {
                 <div className='deshboard'>
                     <Sidebar />
                 </div>
-                <div className="productListContainer">
-                    <h1 id="productListHeading">All Users</h1>
+                <div className="userListContainer">
+                    <h1>All Users</h1>
                     <DataGrid
                         rows={rows}
                         columns={columns}
                         pageSize={10}
                         disableSelectionOnClick
                         disableColumnMenu
-                        className="productListGrid"
+                        className="userListTable"
                         autoHeight
                     />
                 </div>
