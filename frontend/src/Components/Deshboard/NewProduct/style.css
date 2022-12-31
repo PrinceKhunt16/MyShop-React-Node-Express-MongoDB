@@ -31,11 +31,6 @@
     margin-bottom: 30px;
 }
 
-/* .createProductContent form div {
-    width: 100%;
-    margin-top: 20px;
-} */
-
 .createProductContent form .inputField {
     margin-top: 20px;
 }
@@ -81,6 +76,18 @@
 .createProductContent form textarea:focus,
 .createProductContent form select:focus {
     outline: none;
+}
+
+.textareaField textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.textareaField textarea::-webkit-scrollbar-track {
+    background: #dd509710;
+}
+
+.textareaField textarea::-webkit-scrollbar-thumb {
+    background: #dd509725;
 }
 
 #createProductFile {

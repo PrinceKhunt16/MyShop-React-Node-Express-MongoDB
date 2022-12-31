@@ -53,7 +53,7 @@ const Deshboard = () => {
                 <Sidebar />
             </div>
             <div className='deshboardContainer'>
-                <h2>Deshboard</h2>
+                <h2>Dashboard</h2>
                 <div className='deshboardSummary'>
                     <div className='deshboardSummaryOne'>
                         <p>Total Amount {totalAmount} Rupees</p>

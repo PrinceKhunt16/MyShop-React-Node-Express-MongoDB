@@ -8,6 +8,14 @@ import { clearErrors, updateProduct, getProductDetails } from '../../../Redux/ac
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
+const categories = ["Women Ethnic", "Women Western", "Men", "Tops", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear"];
+
+const subCategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
+
+const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS']
+
+const colors = ['Beige', 'Black', 'Blue', 'Brown', 'Grey', 'Khaki', 'Maroon', 'White', 'Multicolor', 'Nude', 'Olive', 'Orange', 'Pink']
+
 const UpdateProduct = ({ history, match }) => {
     const dispatch = useDispatch();
     const { loading, error: updateError, isUpdated } = useSelector((state) => state.product);
@@ -15,21 +23,18 @@ const UpdateProduct = ({ history, match }) => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
     const [stock, setStock] = useState(0);
     const [images, setImages] = useState([]);
     const [oldImages, setOldImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
-
-    const categories = [
-        "Laptop", 
-        "Footwear",
-        "Bottom",
-        "Tops",
-        "Watch",
-        "Camera",
-        "SmartPhones",
-    ];
+    const [category, setCategory] = useState('');
+    const [displayCategory, setDisplayCategory] = useState(false);
+    const [subCategory, setSubCategory] = useState('');
+    const [displaySubCategory, setDisplaySubCategory] = useState(false);
+    const [size, setSize] = useState('');
+    const [displaySize, setDisplaySize] = useState(false);
+    const [color, setColor] = useState('');
+    const [displayColor, setDisplayColor] = useState(false);
 
     const productId = match.params.id;
 
@@ -91,7 +96,6 @@ const UpdateProduct = ({ history, match }) => {
     };
 
     const updateProductImagesChange = (e) => {
-
         const files = Array.from(e.target.files);
 
         setImages([]);
@@ -114,21 +118,21 @@ const UpdateProduct = ({ history, match }) => {
 
     return (
         <>
-            <MetaData title={`Create Product Admin`} />
+            <MetaData title={`Update Product Admin`} />
             <ToastContainerBox />
             <div className='deshboardContent'>
                 <div className='deshboard'>
                     <Sidebar />
                 </div>
-                <div className='newProductContainer'>
-                    <div className='newProductContent'>
+                <div className='updateProductContainer'>
+                    <div className='updateProductContent'>
                         <form
-                            className="createProductForm"
+                            className="updateProductForm"
                             encType="multipart/form-data"
                             onSubmit={(e) => {updateProductSubmitHandler(e)}}
                         >
-                            <h2>Update Product</h2>
-                            <div>
+                            <h2>UPDATE PRODUCT</h2>
+                            <div className="inputField">
                                 <input
                                     type="text"
                                     placeholder="Product Name"
@@ -137,7 +141,7 @@ const UpdateProduct = ({ history, match }) => {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
-                            <div>
+                            <div className="inputField">
                                 <input
                                     type="number"
                                     placeholder="Price"
@@ -146,7 +150,7 @@ const UpdateProduct = ({ history, match }) => {
                                     onChange={(e) => setPrice(e.target.value)}
                                 />
                             </div>
-                            <div>
+                            <div className="textareaField">
                                 <textarea
                                     placeholder="Product Description"
                                     value={description}
@@ -155,17 +159,7 @@ const UpdateProduct = ({ history, match }) => {
                                     rows="1"
                                 ></textarea>
                             </div>
-                            <div>
-                                <select onChange={(e) => setCategory(e.target.value)}>
-                                    <option value="">Choose Category</option>
-                                    {categories.map((cate) => (
-                                        <option key={cate} value={cate}>
-                                            {cate}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            <div>
+                            <div className="inputField">
                                 <input
                                     type="number"
                                     placeholder="Stock"
@@ -174,7 +168,89 @@ const UpdateProduct = ({ history, match }) => {
                                     onChange={(e) => setStock(e.target.value)}
                                 />
                             </div>
-                            <div id="createProductFormFile">
+
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplayCategory(!displayCategory)}>
+                                    {category !== '' ?
+                                        `${category}`
+                                        :
+                                        'Category'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displayCategory ? 'block' : 'none'}` }}>
+                                    {categories &&
+                                        categories.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setCategory(item)
+                                                setDisplayCategory(!displayCategory)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplaySubCategory(!displaySubCategory)}>
+                                    {subCategory !== '' ?
+                                        `${subCategory}`
+                                        :
+                                        'Subcategory'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displaySubCategory ? 'block' : 'none'}` }}>
+                                    {subCategories &&
+                                        subCategories.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setSubCategory(item)
+                                                setDisplaySubCategory(!displaySubCategory)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplaySize(!displaySize)}>
+                                    {size !== '' ?
+                                        `${size}`
+                                        :
+                                        'Size'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displaySize ? 'block' : 'none'}` }}>
+                                    {sizes &&
+                                        sizes.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setSize(item)
+                                                setDisplaySize(!displaySize)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                            <div className="categoryBox">
+                                <h2 className='heading' onClick={() => setDisplayColor(!displayColor)}>
+                                    {color !== '' ?
+                                        `${color}`
+                                        :
+                                        'Color'
+                                    }
+                                </h2>
+                                <div className='categoryList' style={{ display: `${displayColor ? 'block' : 'none'}` }}>
+                                    {colors &&
+                                        colors.map((item) => (
+                                            <div key={item} value={item} onClick={() => {
+                                                setColor(item)
+                                                setDisplayColor(!displayColor)
+                                            }}>
+                                                {item}
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+
+                            <div id="updateProductFile">
                                 <input
                                     type="file"
                                     name="avatar"
@@ -183,7 +259,7 @@ const UpdateProduct = ({ history, match }) => {
                                     multiple
                                 />
                             </div>
-                            <div id="createProductFormImage">
+                            <div id="updateProductImage">
                                 {oldImages && oldImages.map((image, index) => (
                                     <div className="outerBodyImage">
                                         <div className="InnerBodyImage">
@@ -192,7 +268,7 @@ const UpdateProduct = ({ history, match }) => {
                                     </div>
                                 ))}
                             </div>
-                            <div id="createProductFormImage">
+                            <div id="updateProductImage">
                                 {imagesPreview.map((image, index) => (
                                     <div className="outerBodyImage">
                                         <div className="InnerBodyImage">
@@ -201,13 +277,13 @@ const UpdateProduct = ({ history, match }) => {
                                     </div>
                                 ))}
                             </div>
-                            <div className='submitBtnCreateProdcuct'>
+                            <div className='submitBtnUpdateProdcuct'>
                                 <button
-                                    id="createProductBtn"
+                                    id="updateProductBtn"
                                     type="submit"
                                     disabled={loading ? true : false}
                                 >
-                                    Update
+                                    UPDATE
                                 </button>
                             </div>
                         </form>

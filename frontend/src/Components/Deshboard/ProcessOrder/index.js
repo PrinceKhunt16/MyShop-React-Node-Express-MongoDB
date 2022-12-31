@@ -60,10 +60,10 @@ const ProcessOrder = ({ history, match }) => {
                 {loading ? (
                     <Loading />
                 ) : (
-                    <div className="orderDetailContainer">
-                        <div className="confirmBox">
-                            <h2>Order</h2>
-                            <div className="confirmshippingAreaBox">
+                    <div className="processOrderContainer">
+                        <div className="processOrderBox">
+                            <h2>Order</h2> 
+                            <div className="processOrderShippingAreaBox">
                                 <div>
                                     <p>Name</p>
                                     <span>{order.user && order.user.name}</span>
@@ -111,12 +111,12 @@ const ProcessOrder = ({ history, match }) => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="itemConfirmBox">
+                            <div className="processOrderConfirmBox">
                                 {order.orderItems &&
                                     order.orderItems.map((item) => (
-                                        <div className="ItemBoxConfirm" key={item.product}>
+                                        <div className="processOrderBoxConfirm" key={item.product}>
                                             <img src={item.image} alt="productimage" />
-                                            <div className='itemConfirmDetails'>
+                                            <div className='processOrderConfirmDetails'>
                                                 <h4> Name <Link to={`/product/${item.product}`}> {item.name} </Link> </h4>
                                                 <h4> Price <span> {`₹${item.price}`} </span> </h4>
                                                 <h4>{item.quantity} X ₹{item.price} = <span>₹{item.price * item.quantity}</span></h4>
@@ -131,7 +131,7 @@ const ProcessOrder = ({ history, match }) => {
                                 }}
                             >
                                 <form
-                                    className="updateOrderForm"
+                                    className="processOrderForm"
                                     onSubmit={(e) => updateOrderSubmitHandler(e)}
                                 >
                                     <div>

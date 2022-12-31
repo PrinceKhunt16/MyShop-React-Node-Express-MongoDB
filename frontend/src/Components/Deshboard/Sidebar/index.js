@@ -8,7 +8,7 @@ const Sidebar = () => {
             <div className='sidebar'>
                 <div className='sidebarItem'>
                     <Link to="/admin/deshboard">
-                        <div className='dashboardBorderBottom'>Deshboard</div>
+                        <div className='dashboardBorderBottom'>Dashboard</div>
                     </Link>
                     <Link to="/admin/products">
                         <div className='dashboardBorderBottom'>All Products</div>
