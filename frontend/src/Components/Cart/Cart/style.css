@@ -26,7 +26,7 @@
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid #0000001a;
+    border: 1px solid #e0e0e0;
     overflow: scroll;
 }
 
@@ -39,7 +39,7 @@
     grid-template-columns: 2fr 2fr 2fr 2fr 100px;
     gap: 10px;
     padding: 10px 0px;
-    border-bottom: 1px solid #0000001a;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .cart .cartItem:last-child {
@@ -102,7 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #0000001a;
+    border: 1px solid #e0e0e0;
     padding: 10px;
     border-radius: 1px;
     gap: 10px;
@@ -170,7 +170,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #44404210;
+    border-bottom: 1px solid #e0e0e0;
     padding-top: 10px;
     padding-bottom: 11px;
 }

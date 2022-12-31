@@ -1,24 +1,19 @@
-.myOrdersTable {
-    font-family: "Noto Sans JP", sans-serif !important;
-}
-
-.MuiDataGrid-footerContainer p{
-    font-family: "Noto Sans JP", sans-serif !important;
-}
-
 .myOrdersPage {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
+    padding: 15px 15px;
 }
 
-#myOrdersHeading {
+.myOrdersHeading {
     text-align: center;
-    font-family: "Noto Sans JP", sans-serif;
-    color: rgba(0, 0, 0, 0.95);
-    font-size: 18px;
+    font-family: "Caveat", sans-serif;
+    color: #f43397;
+    font-size: 30px;
     font-weight: 400;
-    margin: 14px;
+    margin: 15px;
+    letter-spacing: 0.2px;
+}
+
+.myOrdersTable {
+    border-radius: 1px !important;
 }
 
 .orderLink {
@@ -26,29 +21,21 @@
 }
 
 .greenColor {
-    color: #184904;
+    color: #1d5606;
 }
 
 .redColor {
     color: #630d0d;
 }
 
-.css-1w5m2wr-MuiDataGrid-virtualScroller::-webkit-scrollbar {
+.myOrdersTable .MuiDataGrid-virtualScroller::-webkit-scrollbar {
     height: 0px;
-}
-
-.css-1w5m2wr-MuiDataGrid-virtualScroller::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.css-1w5m2wr-MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb {
-    background: rgb(225, 225, 225);
-}
-
-.css-1w5m2wr-MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb:hover {
-    background: rgb(195, 195, 195);
 }
 
 .myOrdersTable .MuiDataGrid-columnSeparator {
     display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    
 }

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import "./style.css"
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Typography from '@mui/material/Typography';
 import { DataGrid } from '@mui/x-data-grid';
 import NotesIcon from '@mui/icons-material/Notes';
 import { myOrders, clearErrors } from '../../../Redux/action/orderAction';
@@ -20,22 +19,22 @@ const MyOrders = () => {
         {
             field: "id",
             headerName: "Order ID",
-            minWidth: 240,
+            minWidth: 220,
             sortable: false,
-            flex: 0.5 
+            flex: 1 
         }, {
             field: "itemsQty",
             headerName: "Items",
             type: "number",
-            minWidth: 150,
+            minWidth: 120,
             sortable: false,
-            flex: 0.4,
+            flex: 2
         }, {
             field: "status",
             headerName: "Status",
             type: "number",
-            minWidth: 180,  
-            flex: 0.5,
+            minWidth: 150,  
+            flex: 3.5,
             sortable: false,
             cellClassName: (params) => {
                 return params.getValue(params.id, "status") === "Delivered"
@@ -46,14 +45,14 @@ const MyOrders = () => {
             field: "amount",
             headerName: "Amount",
             type: "number",
-            minWidth: 200, 
+            minWidth: 150, 
             sortable: false,
-            flex: 0.5
+            flex: 3.5
         }, {
             field: "actions",
-            flex: 0.3,
+            flex: 3.5,
             headerName: "About",
-            minWidth: 150,
+            minWidth: 100,
             type: "number",  
             sortable: false,
             renderCell: (params) => {
@@ -94,7 +93,7 @@ const MyOrders = () => {
                 <Loading />
             ) : (
                 <div className="myOrdersPage">
-                    <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
+                    <h2 className="myOrdersHeading">{user.name}'s Orders</h2>
                     <DataGrid
                         rows={rows}
                         columns={columns}
