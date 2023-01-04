@@ -89,3 +89,13 @@
     letter-spacing: 0.4px;
     margin-top: 40px;
 }
+
+@media only screen and (max-width: 900px) {
+    .updateUserContent {
+        width: 100%;
+    }    
+
+    .updateUserContent form {
+        padding: 30px 15px;
+    }
+}

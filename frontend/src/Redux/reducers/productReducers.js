@@ -14,6 +14,7 @@ export const productsReducers = (state = { products: [] }, action) => {
                 products: action.payload.products,
                 productsCount: action.payload.productsCount,
                 resultPerPage: action.payload.resultPerPage,
+                filteredProductsCount: action.payload.filteredProductsCount
             }
         case actions.ADMIN_PRODUCT_SUCCESS:
             return {

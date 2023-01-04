@@ -8,11 +8,11 @@ import { clearErrors, createProduct } from '../../../Redux/action/productAction'
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
-const categories = ["Women Ethnic", "Women Western", "Men", "Tops", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear"];
+const categories = ["Women Ethnic", "Women Western", "Men", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear", "Home"];
 
-const subCategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
+const subcategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics", "Kitchen", "Home"]
 
-const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS']
+const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS', 'FREE SIZE']
 
 const colors = ['Beige', 'Black', 'Blue', 'Brown', 'Grey', 'Khaki', 'Maroon', 'White', 'Multicolor', 'Nude', 'Olive', 'Orange', 'Pink']
 
@@ -27,8 +27,8 @@ const NewProduct = ({ history }) => {
     const [imagesPreview, setImagesPreview] = useState([]);
     const [category, setCategory] = useState('');
     const [displayCategory, setDisplayCategory] = useState(false);
-    const [subCategory, setSubCategory] = useState('');
-    const [displaySubCategory, setDisplaySubCategory] = useState(false);
+    const [subcategory, setSubcategory] = useState('');
+    const [displaySubcategory, setDisplaySubcategory] = useState(false);
     const [size, setSize] = useState('');
     const [displaySize, setDisplaySize] = useState(false);
     const [color, setColor] = useState('');
@@ -63,7 +63,10 @@ const NewProduct = ({ history }) => {
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("category", category);
+        myForm.set("subcategory", subcategory);
         myForm.set("stock", Stock);
+        myForm.set("size", size);
+        myForm.set("color", color);
 
         images.forEach((image) => {
             myForm.append("images", image);
@@ -164,19 +167,19 @@ const NewProduct = ({ history }) => {
                                 </div>
                             </div>
                             <div className="categoryBox">
-                                <h2 className='heading' onClick={() => setDisplaySubCategory(!displaySubCategory)}>
-                                    {subCategory !== '' ?
-                                        `${subCategory}`
+                                <h2 className='heading' onClick={() => setDisplaySubcategory(!displaySubcategory)}>
+                                    {subcategory !== '' ?
+                                        `${subcategory}`
                                         :
                                         'Subcategory'
                                     }
                                 </h2>
-                                <div className='categoryList' style={{ display: `${displaySubCategory ? 'block' : 'none'}` }}>
-                                    {subCategories &&
-                                        subCategories.map((item) => (
+                                <div className='categoryList' style={{ display: `${displaySubcategory ? 'block' : 'none'}` }}>
+                                    {subcategories &&
+                                        subcategories.map((item) => (
                                             <div key={item} value={item} onClick={() => {
-                                                setSubCategory(item)
-                                                setDisplaySubCategory(!displaySubCategory)
+                                                setSubcategory(item)
+                                                setDisplaySubcategory(!displaySubcategory)
                                             }}>
                                                 {item}
                                             </div>

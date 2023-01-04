@@ -1,17 +1,13 @@
 import axios from "axios";
 import * as actions from "../constant/productConstant";
 
-export const getProducts = (keyword = "", currentPage = 1, category, ratings = 0, price = [0, 100000]) => async (dispatch) => {
+export const getProducts = (keyword = "", currentPage = 1, category, ratings = 0, price = [0, 100000], color = "", size = "") => async (dispatch) => {
     try {
         dispatch({
             type: actions.ALL_PRODUCT_REQUEST
         });
-
-        let refrenceLink = `/api/v1/products?keyword=${keyword}&page=${currentPage}&ratings[gte]=${ratings}&price[gte]=${price[0]}&price[lte]=${price[1]}`;
-
-        if (category) {
-            refrenceLink = `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}&ratings[gte]=${ratings}&price[gte]=${price[0]}&price[lte]=${price[1]}`;
-        }
+ 
+        let refrenceLink = `/api/v1/products?keyword=${keyword}&subcategory=${category}&size=${size}&color=${color}&page=${currentPage}&ratings[gte]=${ratings}&price[gte]=${price[0]}&price[lte]=${price[1]}`;
 
         const { data } = await axios.get(refrenceLink);
 

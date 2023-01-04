@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
                 <Link className='productsCard' to={`product/${product._id}`}>
                     <img src={product?.images[0]?.url} alt={product.name} />
                     <div className='productsDetails'>
-                        <p>{product.name}</p>
+                        <p>{String(product.name).slice(0, 48)}</p>
                         <div className='priceStock'>
                             <h3>₹{product.price}</h3>
                         </div>

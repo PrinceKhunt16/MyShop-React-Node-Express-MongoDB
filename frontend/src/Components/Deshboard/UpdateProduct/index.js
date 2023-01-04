@@ -8,9 +8,9 @@ import { clearErrors, updateProduct, getProductDetails } from '../../../Redux/ac
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
-const categories = ["Women Ethnic", "Women Western", "Men", "Tops", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear"];
+const categories = ["Women Ethnic", "Women Western", "Men", "Tops", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear", "Home"];
 
-const subCategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
+const subCategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics", "Home"];
 
 const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS']
 
@@ -29,7 +29,7 @@ const UpdateProduct = ({ history, match }) => {
     const [imagesPreview, setImagesPreview] = useState([]);
     const [category, setCategory] = useState('');
     const [displayCategory, setDisplayCategory] = useState(false);
-    const [subCategory, setSubCategory] = useState('');
+    const [subcategory, setSubcategory] = useState('');
     const [displaySubCategory, setDisplaySubCategory] = useState(false);
     const [size, setSize] = useState('');
     const [displaySize, setDisplaySize] = useState(false);
@@ -48,6 +48,9 @@ const UpdateProduct = ({ history, match }) => {
             setCategory(product.category);
             setStock(product.stock);
             setOldImages(product.images);
+            setSubcategory(product.subcategory);
+            setSize(product.size);
+            setColor(product.color);
         }
 
         if (error) {
@@ -87,6 +90,8 @@ const UpdateProduct = ({ history, match }) => {
         myForm.set("description", description);
         myForm.set("category", category);
         myForm.set("stock", stock);
+        myForm.set("size", size);
+        myForm.set("color", color);
  
         images.forEach((image) => {
             myForm.append("images", image);
@@ -191,8 +196,8 @@ const UpdateProduct = ({ history, match }) => {
                             </div>
                             <div className="categoryBox">
                                 <h2 className='heading' onClick={() => setDisplaySubCategory(!displaySubCategory)}>
-                                    {subCategory !== '' ?
-                                        `${subCategory}`
+                                    {subcategory !== '' ?
+                                        `${subcategory}`
                                         :
                                         'Subcategory'
                                     }
@@ -201,7 +206,7 @@ const UpdateProduct = ({ history, match }) => {
                                     {subCategories &&
                                         subCategories.map((item) => (
                                             <div key={item} value={item} onClick={() => {
-                                                setSubCategory(item)
+                                                setSubcategory(item)
                                                 setDisplaySubCategory(!displaySubCategory)
                                             }}>
                                                 {item}

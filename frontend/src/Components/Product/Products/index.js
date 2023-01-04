@@ -6,7 +6,6 @@ import Pagination from "react-js-pagination";
 import { getProducts } from "../../../Redux/action/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../Layouts/Loading";
-import { useHistory } from 'react-router-dom';
 
 const categories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
 
@@ -37,7 +36,7 @@ const prices = [
     }
 ]
 
-const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS']
+const sizes = ['L', 'XL', 'XXL', 'M', 'S', 'XXXL', 'XXS', 'FREE SIZE']
 
 const productratings = [2, 3, 4]
 
@@ -57,6 +56,12 @@ const Products = ({ match }) => {
         'ratings': false,
         'size': false
     });
+    
+    const { loading, error, products, productsCount, resultPerPage, filteredProductsCount } = useSelector(
+        (state) => state.products
+    );
+
+    let count = filteredProductsCount
 
     const handleOpenClose = (categoryName) => {
         setOpenclose({
@@ -64,7 +69,7 @@ const Products = ({ match }) => {
             [categoryName]: !openclose[categoryName]
         })
     }
-
+  
     const removeAllCategory = () => {
         setCategory('')
         setRatings(0)
@@ -74,20 +79,16 @@ const Products = ({ match }) => {
     }
 
     const dispatch = useDispatch();
-
-    const { loading, error, products, productsCount, resultPerPage } = useSelector(
-        (state) => state.products
-    );
-
+    
     const setCurrentPageNo = (e) => {
         setCurrentPage(e);
     }
 
     const keyword = match.params.keyword;
-
+  
     useEffect(() => {
-        dispatch(getProducts(keyword, currentPage, category, ratings, price));
-    }, [dispatch, keyword, currentPage, category, ratings, price]);
+        dispatch(getProducts(keyword, currentPage, category, ratings, price, color, size));
+    }, [dispatch, keyword, currentPage, category, ratings, price, color, size]);
 
     return (
         <>
@@ -241,7 +242,7 @@ const Products = ({ match }) => {
                                         <ProductsCard product={product} />
                                     ))} 
                             </div>
-                            {resultPerPage < productsCount &&
+                            {resultPerPage < count &&
                                 <div className='paginationBox'>
                                     <Pagination
                                         activePage={currentPage}

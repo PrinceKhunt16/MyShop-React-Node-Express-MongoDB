@@ -46,16 +46,22 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
 
     const apiFeatures = new ApiFeatures(Product.find(), req.query)
     .search()
-    .filter()
-    .pagination(resultPerPage);
+    .filter();
+    
+    let products = await apiFeatures.query.clone();
 
-    const products = await apiFeatures.query;
+    let filteredProductsCount = products.length;
+  
+    apiFeatures.pagination(resultPerPage);
+
+    products = await apiFeatures.query;
 
     res.status(200).json({
         success: true,
         products,
         productsCount,
-        resultPerPage
+        resultPerPage,
+        filteredProductsCount
     });
 });
 
@@ -76,7 +82,7 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
     }
 
     if (images !== undefined) {
-        for (let i = 0; i < product.images.length; i++) {
+        for (let i = 0; i < product.images?.length; i++) {
             await cloudinary.v2.uploader.destroy(product.images[i].public_id);
         }
 
