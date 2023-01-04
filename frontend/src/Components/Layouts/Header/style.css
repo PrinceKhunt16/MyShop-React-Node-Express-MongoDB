@@ -43,6 +43,7 @@
     border: 1px solid #87878750;
     border-radius: 25px;
     letter-spacing: 0.2px;
+    color: #3e3e3e;
 }
 
 .searchBox form input:focus {

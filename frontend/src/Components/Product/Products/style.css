@@ -7,7 +7,7 @@
     margin: 15px 15px;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .productsContainer {
@@ -19,7 +19,7 @@
 .productsBody {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .paginationBox {
@@ -180,7 +180,6 @@
     .productsBody {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
     }
 }
 
@@ -194,7 +193,6 @@
     .productsBody {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
     }
 }
 
@@ -202,6 +200,5 @@
     .productsBody {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 }

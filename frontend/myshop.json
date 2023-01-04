@@ -1,0 +1,314 @@
+{
+  "success": true,
+  "products": [
+    {
+      "_id": "63b4eeefa8a4cf8396794196",
+      "name": "Aakarsha Ensemble Kurtis",
+      "description": "This kurta is a loose collarless shirt or tunic worn in many regions of South Asia, and is now also worn worldwide. ",
+      "price": 300,
+      "ratings": 4,
+      "images": [
+        {
+          "public_id": "Products/gq2wmbj67hcgucb2144z",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802572/Products/gq2wmbj67hcgucb2144z.webp",
+          "_id": "63b4f10e61e5a8970d3d0abc"
+        },
+        {
+          "public_id": "Products/a4teg5dmucextvije1ed",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802573/Products/a4teg5dmucextvije1ed.webp",
+          "_id": "63b4f10e61e5a8970d3d0abd"
+        }
+      ],
+      "category": "Women Ethnic",
+      "subcategory": "Kurtis",
+      "size": "M",
+      "color": "Grey",
+      "stock": 9,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 4,
+          "comment": "The product is very nice but it's kinda thin and the order was late.",
+          "_id": "63b4f995dbbc164646c98b47"
+        }
+      ],
+      "createdAt": "2023-01-04T03:13:51.087Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f1d8f46a9c864e837c1f",
+      "name": "Saree on pista and black color",
+      "description": "This sari is a women's garment from the Indian subcontinent, that consists of an un-stitched stretch of woven fabric arranged over the body as a robe, with one end tied to the waist, while the other end rests over one shoulder as a stole, sometimes baring a part of the midriff.",
+      "price": 517,
+      "ratings": 3,
+      "images": [
+        {
+          "public_id": "Products/undroipxz5mp20vaqih4",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802772/Products/undroipxz5mp20vaqih4.webp",
+          "_id": "63b4f1d8f46a9c864e837c20"
+        },
+        {
+          "public_id": "Products/tzxwb6nr3h6srzeie92j",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802773/Products/tzxwb6nr3h6srzeie92j.webp",
+          "_id": "63b4f1d8f46a9c864e837c21"
+        },
+        {
+          "public_id": "Products/mrjxtwyk3frpwa3ivcrw",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802775/Products/mrjxtwyk3frpwa3ivcrw.webp",
+          "_id": "63b4f1d8f46a9c864e837c22"
+        }
+      ],
+      "category": "Women Western",
+      "subcategory": "Sarees",
+      "size": "FREE SIZE",
+      "color": "Black",
+      "stock": 10,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 3,
+          "comment": "I would like to share my feedback about product it's really amazing with best price thank you my shop.",
+          "_id": "63b4f9c5dbbc164646c98b52"
+        }
+      ],
+      "createdAt": "2023-01-04T03:26:16.191Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f277f46a9c864e837c33",
+      "name": "Kurti on Khadi cotten cloths",
+      "description": "This kurtis cloth is made from cotton, but it may also include silk or wool, which are all spun into yarn on a charkha. It is a versatile fabric that remains cool in summer and warm in winter. To improve its appearance, khadi is sometimes starched to give it a stiffer feel. It is widely accepted in various fashion circles.",
+      "price": 800,
+      "ratings": 5,
+      "images": [
+        {
+          "public_id": "Products/usywjcprd7b8yzvcqwbp",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672802934/Products/usywjcprd7b8yzvcqwbp.webp",
+          "_id": "63b4f277f46a9c864e837c34"
+        }
+      ],
+      "category": "Women Ethnic",
+      "subcategory": "Kurtis",
+      "size": "XL",
+      "color": "Brown",
+      "stock": 10,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 5,
+          "comment": "So a satisfying product just love its fabric is also awesome.",
+          "_id": "63b4f9dddbbc164646c98b5a"
+        }
+      ],
+      "createdAt": "2023-01-04T03:28:55.491Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f2ecf46a9c864e837c3f",
+      "name": "Versatile Stylish Women",
+      "description": "The Fashion & Heritage Pichora is traditionally hand-made. There are only two colors that are used in the Pichora – red and saffron. They are considered auspicious colors in Indian culture. The red color stands for energy and conjugal life, while the saffron represents all the holy and worldly elements. The combination of these two colors brings in good luck to the bride for her married life ahead. This Odhni is called the Pichora of Rangoli or the Pichora of Rangwali. Married women use it on auspicious occasions such as marriage, festivals, worship-archana.",
+      "price": 410,
+      "ratings": 3,
+      "images": [
+        {
+          "public_id": "Products/dxyx7lctdutrymkayt3l",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803049/Products/dxyx7lctdutrymkayt3l.webp",
+          "_id": "63b4f2ecf46a9c864e837c40"
+        },
+        {
+          "public_id": "Products/iabsb5q7jpls4q7nnhhr",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803051/Products/iabsb5q7jpls4q7nnhhr.webp",
+          "_id": "63b4f2ecf46a9c864e837c41"
+        }
+      ],
+      "category": "Women Ethnic",
+      "subcategory": "Dupattas",
+      "size": "FREE SIZE",
+      "color": "Maroon",
+      "stock": 8,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 3,
+          "comment": "Dupatta bahut achhi h delivery bhi on time ho gyi mujhe bahut psand thi.",
+          "_id": "63b4fa1fdbbc164646c98b63"
+        }
+      ],
+      "createdAt": "2023-01-04T03:30:52.304Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f36cf46a9c864e837c4a",
+      "name": "Meet New Designers Wedding",
+      "description": "Ghagra choli is a type of ethnic clothing for women from the Indian Subcontinent, notably in the Indian states of Rajasthan, Gujarat, Madhya Pradesh, Uttar Pradesh, Bihar, Haryana, Punjab, Himachal Pradesh, Uttarakhand, Jammu and Kashmir, as well as in the Pakistani provinces of Punjab and Sindh.",
+      "price": 900,
+      "ratings": 5,
+      "images": [
+        {
+          "public_id": "Products/aqzlfezpyex1ztigiu64",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803179/Products/aqzlfezpyex1ztigiu64.webp",
+          "_id": "63b4f36cf46a9c864e837c4b"
+        }
+      ],
+      "category": "Women Ethnic",
+      "subcategory": "Lehengas",
+      "size": "FREE SIZE",
+      "color": "Black",
+      "stock": 15,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 5,
+          "comment": "Superb choli Awesome color As per photo same design same color All women have to buy this saree.",
+          "_id": "63b4fa50dbbc164646c98b6e"
+        }
+      ],
+      "createdAt": "2023-01-04T03:33:00.433Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f3eff46a9c864e837c5c",
+      "name": "Meshi shirt for men styles",
+      "description": "This shirt is a cloth garment for the upper body. Originally an undergarment worn exclusively by men, it has become, in American English, a catch-all term for a broad variety of upper-body garments and undergarments.",
+      "price": 322,
+      "ratings": 5,
+      "images": [
+        {
+          "public_id": "Products/riygmmkr0dw5v970sums",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803307/Products/riygmmkr0dw5v970sums.webp",
+          "_id": "63b4f3eff46a9c864e837c5d"
+        },
+        {
+          "public_id": "Products/qfrrxowr4grdnepgryid",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803309/Products/qfrrxowr4grdnepgryid.webp",
+          "_id": "63b4f3eff46a9c864e837c5e"
+        },
+        {
+          "public_id": "Products/pzdu3gdigahlaj3gkjs4",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803310/Products/pzdu3gdigahlaj3gkjs4.webp",
+          "_id": "63b4f3eff46a9c864e837c5f"
+        }
+      ],
+      "category": "Men",
+      "subcategory": "Shirts",
+      "size": "M",
+      "color": "Maroon",
+      "stock": 23,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 5,
+          "comment": "Osm product 😍jst wow, go for it 👍🏻",
+          "_id": "63b4fa68dbbc164646c98b76"
+        }
+      ],
+      "createdAt": "2023-01-04T03:35:11.202Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f4a27c3a560da3b2f7ea",
+      "name": "Thermos with Lid Insulated Travel",
+      "description": "Thermos Flask with Lid Insulated Travel Tea and Coffee Mug Portable Thermal Cup Stainless Steel Vacuum Insulated Tumbler Cup for Hot & Cold Drinks ( 400 ML )",
+      "price": 1100,
+      "ratings": 2,
+      "images": [
+        {
+          "public_id": "Products/wvmh87wjylhdn58b2mjx",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803486/Products/wvmh87wjylhdn58b2mjx.webp",
+          "_id": "63b4f4a27c3a560da3b2f7eb"
+        },
+        {
+          "public_id": "Products/vitghopdqsicahhudeo9",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803488/Products/vitghopdqsicahhudeo9.webp",
+          "_id": "63b4f4a27c3a560da3b2f7ec"
+        },
+        {
+          "public_id": "Products/e65acfolm4tj3swn6r6q",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803489/Products/e65acfolm4tj3swn6r6q.webp",
+          "_id": "63b4f4a27c3a560da3b2f7ed"
+        }
+      ],
+      "category": "Kitchen",
+      "subcategory": "Kitchen",
+      "size": "FREE SIZE",
+      "color": "Grey",
+      "stock": 3,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 2,
+          "comment": "It is some faults that I never think of.",
+          "_id": "63b4faacdbbc164646c98b7e"
+        }
+      ],
+      "createdAt": "2023-01-04T03:38:10.680Z",
+      "__v": 1
+    },
+    {
+      "_id": "63b4f5107c3a560da3b2f7fe",
+      "name": "New Stylish and Good Look Backpack",
+      "description": "Sana Enterprises For all the women who value the firework in them, this backpack is the perfect emblem. Crafted under proficient it is made of unmatched quality leatherette. Carry it with your colorful western look or the vintage traditional to give a new feature to styling.",
+      "price": 785,
+      "ratings": 1,
+      "images": [
+        {
+          "public_id": "Products/cavpueegtbskiybpmkmx",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803596/Products/cavpueegtbskiybpmkmx.webp",
+          "_id": "63b4f5107c3a560da3b2f7ff"
+        },
+        {
+          "public_id": "Products/flmfv1leyvrmht4yubwy",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803598/Products/flmfv1leyvrmht4yubwy.webp",
+          "_id": "63b4f5107c3a560da3b2f800"
+        },
+        {
+          "public_id": "Products/ewuy4hl4w0go18elsmbz",
+          "url": "https://res.cloudinary.com/my-market/image/upload/v1672803599/Products/ewuy4hl4w0go18elsmbz.webp",
+          "_id": "63b4f5107c3a560da3b2f801"
+        }
+      ],
+      "category": "Bags",
+      "subcategory": "Kitchen",
+      "size": "FREE SIZE",
+      "color": "Olive",
+      "stock": 7,
+      "numOfReviews": 1,
+      "user": "62e02b82584f9d2bc1dd2b44",
+      "reviews": [
+        {
+          "user": "62e02b82584f9d2bc1dd2b44",
+          "name": "Prince Khunt",
+          "rating": 1,
+          "comment": "nononononnononoo",
+          "_id": "63b4fac6dbbc164646c98b86"
+        }
+      ],
+      "createdAt": "2023-01-04T03:40:00.469Z",
+      "__v": 1
+    }
+  ],
+  "productsCount": 13,
+  "resultPerPage": 8,
+  "filteredProductsCount": 13
+}

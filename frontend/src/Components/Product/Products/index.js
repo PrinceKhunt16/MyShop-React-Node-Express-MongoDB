@@ -6,7 +6,6 @@ import Pagination from "react-js-pagination";
 import { getProducts } from "../../../Redux/action/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../Layouts/Loading";
-import { useLocation } from 'react-router-dom';
 import UseQuery from '../UseQuery'
 
 const categories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
@@ -44,8 +43,9 @@ const productratings = [2, 3, 4]
 
 const colors = ['Beige', 'Black', 'Blue', 'Brown', 'Grey', 'Khaki', 'Maroon', 'White', 'Multicolor', 'Nude', 'Olive', 'Orange', 'Pink']
 
-const Products = ({ match }) => {
+const Products = () => {
     const query = UseQuery()
+    const [keyword, setKeyword] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const [type, setType] = useState('');
     const [category, setCategory] = useState('');
@@ -61,7 +61,7 @@ const Products = ({ match }) => {
         'size': false
     });
 
-    const { loading, error, products, productsCount, resultPerPage, filteredProductsCount } = useSelector(
+    const { loading, products, productsCount, resultPerPage, filteredProductsCount } = useSelector(
         (state) => state.products
     );
 
@@ -86,8 +86,6 @@ const Products = ({ match }) => {
         setCurrentPage(e);
     }
 
-    const keyword = match.params.keyword;
-
     useEffect(() => {
         dispatch(getProducts(keyword, currentPage, category, ratings, price, color, size, type));
     }, [dispatch, keyword, currentPage, category, ratings, price, color, size, type]);
@@ -95,9 +93,11 @@ const Products = ({ match }) => {
     useEffect(() => {
         let type = query.get('type')?.replace('-', ' ')
         setType(type)
+        let search = query.get('search')?.replace('%20', ' ')
+        setKeyword(search)
     }, [query])
 
-    return (
+    return ( 
         <>
             {loading ? (
                 <Loading />

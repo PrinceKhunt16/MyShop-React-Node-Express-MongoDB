@@ -7,11 +7,13 @@ import SearchSmall from "../../../Utils/search-small.png"
 import Close from "../../../Utils/cancel.png"
 import { AiOutlineUser } from "react-icons/ai"
 import { BsFillCartCheckFill } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { useSelector } from 'react-redux'
 import { loadUser } from '../../../Redux/action/userAction'
 
 const Header = () => {
+    let history = useHistory()	
+    const [keyword, setKeyword] = useState("")
     const [dis, setDis] = useState(false)
     const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -24,8 +26,19 @@ const Header = () => {
     }
 
     const handleSearchDisplay = () => {
-        if(window.innerWidth > 700){
-            setDis(false) 
+        if (window.innerWidth > 700) {
+            setDis(false)
+        }
+    }
+
+    const searchSubmitHandler = (e) => {
+        e.preventDefault()
+
+        if(keyword.trim()) {
+            history.push(`/products?search=${keyword}`)
+        } 
+        else {
+            history.push("/products");
         }
     }
 
@@ -44,12 +57,11 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className='searchBox'>
-                        {/* <form className='searchbox' onSubmit={searchSubmitHandler}> */}
-                        <form className='bigScreenSearch'>
-                            <input
+                        <form className='bigScreenSearch' onSubmit={searchSubmitHandler}>
+                            <input 
                                 type="text"
                                 placeholder='Try your expensive choice'
-                            // onChange={(e) => setSearch(e.target.value)}
+                                onChange={(e) => setKeyword(e.target.value)}
                             />
                             <img src={Search} alt=""></img>
                         </form>
@@ -59,7 +71,6 @@ const Header = () => {
                             <input
                                 type="text"
                                 placeholder='Try your expensive choice'
-                            // onChange={(e) => setSearch(e.target.value)}
                             />
                             <img id='searchIcon' src={Search} alt=""></img>
                             <img onClick={() => setDis(!dis)} id='closeIcon' src={Close} alt=""></img>
@@ -102,11 +113,11 @@ const Header = () => {
                 </div>
             </div>
             <div className='categoryHeader'>
-                <div className='contant'> 
+                <div className='contant'>
                     <div className='item'><Link to="/products">View&nbsp;All</Link></div>
                     <div className='item'><Link to="/products?type=Women-Ethnic">Women&nbsp;Ethnic</Link></div>
                     <div className='item'><Link to="/products?type=Women-Western">Women&nbsp;Western</Link></div>
-                    <div className='item'><Link to="/products?type=Men">Men</Link></div> 
+                    <div className='item'><Link to="/products?type=Men">Men</Link></div>
                     <div className='item'><Link to="/products?type=Kids">Kids</Link></div>
                     <div className='item'><Link to="/products?type=Home">Home</Link></div>
                     <div className='item'><Link to="/products?type=Kitchen">Kitchen</Link></div>
