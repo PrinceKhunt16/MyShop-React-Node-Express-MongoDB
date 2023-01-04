@@ -8,7 +8,7 @@ import { clearErrors, createProduct } from '../../../Redux/action/productAction'
 import Toast from "../../Layouts/Toast"
 import ToastContainerBox from "../../Layouts/ToastContainerBox"
 
-const categories = ["Women Ethnic", "Women Western", "Men", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accesories", "Footwear", "Home"];
+const categories = ["Women Ethnic", "Women Western", "Men", "Kitchen", "Beauty", "Jewellery", "Bags", "Electronics", "Accessories", "Footwear", "Home"];
 
 const subcategories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics", "Kitchen", "Home"]
 

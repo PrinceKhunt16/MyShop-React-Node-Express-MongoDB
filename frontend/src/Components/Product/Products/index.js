@@ -6,6 +6,8 @@ import Pagination from "react-js-pagination";
 import { getProducts } from "../../../Redux/action/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../Layouts/Loading";
+import { useLocation } from 'react-router-dom';
+import UseQuery from '../UseQuery'
 
 const categories = ["Dupattas", "Kurtis", "Kurta Sets", "Lehengas", "Patiala", "Sarees", "Suits", "Tops and Tunics", "Shirts", "T-shirts", "Beauty", "Jewellery", "Bags", "Footware", "Electronics"]
 
@@ -43,7 +45,9 @@ const productratings = [2, 3, 4]
 const colors = ['Beige', 'Black', 'Blue', 'Brown', 'Grey', 'Khaki', 'Maroon', 'White', 'Multicolor', 'Nude', 'Olive', 'Orange', 'Pink']
 
 const Products = ({ match }) => {
+    const query = UseQuery()
     const [currentPage, setCurrentPage] = useState(1)
+    const [type, setType] = useState('');
     const [category, setCategory] = useState('');
     const [ratings, setRatings] = useState(0);
     const [price, setPrice] = useState([0, 100000]);
@@ -56,12 +60,10 @@ const Products = ({ match }) => {
         'ratings': false,
         'size': false
     });
-    
+
     const { loading, error, products, productsCount, resultPerPage, filteredProductsCount } = useSelector(
         (state) => state.products
     );
-
-    let count = filteredProductsCount
 
     const handleOpenClose = (categoryName) => {
         setOpenclose({
@@ -69,7 +71,7 @@ const Products = ({ match }) => {
             [categoryName]: !openclose[categoryName]
         })
     }
-  
+
     const removeAllCategory = () => {
         setCategory('')
         setRatings(0)
@@ -79,16 +81,21 @@ const Products = ({ match }) => {
     }
 
     const dispatch = useDispatch();
-    
+
     const setCurrentPageNo = (e) => {
         setCurrentPage(e);
     }
 
     const keyword = match.params.keyword;
-  
+
     useEffect(() => {
-        dispatch(getProducts(keyword, currentPage, category, ratings, price, color, size));
-    }, [dispatch, keyword, currentPage, category, ratings, price, color, size]);
+        dispatch(getProducts(keyword, currentPage, category, ratings, price, color, size, type));
+    }, [dispatch, keyword, currentPage, category, ratings, price, color, size, type]);
+
+    useEffect(() => {
+        let type = query.get('type')?.replace('-', ' ')
+        setType(type)
+    }, [query])
 
     return (
         <>
@@ -235,14 +242,19 @@ const Products = ({ match }) => {
                                 }
                             </div>
                         </div>
+                        {products.length === 0 &&
+                            <div className='noItemWrapper'>
+                                <div className='noItem'>Nothing to show you</div>
+                            </div>
+                        }
                         <div className="productsContainer">
                             <div className='productsBody'>
-                                {products &&  
+                                {products &&
                                     products.map((product) => (
                                         <ProductsCard product={product} />
-                                    ))} 
+                                    ))}
                             </div>
-                            {resultPerPage < count &&
+                            {resultPerPage < filteredProductsCount &&
                                 <div className='paginationBox'>
                                     <Pagination
                                         activePage={currentPage}

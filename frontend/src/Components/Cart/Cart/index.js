@@ -44,7 +44,9 @@ const Cart = ({ history }) => {
             {
                 cartItems.length === 0
                     ? (
-                        <p className='noNoItem'>NO ITEMS</p>
+                        <div className='noItemCardWrapper'>
+                        <p className='noItem'>Nothing to show you</p>
+                        </div>
                     ) : (
                         <div className='cart'>
                             <div className='heading'>

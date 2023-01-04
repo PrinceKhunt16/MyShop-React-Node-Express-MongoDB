@@ -11,6 +11,10 @@ class ApiFeatures {
                     $regex: this.queryStr.keyword,
                     $options: "i"
                 },
+                description: {
+                    $regex: this.queryStr.keyword,
+                    $options: "i"
+                },
             } : {};
 
         this.query = this.query.find({ ...keyword });
@@ -35,6 +39,10 @@ class ApiFeatures {
 
         if(queryCopy.subcategory == ""){
             delete queryCopy.subcategory
+        }
+
+        if(queryCopy.category == ""){
+            delete queryCopy.category
         }
         
         // Price filter 

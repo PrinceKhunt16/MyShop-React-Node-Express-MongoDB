@@ -1,10 +1,13 @@
-.noNoItem {
-    text-align: center;
+.noItemCardWrapper {
     margin-top: 20px;
-    font-size: 40px;
+}
+
+.noItem {
+    text-align: center;
+    font-size: 34px;
     font-family: 'Caveat';
     color: #f43397;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 400;
 }
 

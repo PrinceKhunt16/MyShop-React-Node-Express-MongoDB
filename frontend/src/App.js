@@ -31,7 +31,6 @@ import OrderList from './Components/Deshboard/OrderList';
 import ProcessOrder from './Components/Deshboard/ProcessOrder';
 import UsersList from './Components/Deshboard/UsersList';
 import UpdateUser from './Components/Deshboard/UpdateUser';
-import PageNotFound from './Components/Route/PageNotFound';
 
 const App = () => {
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -58,7 +57,7 @@ const App = () => {
             <Route exact path={'/'} component={Homepage} />
             <Route exact path={'/product/:id'} component={ProductDetails} />
             <Route exact path={'/products'} component={Products} />
-            <Route path={'/products/:keyword'} component={Products} />
+            {/* <Route path={'/products/:keyword'} component={Products} /> */}
             <Route exact path={'/login'} component={LoginSignup} />
             <ProtectedRoute exact path={'/account'} component={Profile} />
             <ProtectedRoute exact path={'/me/update'} component={UpdateProfile} />

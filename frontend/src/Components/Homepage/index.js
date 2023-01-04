@@ -12,7 +12,6 @@ import Jawallry from '../../Utils/jawallry.jpg'
 import Pant from '../../Utils/pant.jpg'
 import Kids from '../../Utils/kids.jpg'
 import Kurti from '../../Utils/kurti.webp'
-import Products from '../Product/Products'
 
 const Homepage = () => {
   return (
@@ -26,44 +25,44 @@ const Homepage = () => {
       </div>
       <div className='productPhotoGrid'>
         <div className='productPhoto'>
-          <Link to="/products/men">
+          <Link to="/products?type=Men">
             <img src={Shirt} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/men">
+          <Link to="/products?type=Men">
             <img src={Jackat} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/footware">
+          <Link to="/products?type=Footwear">
             <img src={Footware} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/footware">
+          <Link to="/products?type=Men">
             <img src={Pant} alt='' />
           </Link>
         </div>
       </div>
       <div className='productPhotoGrid'>
         <div className='productPhoto'>
-          <Link to="/products/men">
+          <Link to="/products?type=Beauty">
             <img src={Beauty} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/men">
+          <Link to="/products?type=Jewellery">
             <img src={Jawallry} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/kids">
+          <Link to="/products?type=Kids">
             <img src={Kids} alt='' />
           </Link>
         </div>
         <div className='productPhoto'>
-          <Link to="/products/women-western">
+          <Link to="/products?type=Women-Western">
             <img src={Kurti} alt='' />
           </Link>
         </div>

@@ -102,17 +102,20 @@ const Header = () => {
                 </div>
             </div>
             <div className='categoryHeader'>
-                <div className='contant'>
+                <div className='contant'> 
                     <div className='item'><Link to="/products">View&nbsp;All</Link></div>
-                    <div className='item'><Link to="/products/women-ethnic">Women&nbsp;Ethnic</Link></div>
-                    <div className='item'><Link to="/products/women-western">Women&nbsp;Western</Link></div>
-                    <div className='item'><Link to="/products/men">Men</Link></div>
-                    <div className='item'><Link to="/products/kids">Kids</Link></div>
-                    <div className='item'><Link to="/products/home-kitchen">Home&nbsp;&&nbsp;Kitchen</Link></div>
-                    <div className='item'><Link to="/products/beauty">Beauty</Link></div>
-                    <div className='item'><Link to="/products/jewellery-accessories">Jewellery&nbsp;&&nbsp;Accessories</Link></div>
-                    <div className='item'><Link to="/products/bags-footwear">Bags&nbsp;&&nbsp;Footwear</Link></div>
-                    <div className='item'><Link to="/products/electronics">Electronics</Link></div>
+                    <div className='item'><Link to="/products?type=Women-Ethnic">Women&nbsp;Ethnic</Link></div>
+                    <div className='item'><Link to="/products?type=Women-Western">Women&nbsp;Western</Link></div>
+                    <div className='item'><Link to="/products?type=Men">Men</Link></div> 
+                    <div className='item'><Link to="/products?type=Kids">Kids</Link></div>
+                    <div className='item'><Link to="/products?type=Home">Home</Link></div>
+                    <div className='item'><Link to="/products?type=Kitchen">Kitchen</Link></div>
+                    <div className='item'><Link to="/products?type=Beauty">Beauty</Link></div>
+                    <div className='item'><Link to="/products?type=Jewellery">Jewellery</Link></div>
+                    <div className='item'><Link to="/products?type=Accessories">Accessories</Link></div>
+                    <div className='item'><Link to="/products?type=Bags">Bags</Link></div>
+                    <div className='item'><Link to="/products?type=Footwear">Footwear</Link></div>
+                    <div className='item'><Link to="/products?type=Electronics">Electronics</Link></div>
                 </div>
             </div>
         </>

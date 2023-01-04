@@ -1,3 +1,8 @@
+.noItemWrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .productsPageBody {
     margin: 15px 15px;
     display: grid;

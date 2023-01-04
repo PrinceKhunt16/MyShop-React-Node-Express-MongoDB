@@ -1,6 +1,6 @@
 .imageWrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   gap: 10px;
 }
 
@@ -19,7 +19,7 @@
 .imageWrapper .bigImagesWrapper {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: flex-start;
 }
 
 .imageWrapper .bigImagesWrapper img {
